@@ -1,0 +1,15 @@
+{
+  "name": "default-element-styles-vinalla",
+  "version": "1.0.0",
+  "description": "",
+  "main": "css-defaults.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

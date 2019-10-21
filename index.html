@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Browser Default Styles</title>
+    <link rel="stylesheet" href="global.css" />
+    <script type="module" src="search-filter.js" defer></script>
+    <script src="https://kit.fontawesome.com/d7c692687b.js" crossorigin="anonymous" async></script>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="header-wrapper">
+            <header class="header">
+                <hgroup class="u-center">
+                    <h1><span>{</span> Browser Default Styles <span>}</span></h1>
+                    <h4>/* Search for any element to check its browser default styles */</h4>
+                </hgroup>
+            </header>
+        </div>
+        <div class="actions-wrapper">
+            <div class="search">
+                <label for="search" class="search__label u-hide">Search for an element to check .</label>
+                <input type="search" id="search" name="search" class="search__field" placeholder="Search for an element." aria-label="Search for an element." />
+                <span></span>
+            </div>
+            <div class="filter">
+                <div class="filter__buttongroup u-tooltip-parent">
+                    <button class="filter__button u-button" data-engine="blink">Blink</button> 
+                    <div class="filter__tooltip u-tooltip u-center">
+                        <span><i class="fab fa-chrome"></i><small>Chrome</small></span>
+                        <span><i class="fab fa-opera"></i><small>Opera</small></span>
+                        <span><i class="fab fa-edge"></i><small>Edge</small></span>
+                        <span><small>Brave</small></span>
+                        <div class="u-tooltip__arrow"></div>
+                    </div> 
+                </div>
+                <div class="filter__buttongroup u-tooltip-parent">
+                    <button class="filter__button u-button" data-engine="webkit">Webkit</button>
+                    <div class="filter__tooltip u-tooltip u-center">
+                        <span><i class="fab fa-safari"></i><small>Safari</small></span>
+                        <div class="u-tooltip__arrow"></div>
+                    </div>
+                </div>
+                <div class="filter__buttongroup u-tooltip-parent">
+                    <button class="filter__button u-button" data-engine="gecko">Gecko</button>
+                    <div class="filter__tooltip u-tooltip u-center">
+                        <span><i class="fab fa-firefox"></i><small>Firefox</small></span>
+                        <div class="u-tooltip__arrow"></div>
+                    </div>
+                </div>
+                <div class="filter__buttongroup u-tooltip-parent">
+                    <button class="filter__button u-button" data-engine="trident">Trident</button>
+                    <div class="filter__tooltip u-tooltip u-center">
+                        <span><i class="fab fa-internet-explorer"></i><small>Internet Explorer</small></span>
+                        <div class="u-tooltip__arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="results-wrapper">
+            <div>
+                <div class="filter-results-label u-hide">
+                    <span></span>
+                    <i class="fab fa-chrome"></i>
+                    <i class="fab fa-firefox"></i>
+                    <i class="fab fa-safari"></i>
+                    <i class="fab fa-edge"></i>
+                    <i class="fab fa-internet-explorer"></i>
+                    <i class="fab fa-opera"></i>
+                </div>
+                <div class="filter-engine-styles u-hide">
+                    <span class="blink-styles">
+                        <input type="checkbox" id="blinkStyles" name="blink-styles" checked>
+                        <label for="blinkStyles"><i class="fas fa-check-square"></i>Blink</label>
+                    </span>
+                    <span class="webkit-styles">
+                        <input type="checkbox" id="webkitStyles" name="webkit-styles" checked>
+                        <label for="webkitStyles"><i class="fas fa-check-square"></i>WebKit</label>
+                    </span>
+                    <span class="gecko-styles">
+                        <input type="checkbox" id="geckoStyles" name="gecko-styles" checked>
+                        <label for="geckoStyles"><i class="fas fa-check-square"></i>Gecko</label>
+                    </span>
+                    <span class="trident-styles">
+                        <input type="checkbox" id="tridentStyles" name="trident-styles" checked>
+                        <label for="tridentStyles"><i class="fas fa-check-square"></i>Trident</label>
+                    </span>
+                </div>
+            </div>
+            <ul class="results"></ul>
+        </div>
+        <div class="footer-wrapper">
+                <footer class="footer">
+                    <div class="sources u-tooltip-parent">
+                        Sources
+                        <div class="sources__tooltip u-tooltip">
+                            <strong class="u-primary-color">.sources</strong> {
+                            <ul>
+                                <li>blink: <a href="https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css" rel="nofollow" target="_blank">chromium.googlesource.com</a>;</li>
+                                <li>webkit: <a href="https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css" rel="nofollow" target="_blank">trac.webkit.org</a>;</li>
+                                <li>firefox: <a href="https://dxr.mozilla.org/mozilla-central/source/layout/style/res/html.css" rel="nofollow" target="_blank">dxr.mozilla.org</a>;</li>
+                                <li>trident: <a href="https://web.archive.org/web/20170122223926/http://www.iecss.com/" rel="nofollow" target="_blank">www.iecss.com</a>;</li>
+                                <li>standards: <a href="https://html.spec.whatwg.org/multipage/rendering.html" rel="nofollow" target="_blank">html.spec.whatwg.org</a>;</li>
+                                <li>elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" rel="nofollow" target="_blank">developer.mozilla.org</a>;</li>
+                            </ul>
+                            }
+                            <div class="u-tooltip__arrow"></div>
+                        </div>
+                    </div>
+                </footer>
+        </div>
+    </div>
+</body>
+</html>
