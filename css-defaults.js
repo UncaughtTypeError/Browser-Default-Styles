@@ -1,10 +1,10 @@
 // Sample Data @https://stackoverflow.com/questions/6867254/browsers-default-css-for-html-elements
 
 // Browser Rendering Engines
-// - Chrome/Opera/Edge/Brave	: Blink (fork of WebKit)
-// - Safari 					: WebKit
-// - Firefox					: Gecko
-// - IE							: Trident
+// - Chrome/Opera/Edge/Brave    : Blink (fork of WebKit)
+// - Safari 				    : WebKit
+// - Firefox				    : Gecko
+// - IE						    : Trident
 export const cssDefaults = [
     {
         element: 'html',
@@ -844,6 +844,155 @@ export const cssDefaults = [
         description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
         defaults: {
             color: '#FF0000',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'abbr[title]',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML Abbreviation element </strong>(<strong><code>&lt;abbr&gt;</code></strong>) represents an abbreviation or acronym; the optional <code>title</code> attribute can provide an expansion or description for the abbreviation.',
+        note: 'with attribute <code>title</code>',
+        defaults: {
+            textDecoration: 'dotted underline',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            textDecoration: 'dotted underline',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'b',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML Bring Attention To element (<code>&lt;b&gt;</code>)</strong>&nbsp; is used to draw the reader\'s attention to the element\'s contents, which are not otherwise granted special importance.',
+        defaults: {
+            fontWeight: 'bolder',
+        },
+        blink: {
+            fontWeight: 'bold',
+        },
+        webkit: {
+            fontWeight: 'bold',
+        },
+        gecko: {
+            fontWeight: 'bolder',
+        },
+        trident: {
+            fontWeight: 'bold',
+        },
+    },
+    {
+        element: 'bdi',
+        type: 'Inline text semantics',
+        description: 'The HTML <strong>Bidirectional Isolate element</strong> (<strong><code>&lt;bdi&gt;</code></strong>)&nbsp; tells the browser\'s bidirectional algorithm to treat the text it contains in isolation from its surrounding text.',
+        defaults: {
+            unicodeBidi: 'isolate',
+        },
+        blink: {
+            unicodeBidi: 'isolate',
+        },
+        webkit: {
+            unicodeBidi: 'isolate',
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'bdo',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML Bidirectional Text Override element</strong> (<strong><code>&lt;bdo&gt;</code></strong>) overrides the current directionality of text, so that the text within is rendered in a different direction.',
+        defaults: {
+            unicodeBidi: 'isolate-override',
+        },
+        blink: {
+            unicodeBidi: 'bidi-override',
+        },
+        webkit: {
+            unicodeBidi: 'bidi-override',
+        },
+        gecko: {
+            unicodeBidi: 'isolate-override',
+        },
+        trident: {
+            direction: 'rtl',
+            unicodeBidi: 'bidi-override',
+        },
+    },
+    {
+        element: 'br',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML <code>&lt;br&gt;</code> element</strong> produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.',
+        defaults: {
+            displayOutside: 'newline',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'cite',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML Citation element</strong> (<strong><code>&lt;cite&gt;</code></strong>) is used to describe a reference to a cited creative work, and must include the title of that work.',
+        defaults: {
+            fontStyle: 'italic',
+        },
+        blink: {
+            fontStyle: 'italic',
+        },
+        webkit: {
+            fontStyle: 'italic',
+        },
+        gecko: {
+            fontStyle: 'italic',
+        },
+        trident: {
+            fontStyle: 'italic',
+        },
+    },
+    {
+        element: 'code',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML <code>&lt;code&gt;</code> element</strong> displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code.',
+        defaults: {
+            fontFamily: 'monospace',
+        },
+        blink: {
+            fontFamily: 'monospace',
+        },
+        webkit: {
+            fontFamily: 'monospace',
+        },
+        gecko: {
+            fontFamily: 'monospace',
+        },
+        trident: {
+            fontFamily: 'monospace',
+            fontSize: '10pt',
+        },
+    },
+    {
+        element: 'data',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML <code>&lt;data&gt;</code> element</strong> links a given content with a machine-readable translation. If the content is time- or date-related, the <code>&lt;time&gt;</code> element must be used.',
+        defaults: {
         },
         blink: {
         },
