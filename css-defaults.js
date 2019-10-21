@@ -795,4 +795,63 @@ export const cssDefaults = [
             padding: '0 0 0 30pt',
         },
     },
+    {
+        element: 'a',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        defaults: {
+            color: '#0000EE',
+            textDecoration: 'underline',
+            cursor: 'pointed',
+        },
+        blink: {
+            textDecoration: 'underline',
+            cursor: 'auto',
+        },
+        webkit: {
+            textDecoration: 'underline',
+            cursor: 'auto',
+        },
+        gecko: {
+        },
+        trident: {
+            color: '#0066cc',
+            textDecoration: 'underline',
+        },
+    },
+    {
+        element: 'a:visited',
+        type: 'Inline text semantics',
+        state: ':visited',
+        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        defaults: {
+            color: '#551A8B',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+            color: '#800080',
+        },
+    },
+    {
+        element: 'a:active',
+        type: 'Inline text semantics',
+        state: ':active',
+        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        defaults: {
+            color: '#FF0000',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
 ]
