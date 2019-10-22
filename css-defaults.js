@@ -1003,4 +1003,64 @@ export const cssDefaults = [
         trident: {
         },
     },
+    {
+        element: 'dfn',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML Definition element</strong> (<strong><dfn>&lt;dfn&gt;</dfn></strong>) is used to indicate the term being defined within the context of a definition phrase or sentence.',
+        defaults: {
+            fontStyle: 'italic',
+        },
+        blink: {
+            fontStyle: 'italic',
+        },
+        webkit: {
+            fontStyle: 'italic',
+        },
+        gecko: {
+            fontStyle: 'italic',
+        },
+        trident: {
+            fontStyle: 'italic',
+        },
+    },
+    {
+        element: 'em',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML <code>&lt;em&gt;</code> element</strong> marks text that has stress emphasis. The <code>&lt;em&gt;</code> element can be nested, with each level of nesting indicating a greater degree of emphasis.',
+        defaults: {
+            fontStyle: 'italic',
+        },
+        blink: {
+            fontStyle: 'italic',
+        },
+        webkit: {
+            fontStyle: 'italic',
+        },
+        gecko: {
+            fontStyle: 'italic',
+        },
+        trident: {
+            fontStyle: 'italic',
+        },
+    },
+    {
+        element: 'i',
+        type: 'Inline text semantics',
+        description: 'The <strong>HTML <code>&lt;i&gt;</code> element</strong> represents a range of text that is set off from the normal text for some reason. Some examples include technical terms, foreign language phrases, or fictional character thoughts. It is typically displayed in italic type.',
+        defaults: {
+            fontStyle: 'italic',
+        },
+        blink: {
+            fontStyle: 'italic',
+        },
+        webkit: {
+            fontStyle: 'italic',
+        },
+        gecko: {
+            fontStyle: 'italic',
+        },
+        trident: {
+            fontStyle: 'italic',
+        },
+    },
 ]
