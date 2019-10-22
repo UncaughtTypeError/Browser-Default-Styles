@@ -1063,4 +1063,314 @@ export const cssDefaults = [
             fontStyle: 'italic',
         },
     },
+    {
+        element: 'kbd',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'User input',
+        description: 'The <strong>HTML Keyboard Input element</strong> (<strong><code>&lt;kbd&gt;</code></strong>) represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device.',
+        defaults: {
+            fontFamily: 'monospace',
+        },
+        blink: {
+            fontFamily: 'monospace',
+        },
+        webkit: {
+            fontFamily: 'monospace',
+        },
+        gecko: {
+            fontFamily: 'monospace',
+        },
+        trident: {
+            fontFamily: 'monospace',
+            fontSize: '10pt',
+        },
+    },
+    {
+        element: 'mark',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Highlight',
+        description: 'The <strong>HTML Mark Text element</strong> (<strong><code>&lt;mark&gt;</code></strong>) represents text which is <strong>marked</strong> or <strong>highlighted</strong> for reference or notation purposes, due to the marked passage\'s relevance or importance in the enclosing context.',
+        defaults: {
+            background: 'yellow',
+            color: 'black',
+        },
+        blink: {
+            backgroundColor: 'yellow',
+            color: 'black',
+        },
+        webkit: {
+            backgroundColor: 'yellow',
+            color: 'black',
+        },
+        gecko: {
+            background: 'yellow',
+            color: 'black',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'q',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Quotation',
+        description: 'The <strong>HTML <code>&lt;q&gt;</code> element </strong> indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks.',
+        defaults: {
+        },
+        blink: {
+            display: 'inline',
+        },
+        webkit: {
+            display: 'inline',
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'q:before',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Quotation',
+        description: 'The <strong>HTML <code>&lt;q&gt;</code> element </strong> indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks.',
+        note: 'with <em>pseudo-element</em> <code>:before</code>',
+        defaults: {
+            content: 'open-quote',
+        },
+        blink: {
+            content: 'open-quote',
+        },
+        webkit: {
+            content: 'open-quote',
+        },
+        gecko: {
+            content: 'open-quote',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'q:after',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Quotation',
+        description: 'The <strong>HTML <code>&lt;q&gt;</code> element </strong> indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks.',
+        note: 'with <em>pseudo-element</em> <code>:after</code>',
+        defaults: {
+            content: 'close-quote',
+        },
+        blink: {
+            content: 'close-quote',
+        },
+        webkit: {
+            content: 'close-quote',
+        },
+        gecko: {
+            content: 'close-quote',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'rb',
+        type: 'Inline text semantics',
+        categories: ['none'],
+        use: 'Ruby annotation(s)',
+        description: 'The <strong>HTML Ruby Fallback Parenthesis (<code>&lt;rp&gt;</code>) element</strong> is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the <code>&lt;ruby&gt;</code> element.',
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            display: 'ruby-base',
+            whiteSpace: 'nowrap',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'rp',
+        type: 'Inline text semantics',
+        categories: ['none'],
+        use: 'Parenthesis for ruby annotation text',
+        description: 'The <strong>HTML Ruby Fallback Parenthesis (<code>&lt;rp&gt;</code>) element</strong> is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the <code>&lt;ruby&gt;</code> element.',
+        defaults: {
+            display: 'none',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            display: 'none',
+            unicodeBidi: 'isolate',
+        },
+        trident: {
+            fontSize: '6pt',
+        },
+    },
+    {
+        element: 'ruby > rp',
+        type: 'Inline text semantics',
+        categories: ['none'],
+        use: 'Parenthesis for ruby annotation text',
+        description: 'The <strong>HTML Ruby Fallback Parenthesis (<code>&lt;rp&gt;</code>) element</strong> is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the <code>&lt;ruby&gt;</code> element.',
+        note: 'direct descendent of <code>ruby</code>',
+        defaults: {
+        },
+        blink: {
+            display: 'none',
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'rt',
+        type: 'Inline text semantics',
+        categories: ['none'],
+        use: 'Ruby annotation text',
+        description: 'The <strong>HTML Ruby Text (<code>&lt;rt&gt;</code>) element</strong> specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The <code>&lt;rt&gt;</code> element must always be contained within a <code>&lt;ruby&gt;</code> element.',
+        defaults: {
+            display: 'ruby-text',
+        },
+        blink: {
+            lineHeight: 'normal',
+            textIndent: '0',
+        },
+        webkit: {
+            lineHeight: 'normal',
+            textIndent: '0',
+        },
+        gecko: {
+            display: 'ruby-text',
+            whiteSpace: 'nowrap',
+            fontSize: '50%',
+            lineHeight: '1',
+            fontVariantEastAsian: 'ruby',
+            textEmphasis: 'none',
+            unicodeBidi: 'isolate',
+        },
+        trident: {
+            display: 'ruby-text',
+            fontSize: '6pt',
+        },
+    },
+    {
+        element: 'ruby > rt',
+        type: 'Inline text semantics',
+        categories: ['none'],
+        use: 'Ruby annotation text',
+        description: 'The <strong>HTML Ruby Text (<code>&lt;rt&gt;</code>) element</strong> specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The <code>&lt;rt&gt;</code> element must always be contained within a <code>&lt;ruby&gt;</code> element.',
+        note: 'direct descendent of <code>ruby</code>',
+        defaults: {
+        },
+        blink: {
+            display: 'block',
+            textAlign: 'start',
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'rtc > rt',
+        type: 'Inline text semantics',
+        categories: ['none'],
+        use: 'Ruby annotation text',
+        description: 'The <strong>HTML Ruby Text (<code>&lt;rt&gt;</code>) element</strong> specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The <code>&lt;rt&gt;</code> element must always be contained within a <code>&lt;ruby&gt;</code> element.',
+        note: 'direct descendent of <code>rtc</code>',
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            fontSize: 'unset',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'rtc',
+        type: 'Inline text semantics',
+        categories: ['none'],
+        use: 'Ruby semantic annotation text',
+        description: 'The <strong>HTML Ruby Text Container (<code>&lt;rtc&gt;</code>) element</strong> embraces semantic annotations of characters presented in a ruby of <code>&lt;rb&gt;</code> elements used inside of <code>&lt;ruby&gt;</code> element. <code>&lt;rb&gt;</code> elements can have both pronunciation (<code>&lt;rt&gt;</code>) and semantic (<code>&lt;rtc&gt;</code>) annotations.',
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            display: 'ruby-text',
+            whiteSpace: 'nowrap',
+            fontSize: '50%',
+            lineHeight: '1',
+            fontVariantEastAsian: 'ruby',
+            textEmphasis: 'none',
+            unicodeBidi: 'isolate',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'ruby',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Ruby annotation(s)',
+        description: 'The <strong>HTML <code>&lt;ruby&gt;</code> element</strong> represents a ruby annotation. Ruby annotations are for showing pronunciation of East Asian characters.',
+        defaults: {
+            display: 'ruby',
+        },
+        blink: {
+            textIndent: '0',
+        },
+        webkit: {
+            textIndent: '0',
+        },
+        gecko: {
+            display: 'ruby',
+            unicodeBidi: 'isolate',
+        },
+        trident: {
+            display: 'ruby',
+        },
+    },
+    {
+        element: 's',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Inaccurate text',
+        description: 'The <strong>HTML <code>&lt;s&gt;</code> element</strong> renders text with a strikethrough, or a line through it. Use the <code>&lt;s&gt;</code> element to represent things that are no longer relevant or no longer accurate. However, <code>&lt;s&gt;</code> is not appropriate when indicating document edits; for that, use the <code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code> elements, as appropriate.',
+        defaults: {
+            textDecoration: 'line-through',
+        },
+        blink: {
+            textDecoration: 'line-through',
+        },
+        webkit: {
+            textDecoration: 'line-through',
+        },
+        gecko: {
+            textDecoration: 'line-through',
+        },
+        trident: {
+        },
+    },
 ]
+
+// TODO: add MDN browser compatibility data: https://github.com/mdn/browser-compat-data
