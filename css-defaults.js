@@ -836,7 +836,7 @@ export const cssDefaults = [
     {
         element: 'a',
         type: 'Inline text semantics',
-        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with its <code>href</code> attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
         obsolete: false,
         defaults: {
             color: '#0000EE',
@@ -862,7 +862,7 @@ export const cssDefaults = [
         element: 'a:visited',
         type: 'Inline text semantics',
         state: ':visited',
-        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with its <code>href</code> attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
         obsolete: false,
         defaults: {
             color: '#551A8B',
@@ -881,7 +881,7 @@ export const cssDefaults = [
         element: 'a:active',
         type: 'Inline text semantics',
         state: ':active',
-        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with its <code>href</code> attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
         obsolete: false,
         defaults: {
             color: '#FF0000',
@@ -1718,6 +1718,313 @@ export const cssDefaults = [
         obsolete: false,
         defaults: {
             whiteSpace: 'normal',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'area',
+        type: 'Image and multimedia',
+        categories: ['flow', 'phrasing'],
+        use: 'Hyperlink or dead area on an image map',
+        description: 'The <strong>HTML <code>&lt;area&gt;</code> element</strong> defines a hot-spot region on an image, and optionally associates it with a hypertext link. This element is used only within a <code>&lt;map&gt;</code> element.',
+        obsolete: false,
+        defaults: {
+            display: 'none',
+        },
+        blink: {
+            display: 'inline',
+            cursor: 'pointer',
+        },
+        webkit: {
+            display: 'none',
+        },
+        gecko: {
+            display: 'none !important',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'audio',
+        type: 'Image and multimedia',
+        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'palpable'],
+        use: 'Audio player',
+        description: 'The <strong>HTML <code>&lt;audio&gt;</code> element</strong> is used to embed sound content in documents. It may contain one or more audio sources, represented using the <code>src</code> attribute or the <code>&lt;source&gt;</code> element:&nbsp;the browser will choose the most suitable one. It can also be the destination for streamed media, using a <code>MediaStream</code>.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'img',
+        type: 'Image and multimedia',
+        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'form-associated', 'palpable'],
+        use: 'Image',
+        description: 'The <strong>HTML <code>&lt;img&gt;</code> element</strong> embeds an image into the document.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+            zoom: '1',
+        },
+    },
+    {
+        element: 'map',
+        type: 'Image and multimedia',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Image map',
+        description: 'The <strong>HTML <code>&lt;map&gt;</code> element</strong> is used with <code>&lt;area&gt;</code> elements to define an image map (a clickable link area).',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+            display: 'inline',
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'track',
+        type: 'Image and multimedia',
+        categories: [],
+        use: 'Timed text track',
+        description: 'The <strong>HTML <code>&lt;track&gt;</code> element</strong> is used as a child of the media elements <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code>. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format(<code>.vtt</code> files) — Web Video Text Tracks or&nbsp;Timed Text Markup Language (TTML).',
+        obsolete: false,
+        defaults: {
+            display: 'none',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'video',
+        type: 'Image and multimedia',
+        categories: [],
+        use: 'Video player',
+        description: 'The&nbsp;<strong>HTML Video element</strong>&nbsp;(<strong><code>&lt;video&gt;</code></strong>) embeds a media player which supports video playback into the document.&nbsp;You can use&nbsp;<code>&lt;video&gt;</code>&nbsp;for audio content as well, but the <code>&lt;audio&gt;</code> element may provide a more appropriate user experience.',
+        obsolete: false,
+        defaults: {
+            objectFit: 'contain',
+        },
+        blink: {
+            objectFit: 'contain',
+        },
+        webkit: {
+            objectFit: 'contain',
+        },
+        gecko: {
+            objectFit: 'contain',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'applet',
+        type: 'Embedded content',
+        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'listed', 'submittable', 'form-associated', 'palpable'],
+        use: 'Java applet',
+        description: 'The obsolete <strong>HTML Applet Element</strong> (<strong><code>&lt;applet&gt;</code></strong>) embeds a Java applet into the document; this element has been deprecated in favor of <code>&lt;object&gt;</code>.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'embed',
+        type: 'Embedded content',
+        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'palpable'],
+        use: 'Plugin',
+        description: 'The <strong>HTML <code>&lt;embed&gt;</code> element</strong> embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+            zoom: '1',
+        },
+    },
+    {
+        element: 'embed[hidden]',
+        type: 'Embedded content',
+        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'palpable'],
+        use: 'Plugin',
+        description: 'The <strong>HTML <code>&lt;embed&gt;</code> element</strong> embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.',
+        note: 'with attribute <code>hidden</code>',
+        obsolete: false,
+        defaults: {
+            display: 'inline', 
+            height: '0',
+            width: '0',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            display: 'none !important',
+            visibility: 'hidden !important',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'iframe',
+        type: 'Embedded content',
+        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'palpable'],
+        use: 'Nested browsing context',
+        description: 'The <strong>HTML Inline Frame element (<code>&lt;iframe&gt;</code>)</strong> represents a nested browsing context, embedding another HTML page into the current one.',
+        obsolete: false,
+        defaults: {
+            border: '2px inset',
+        },
+        blink: {
+            border: '2px inset',
+        },
+        webkit: {
+            border: '2px inset',
+        },
+        gecko: {
+            border: '2px inset',
+        },
+        trident: {
+            backgroundColor: '#ffffff',
+            height: '150px',
+            width: '300px',
+            zoom: '1',
+        },
+    },
+    {
+        element: 'noembed',
+        type: 'Embedded content',
+        categories: [],
+        use: 'Fallback for <code>&lt;embed&gt;</code>',
+        description: 'The <code><strong>&lt;noembed&gt;</strong></code> element is an obsolete, non-standard way to provide alternative, or "fallback", content for browsers that do not support the <code>&lt;embed&gt;</code> element or do not support the type of embedded content an author wishes to use.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+            display: 'none',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            display: 'none',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'object',
+        type: 'Embedded content',
+        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'listed', 'submittable', 'form-associated', 'palpable'],
+        use: 'Image, nested browsing context, or plugin',
+        description: 'The <code><strong>&lt;noembed&gt;</strong></code> element is an obsolete, non-standard way to provide alternative, or "fallback", content for browsers that do not support the <code>&lt;embed&gt;</code> element or do not support the type of embedded content an author wishes to use.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+            zoom: '1',
+        },
+    },
+    {
+        element: 'param',
+        type: 'Embedded content',
+        categories: [],
+        use: 'Parameter for object',
+        description: 'The <strong>HTML <code>&lt;param&gt;</code> element</strong> defines parameters for an <code>&lt;object&gt;</code> element.',
+        obsolete: false,
+        defaults: {
+            display: 'none',
+        },
+        blink: {
+            display: 'none',
+        },
+        webkit: {
+            display: 'none',
+        },
+        gecko: {
+            display: 'none',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'picture',
+        type: 'Embedded content',
+        categories: ['flow', 'phrasing', 'embedded'],
+        use: 'Image',
+        description: 'The <strong>HTML <code>&lt;param&gt;</code> element</strong> defines parameters for an <code>&lt;object&gt;</code> element.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'source',
+        type: 'Embedded content',
+        categories: [],
+        use: 'Image source for img or media source for video or audio',
+        description: 'The <strong>HTML <code>&lt;source&gt;</code> element</strong> specifies multiple media resources for the <code>&lt;picture&gt;</code>, the <code>&lt;audio&gt;</code> element, or the <code>&lt;video&gt;</code> element.',
+        obsolete: false,
+        defaults: {
+            display: 'none',
         },
         blink: {
         },
