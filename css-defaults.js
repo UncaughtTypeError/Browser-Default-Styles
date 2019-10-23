@@ -10,6 +10,7 @@ export const cssDefaults = [
         element: 'html',
         type: 'Main root',
         description: 'The <strong>HTML <code>&lt;html&gt;</code> element</strong> represents the root (top-level element) of an HTML document, so it is also referred to as the <em>root element</em>. All other elements must be descendants of this element.',
+        obsolete: false,
         defaults: {
             display: 'block',        
         },
@@ -27,6 +28,7 @@ export const cssDefaults = [
         element: 'base',
         type: 'Document metadata',
         description: 'The <strong>HTML <code>&lt;base&gt;</code> element</strong> specifies the base URL to use for all relative URLs in a document.',
+        obsolete: false,
         defaults: {
             display: 'none',
         },
@@ -43,6 +45,7 @@ export const cssDefaults = [
         element: 'head',
         type: 'Document metadata',
         description: 'The <strong>HTML <code>&lt;head&gt;</code> element</strong> contains machine-readable information (metadata) about the document, like its title, scripts, and style sheets.',
+        obsolete: false,
         defaults: {
             display: 'none',
         },
@@ -59,6 +62,7 @@ export const cssDefaults = [
         element: 'link',
         type: 'Document metadata',
         description: 'The <strong>HTML External Resource Link element (<code>&lt;link&gt;</code>)</strong> specifies relationships between the current document and an external resource. This element is most commonly used to link to stylesheets, but is also used to establish site icons (both "favicon" style icons and icons for the home screen and apps on mobile devices) among other things.',
+        obsolete: false,
         defaults: {
             display: 'none',
         },
@@ -75,6 +79,7 @@ export const cssDefaults = [
         element: 'meta',
         type: 'Document metadata',
         description: 'The <strong>HTML <code>&lt;meta&gt;</code> element</strong> represents metadata that cannot be represented by other HTML meta-related elements, like <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code> or <code>&lt;title&gt;</code>.',
+        obsolete: false,
         defaults: {
             display: 'none',
         },
@@ -91,6 +96,7 @@ export const cssDefaults = [
         element: 'style',
         type: 'Document metadata',
         description: 'The <strong>HTML <code>&lt;style&gt;</code> element</strong> contains style information for a document, or part of a document.',
+        obsolete: false,
         defaults: {
             display: 'none',
         },
@@ -108,6 +114,7 @@ export const cssDefaults = [
         element: 'title',
         type: 'Document metadata',
         description: 'The <strong>HTML Title element</strong> (<strong><code>&lt;title&gt;</code></strong>) defines the document\'s title that is shown in a browser\'s title bar or a page\'s tab.',
+        obsolete: false,
         defaults: {
             display: 'none',
         },
@@ -124,6 +131,7 @@ export const cssDefaults = [
         element: 'body',
         type: 'Sectioning root',
         description: 'The <strong>HTML <code>&lt;body&gt;</code> Element</strong> represents the content of an HTML&nbsp;document. There can be only one <code>&lt;body&gt;</code> element in a document.',
+        obsolete: false,
         defaults: {
             display: 'block',
             margin: '8px',
@@ -142,6 +150,7 @@ export const cssDefaults = [
         element: 'address',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;address&gt;</code> element</strong> indicates that the enclosed HTML provides contact information for a person or people, or for an organization.',
+        obsolete: false,
         defaults: {
             display: 'block',
             fontStyle: 'italic', 
@@ -159,6 +168,7 @@ export const cssDefaults = [
         element: 'article',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;article&gt;</code> element</strong> represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication).',
+        obsolete: false,
         defaults: {
             display: 'block', 
         },
@@ -175,6 +185,7 @@ export const cssDefaults = [
         element: 'aside',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;aside&gt;</code> element</strong> represents a portion of a document whose content is only indirectly related to the document\'s main content.',
+        obsolete: false,
         defaults: {
             display: 'block',
         },
@@ -191,6 +202,7 @@ export const cssDefaults = [
         element: 'footer',
         type: 'Content sectioning',
         description: 'The<strong> HTML <code>&lt;footer&gt;</code> element</strong> represents a footer for its nearest sectioning content or sectioning root element. A footer typically contains information about the author of the section, copyright data or links to related documents.',
+        obsolete: false,
         defaults: {
             display: 'block',
         },
@@ -207,6 +219,7 @@ export const cssDefaults = [
         element: 'header',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;header&gt;</code> element</strong> represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements but also a logo, a search form, an author name, and other elements.',
+        obsolete: false,
         defaults: {
             display: 'block', 
         },
@@ -223,6 +236,7 @@ export const cssDefaults = [
         element: 'main',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;main&gt;</code> element</strong> represents the dominant content of the <code>&lt;body&gt;</code> of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application.',
+        obsolete: false,
         defaults: {
             display: 'block', 
         },
@@ -239,6 +253,7 @@ export const cssDefaults = [
         element: 'nav',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;nav&gt;</code> element</strong> represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.',
+        obsolete: false,
         defaults: {
             display: 'block',
         },
@@ -255,6 +270,7 @@ export const cssDefaults = [
         element: 'section',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;section&gt;</code> element</strong> represents a standalone section — which doesn\'t have a more specific semantic element to represent it — contained within an HTML document.',
+        obsolete: false,
         defaults: {
             display: 'block',
         },
@@ -271,6 +287,7 @@ export const cssDefaults = [
         element: 'hgroup',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;hgroup&gt;</code> element</strong> represents a multi-level heading for a section of a document. It groups a set of <code>&lt;h1&gt;–&lt;h6&gt;</code> elements.',
+        obsolete: false,
         defaults: {
             display: 'block',
         },
@@ -287,6 +304,7 @@ export const cssDefaults = [
         element: 'h1',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> elements</strong> represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level and <code>&lt;h6&gt;</code> is the lowest.',
+        obsolete: false,
         defaults: {    
             display: 'block',
             fontWeight: 'bold',
@@ -317,6 +335,7 @@ export const cssDefaults = [
         element: 'h2',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> elements</strong> represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level and <code>&lt;h6&gt;</code> is the lowest.',
+        obsolete: false,
         defaults: {
             display: 'block',
             fontWeight: 'bold',
@@ -347,6 +366,7 @@ export const cssDefaults = [
         element: 'h3',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> elements</strong> represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level and <code>&lt;h6&gt;</code> is the lowest.',
+        obsolete: false,
         defaults: {
             display: 'block',
             fontWeight: 'bold',
@@ -377,6 +397,7 @@ export const cssDefaults = [
         element: 'h4',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> elements</strong> represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level and <code>&lt;h6&gt;</code> is the lowest.',
+        obsolete: false,
         defaults: {
             display: 'block',
             fontWeight: 'bold',
@@ -407,6 +428,7 @@ export const cssDefaults = [
         element: 'h5',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> elements</strong> represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level and <code>&lt;h6&gt;</code> is the lowest.',
+        obsolete: false,
         defaults: {
             display: 'block',
             fontWeight: 'bold',
@@ -437,6 +459,7 @@ export const cssDefaults = [
         element: 'h6',
         type: 'Content sectioning',
         description: 'The <strong>HTML <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> elements</strong> represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level and <code>&lt;h6&gt;</code> is the lowest.',
+        obsolete: false,
         defaults: {
             display: 'block',
             fontWeight: 'bold',
@@ -467,6 +490,7 @@ export const cssDefaults = [
         element: 'blockquote',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block Quotation Element</em>) indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the <strong>cite</strong> attribute, while a text representation of the source can be given using the <code>&lt;cite&gt;</code> element.',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',
@@ -489,6 +513,7 @@ export const cssDefaults = [
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block Quotation Element</em>) indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the <strong>cite</strong> attribute, while a text representation of the source can be given using the <code>&lt;cite&gt;</code> element.',
         note: 'with attribute <code>type="cite"</code>',
+        obsolete: false,
         defaults: {
         },
         blink: {
@@ -513,6 +538,7 @@ export const cssDefaults = [
         element: 'dd',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;dd&gt;</code> element</strong> provides the description, definition, or value for the preceding term (<code>&lt;dt&gt;</code>) in a description list (<code>&lt;dl&gt;</code>).',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginInlineStart: '40px',
@@ -531,6 +557,7 @@ export const cssDefaults = [
         element: 'dir',
         type: 'Text content',
         description: 'The obsolete <strong>HTML Directory element</strong> (<strong><code>&lt;dir&gt;</code></strong>) is used as a container for a directory of files and/or folders, potentially with styles and icons applied by the user agent.',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',
@@ -555,6 +582,7 @@ export const cssDefaults = [
         element: 'div',
         type: 'Text content',
         description: 'The <strong>HTML Content Division element</strong> (<strong><code>&lt;div&gt;</code></strong>) is the generic container for flow content. It has no effect on the content or layout until styled using CSS.',
+        obsolete: false,
         defaults: {
             display: 'block',
         },
@@ -571,6 +599,7 @@ export const cssDefaults = [
         element: 'dl',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;dl&gt;</code> </strong>element represents a description list. The element encloses a list of groups of terms (specified using the <code>&lt;dt&gt;</code> element) and descriptions (provided by <code>&lt;dd&gt;</code> elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',
@@ -592,6 +621,7 @@ export const cssDefaults = [
         element: 'dt',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;dt&gt;</code> element</strong> specifies a term in a description or definition list, and as such must be used inside a <code>&lt;dl&gt;</code> element.',
+        obsolete: false,
         defaults: {
             display: 'block',
         },
@@ -608,6 +638,7 @@ export const cssDefaults = [
         element: 'figcaption',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;figcaption&gt;</code> or Figure Caption element</strong> represents a caption or legend describing the rest of the contents of its parent <code>&lt;figure&gt;</code> element.',
+        obsolete: false,
         defaults: {
             display: 'block',
         },
@@ -624,6 +655,7 @@ export const cssDefaults = [
         element: 'figure',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;figure&gt;</code> (Figure With Optional Caption) element</strong> represents self-contained content, potentially with an optional caption, which is specified using the (<code>&lt;figcaption&gt;</code>) element.',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',
@@ -644,6 +676,7 @@ export const cssDefaults = [
         element: 'hr',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;hr&gt;</code> element</strong> represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.',
+        obsolete: false,
         defaults: {
             display: 'block',
             color: 'gray',
@@ -675,6 +708,7 @@ export const cssDefaults = [
         element: 'li',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;li&gt;</code> element</strong> is used to represent an item in a list.',
+        obsolete: false,
         defaults: {
             display: 'list-item',
         },
@@ -694,6 +728,7 @@ export const cssDefaults = [
         element: 'ol',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;ol&gt;</code> element</strong> represents an ordered list of items, typically rendered as a numbered list.',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',
@@ -723,6 +758,7 @@ export const cssDefaults = [
         element: 'p',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;p&gt;</code> element</strong> represents a paragraph.',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',
@@ -746,6 +782,7 @@ export const cssDefaults = [
         element: 'pre',
         type: 'Text content',
         description: 'The <strong>HTML <code>&lt;pre&gt;</code> element</strong> represents preformatted text which is to be presented exactly as written in the HTML file.',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',
@@ -770,6 +807,7 @@ export const cssDefaults = [
         element: 'ul',
         type: 'Text content',
         description: 'The<strong> HTML <code>&lt;ul&gt;</code> element</strong> represents an unordered list of items, typically rendered as a bulleted list.',
+        obsolete: false,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',
@@ -799,6 +837,7 @@ export const cssDefaults = [
         element: 'a',
         type: 'Inline text semantics',
         description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        obsolete: false,
         defaults: {
             color: '#0000EE',
             textDecoration: 'underline',
@@ -824,6 +863,7 @@ export const cssDefaults = [
         type: 'Inline text semantics',
         state: ':visited',
         description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        obsolete: false,
         defaults: {
             color: '#551A8B',
         },
@@ -842,6 +882,7 @@ export const cssDefaults = [
         type: 'Inline text semantics',
         state: ':active',
         description: 'The <strong>HTML <code>&lt;a&gt;</code> element</strong> (or <em>anchor</em> element), with <a href="#href">its <code>href</code> attribute</a>, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.',
+        obsolete: false,
         defaults: {
             color: '#FF0000',
         },
@@ -859,6 +900,7 @@ export const cssDefaults = [
         type: 'Inline text semantics',
         description: 'The <strong>HTML Abbreviation element </strong>(<strong><code>&lt;abbr&gt;</code></strong>) represents an abbreviation or acronym; the optional <code>title</code> attribute can provide an expansion or description for the abbreviation.',
         note: 'with attribute <code>title</code>',
+        obsolete: false,
         defaults: {
             textDecoration: 'dotted underline',
         },
@@ -876,6 +918,7 @@ export const cssDefaults = [
         element: 'b',
         type: 'Inline text semantics',
         description: 'The <strong>HTML Bring Attention To element (<code>&lt;b&gt;</code>)</strong>&nbsp; is used to draw the reader\'s attention to the element\'s contents, which are not otherwise granted special importance.',
+        obsolete: false,
         defaults: {
             fontWeight: 'bolder',
         },
@@ -896,6 +939,7 @@ export const cssDefaults = [
         element: 'bdi',
         type: 'Inline text semantics',
         description: 'The HTML <strong>Bidirectional Isolate element</strong> (<strong><code>&lt;bdi&gt;</code></strong>)&nbsp; tells the browser\'s bidirectional algorithm to treat the text it contains in isolation from its surrounding text.',
+        obsolete: false,
         defaults: {
             unicodeBidi: 'isolate',
         },
@@ -914,6 +958,7 @@ export const cssDefaults = [
         element: 'bdo',
         type: 'Inline text semantics',
         description: 'The <strong>HTML Bidirectional Text Override element</strong> (<strong><code>&lt;bdo&gt;</code></strong>) overrides the current directionality of text, so that the text within is rendered in a different direction.',
+        obsolete: false,
         defaults: {
             unicodeBidi: 'isolate-override',
         },
@@ -935,6 +980,7 @@ export const cssDefaults = [
         element: 'br',
         type: 'Inline text semantics',
         description: 'The <strong>HTML <code>&lt;br&gt;</code> element</strong> produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.',
+        obsolete: false,
         defaults: {
             displayOutside: 'newline',
         },
@@ -951,6 +997,7 @@ export const cssDefaults = [
         element: 'cite',
         type: 'Inline text semantics',
         description: 'The <strong>HTML Citation element</strong> (<strong><code>&lt;cite&gt;</code></strong>) is used to describe a reference to a cited creative work, and must include the title of that work.',
+        obsolete: false,
         defaults: {
             fontStyle: 'italic',
         },
@@ -971,6 +1018,7 @@ export const cssDefaults = [
         element: 'code',
         type: 'Inline text semantics',
         description: 'The <strong>HTML <code>&lt;code&gt;</code> element</strong> displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code.',
+        obsolete: false,
         defaults: {
             fontFamily: 'monospace',
         },
@@ -992,6 +1040,7 @@ export const cssDefaults = [
         element: 'data',
         type: 'Inline text semantics',
         description: 'The <strong>HTML <code>&lt;data&gt;</code> element</strong> links a given content with a machine-readable translation. If the content is time- or date-related, the <code>&lt;time&gt;</code> element must be used.',
+        obsolete: false,
         defaults: {
         },
         blink: {
@@ -1007,6 +1056,7 @@ export const cssDefaults = [
         element: 'dfn',
         type: 'Inline text semantics',
         description: 'The <strong>HTML Definition element</strong> (<strong><dfn>&lt;dfn&gt;</dfn></strong>) is used to indicate the term being defined within the context of a definition phrase or sentence.',
+        obsolete: false,
         defaults: {
             fontStyle: 'italic',
         },
@@ -1027,6 +1077,7 @@ export const cssDefaults = [
         element: 'em',
         type: 'Inline text semantics',
         description: 'The <strong>HTML <code>&lt;em&gt;</code> element</strong> marks text that has stress emphasis. The <code>&lt;em&gt;</code> element can be nested, with each level of nesting indicating a greater degree of emphasis.',
+        obsolete: false,
         defaults: {
             fontStyle: 'italic',
         },
@@ -1047,6 +1098,7 @@ export const cssDefaults = [
         element: 'i',
         type: 'Inline text semantics',
         description: 'The <strong>HTML <code>&lt;i&gt;</code> element</strong> represents a range of text that is set off from the normal text for some reason. Some examples include technical terms, foreign language phrases, or fictional character thoughts. It is typically displayed in italic type.',
+        obsolete: false,
         defaults: {
             fontStyle: 'italic',
         },
@@ -1069,6 +1121,7 @@ export const cssDefaults = [
         categories: ['flow', 'phrasing', 'palpable'],
         use: 'User input',
         description: 'The <strong>HTML Keyboard Input element</strong> (<strong><code>&lt;kbd&gt;</code></strong>) represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device.',
+        obsolete: false,
         defaults: {
             fontFamily: 'monospace',
         },
@@ -1092,6 +1145,7 @@ export const cssDefaults = [
         categories: ['flow', 'phrasing', 'palpable'],
         use: 'Highlight',
         description: 'The <strong>HTML Mark Text element</strong> (<strong><code>&lt;mark&gt;</code></strong>) represents text which is <strong>marked</strong> or <strong>highlighted</strong> for reference or notation purposes, due to the marked passage\'s relevance or importance in the enclosing context.',
+        obsolete: false,
         defaults: {
             background: 'yellow',
             color: 'black',
@@ -1117,6 +1171,7 @@ export const cssDefaults = [
         categories: ['flow', 'phrasing', 'palpable'],
         use: 'Quotation',
         description: 'The <strong>HTML <code>&lt;q&gt;</code> element </strong> indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks.',
+        obsolete: false,
         defaults: {
         },
         blink: {
@@ -1137,6 +1192,7 @@ export const cssDefaults = [
         use: 'Quotation',
         description: 'The <strong>HTML <code>&lt;q&gt;</code> element </strong> indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks.',
         note: 'with <em>pseudo-element</em> <code>:before</code>',
+        obsolete: false,
         defaults: {
             content: 'open-quote',
         },
@@ -1159,6 +1215,7 @@ export const cssDefaults = [
         use: 'Quotation',
         description: 'The <strong>HTML <code>&lt;q&gt;</code> element </strong> indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks.',
         note: 'with <em>pseudo-element</em> <code>:after</code>',
+        obsolete: false,
         defaults: {
             content: 'close-quote',
         },
@@ -1180,6 +1237,7 @@ export const cssDefaults = [
         categories: ['none'],
         use: 'Ruby annotation(s)',
         description: 'The <strong>HTML Ruby Fallback Parenthesis (<code>&lt;rp&gt;</code>) element</strong> is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the <code>&lt;ruby&gt;</code> element.',
+        obsolete: false,
         defaults: {
         },
         blink: {
@@ -1199,6 +1257,7 @@ export const cssDefaults = [
         categories: ['none'],
         use: 'Parenthesis for ruby annotation text',
         description: 'The <strong>HTML Ruby Fallback Parenthesis (<code>&lt;rp&gt;</code>) element</strong> is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the <code>&lt;ruby&gt;</code> element.',
+        obsolete: false,
         defaults: {
             display: 'none',
         },
@@ -1221,6 +1280,7 @@ export const cssDefaults = [
         use: 'Parenthesis for ruby annotation text',
         description: 'The <strong>HTML Ruby Fallback Parenthesis (<code>&lt;rp&gt;</code>) element</strong> is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the <code>&lt;ruby&gt;</code> element.',
         note: 'direct descendent of <code>ruby</code>',
+        obsolete: false,
         defaults: {
         },
         blink: {
@@ -1239,6 +1299,7 @@ export const cssDefaults = [
         categories: ['none'],
         use: 'Ruby annotation text',
         description: 'The <strong>HTML Ruby Text (<code>&lt;rt&gt;</code>) element</strong> specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The <code>&lt;rt&gt;</code> element must always be contained within a <code>&lt;ruby&gt;</code> element.',
+        obsolete: false,
         defaults: {
             display: 'ruby-text',
         },
@@ -1271,6 +1332,7 @@ export const cssDefaults = [
         use: 'Ruby annotation text',
         description: 'The <strong>HTML Ruby Text (<code>&lt;rt&gt;</code>) element</strong> specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The <code>&lt;rt&gt;</code> element must always be contained within a <code>&lt;ruby&gt;</code> element.',
         note: 'direct descendent of <code>ruby</code>',
+        obsolete: false,
         defaults: {
         },
         blink: {
@@ -1291,6 +1353,7 @@ export const cssDefaults = [
         use: 'Ruby annotation text',
         description: 'The <strong>HTML Ruby Text (<code>&lt;rt&gt;</code>) element</strong> specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The <code>&lt;rt&gt;</code> element must always be contained within a <code>&lt;ruby&gt;</code> element.',
         note: 'direct descendent of <code>rtc</code>',
+        obsolete: false,
         defaults: {
         },
         blink: {
@@ -1309,6 +1372,7 @@ export const cssDefaults = [
         categories: ['none'],
         use: 'Ruby semantic annotation text',
         description: 'The <strong>HTML Ruby Text Container (<code>&lt;rtc&gt;</code>) element</strong> embraces semantic annotations of characters presented in a ruby of <code>&lt;rb&gt;</code> elements used inside of <code>&lt;ruby&gt;</code> element. <code>&lt;rb&gt;</code> elements can have both pronunciation (<code>&lt;rt&gt;</code>) and semantic (<code>&lt;rtc&gt;</code>) annotations.',
+        obsolete: false,
         defaults: {
         },
         blink: {
@@ -1333,6 +1397,7 @@ export const cssDefaults = [
         categories: ['flow', 'phrasing', 'palpable'],
         use: 'Ruby annotation(s)',
         description: 'The <strong>HTML <code>&lt;ruby&gt;</code> element</strong> represents a ruby annotation. Ruby annotations are for showing pronunciation of East Asian characters.',
+        obsolete: false,
         defaults: {
             display: 'ruby',
         },
@@ -1356,6 +1421,7 @@ export const cssDefaults = [
         categories: ['flow', 'phrasing', 'palpable'],
         use: 'Inaccurate text',
         description: 'The <strong>HTML <code>&lt;s&gt;</code> element</strong> renders text with a strikethrough, or a line through it. Use the <code>&lt;s&gt;</code> element to represent things that are no longer relevant or no longer accurate. However, <code>&lt;s&gt;</code> is not appropriate when indicating document edits; for that, use the <code>&lt;del&gt;</code> and <code>&lt;ins&gt;</code> elements, as appropriate.',
+        obsolete: false,
         defaults: {
             textDecoration: 'line-through',
         },
@@ -1367,6 +1433,297 @@ export const cssDefaults = [
         },
         gecko: {
             textDecoration: 'line-through',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'samp',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Computer output',
+        description: 'The <strong>HTML Sample Element</strong> (<strong><code>&lt;samp&gt;</code></strong>) is used to enclose inline text which represents sample (or quoted) output from a computer program.',
+        obsolete: false,
+        defaults: {
+            fontFamily: 'monospace',
+        },
+        blink: {
+            fontFamily: 'monospace',
+        },
+        webkit: {
+            fontFamily: 'monospace',
+        },
+        gecko: {
+            fontFamily: 'monospace',
+        },
+        trident: {
+            fontFamily: 'monospace',
+            fontSize: '10pt',
+        },
+    },
+    {
+        element: 'small',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Side comment',
+        description: 'The <strong>HTML <code>&lt;small&gt;</code></strong> <strong>element </strong>represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size small, such as from <code>small</code> to <code>x-small</code>.',
+        obsolete: false,
+        defaults: {
+            fontSize: 'smaller',
+        },
+        blink: {
+            fontSize: 'smaller',
+        },
+        webkit: {
+            fontSize: 'smaller',
+        },
+        gecko: {
+            fontSize: 'smaller',
+        },
+        trident: {
+            fontSize: '0.83em',
+        },
+    },
+    {
+        element: 'span',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Generic phrasing container',
+        description: 'The <strong>HTML <code>&lt;span&gt;</code> element</strong> is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the <code>class</code> or <code>id</code> attributes), or because they share attribute values, such as <code>lang</code>.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'strong',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Importance',
+        description: 'The HTML <strong>Strong Importance Element</strong> (<strong><code>&lt;strong&gt;</code></strong>) indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.',
+        obsolete: false,
+        defaults: {
+            fontWeight: 'bolder',
+        },
+        blink: {
+            fontWeight: 'bold',
+        },
+        webkit: {
+            fontWeight: 'bold',
+        },
+        gecko: {
+            fontWeight: 'bolder',
+        },
+        trident: {
+            fontWeight: 'bold',
+        },
+    },
+    {
+        element: 'sub',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Subscript',
+        description: 'The HTML <strong>Subscript element</strong> (<strong><code>&lt;sub&gt;</code></strong>) specifies inline text which should be displayed as subscript for solely typographical reasons.',
+        obsolete: false,
+        defaults: {
+            verticalAlign: 'sub',
+            fontSize: 'smaller',
+            lineHeight: 'normal',
+        },
+        blink: {
+            verticalAlign: 'sub',
+            fontSize: 'smaller',
+        },
+        webkit: {
+            verticalAlign: 'sub',
+            fontSize: 'smaller',
+        },
+        gecko: {
+            verticalAlign: 'sub',
+            fontSize: 'smaller',
+        },
+        trident: {
+            fontSize: '0.83em',
+        },
+    },
+    {
+        element: 'sup',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Superscript',
+        description: 'The <strong>HTML Superscript element</strong> (<strong><code>&lt;sup&gt;</code></strong>) specifies inline text which is to be displayed as superscript for solely typographical reasons.',
+        obsolete: false,
+        defaults: {
+            verticalAlign: 'super',
+            fontSize: 'smaller',
+            lineHeight: 'normal',
+        },
+        blink: {
+            verticalAlign: 'super',
+            fontSize: 'smaller',
+        },
+        webkit: {
+            verticalAlign: 'super',
+            fontSize: 'smaller',
+        },
+        gecko: {
+            verticalAlign: 'super',
+            fontSize: 'smaller',
+        },
+        trident: {
+            fontSize: '0.83em',
+        },
+    },
+    {
+        element: 'time',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Machine-readable equivalent of date- or time-related data',
+        description: 'The HTML <strong><code>&lt;time&gt;</code> element</strong> represents a specific period in time.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'tt',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Formatting input/output',
+        description: 'The obsolete <strong>HTML Teletype Text element</strong> (<strong><code>&lt;tt&gt;</code></strong>) creates inline text which is presented using the user agent\'s default monospace font face.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+            fontFamily: 'monospace',
+        },
+        blink: {
+            fontFamily: 'monospace',
+        },
+        webkit: {
+            fontFamily: 'monospace',
+        },
+        gecko: {
+            fontFamily: 'monospace',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'u',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Unarticulated annotation',
+        description: 'The HTML <strong>Unarticulated Annotation Element</strong> (<strong><code>&lt;u&gt;</code></strong>) represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation.',
+        obsolete: false,
+        defaults: {
+            textDecoration: 'underline',
+        },
+        blink: {
+            textDecoration: 'underline',
+        },
+        webkit: {
+            textDecoration: 'underline',
+        },
+        gecko: {
+            textDecoration: 'underline',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'u',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Unarticulated annotation',
+        description: 'The HTML <strong>Unarticulated Annotation Element</strong> (<strong><code>&lt;u&gt;</code></strong>) represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation.',
+        obsolete: false,
+        defaults: {
+            textDecoration: 'underline',
+        },
+        blink: {
+            textDecoration: 'underline',
+        },
+        webkit: {
+            textDecoration: 'underline',
+        },
+        gecko: {
+            textDecoration: 'underline',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'var',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'Variable',
+        description: 'The HTML <strong>Variable element</strong> (<strong><code>&lt;var&gt;</code></strong>) represents the name of a variable in a mathematical expression or a programming context.',
+        obsolete: false,
+        defaults: {
+            fontStyle: 'italic',
+        },
+        blink: {
+            fontStyle: 'italic',
+        },
+        webkit: {
+            fontStyle: 'italic',
+        },
+        gecko: {
+            fontStyle: 'italic',
+        },
+        trident: {
+            fontStyle: 'italic',
+        },
+    },
+    {
+        element: 'wbr',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing'],
+        use: 'Line breaking opportunity',
+        description: 'The <strong>HTML <code>&lt;wbr&gt;</code> element</strong> represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location.',
+        obsolete: false,
+        defaults: {
+            displayOutside: 'break-opportunity',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'nobr wbr',
+        type: 'Inline text semantics',
+        categories: ['flow', 'phrasing'],
+        use: 'Line breaking opportunity',
+        description: 'The <strong>HTML <code>&lt;wbr&gt;</code> element</strong> represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location.',
+        note: 'Descendent of <code>nobr</code>',
+        obsolete: false,
+        defaults: {
+            whiteSpace: 'normal',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
         },
         trident: {
         },

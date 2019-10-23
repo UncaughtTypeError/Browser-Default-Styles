@@ -89,7 +89,7 @@ code {
     box-shadow: 0 0 3px 1px #c7c7c7;
     padding: 5px 10px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.8);
+    background: #ffffff;
     transition: .3s;
     opacity: 0;
     font-size: small;
