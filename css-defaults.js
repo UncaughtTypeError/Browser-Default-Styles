@@ -2035,6 +2035,536 @@ export const cssDefaults = [
         trident: {
         },
     },
+    {
+        element: 'canvas',
+        type: 'Scripting',
+        categories: ['flow', 'phrasing', 'embedded', 'palpable'],
+        use: 'Scriptable bitmap canvas',
+        description: 'Use the <strong>HTML <code>&lt;canvas&gt;</code> element</strong> with either the canvas scripting API or the WebGL API to draw graphics and animations.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            userSelect: 'none',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'noscript',
+        type: 'Scripting',
+        categories: ['flow', 'phrasing', 'metadata'],
+        use: 'Fallback content for script',
+        description: 'The <strong>HTML <code>&lt;noscript&gt;</code> element</strong> defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.',
+        obsolete: false,
+        defaults: {
+            display: 'none !important',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'script',
+        type: 'Scripting',
+        categories: ['script-supporting', 'flow', 'phrasing', 'metadata'],
+        use: 'Embedded script',
+        description: 'The <strong>HTML <code>&lt;script&gt;</code> element</strong> is used to embed or reference executable code; this is typically used to embed or refer to JavaScript code.',
+        obsolete: false,
+        defaults: {
+            display: 'none',
+        },
+        blink: {
+            display: 'none',
+        },
+        webkit: {
+            display: 'none',
+        },
+        gecko: {
+            display: 'none',
+        },
+        trident: {
+            display: 'none',
+            zoom: '1',
+        },
+    },
+    {
+        element: 'del',
+        type: 'Demarcating edits',
+        categories: ['flow', 'phrasing'],
+        use: 'A removal from the document',
+        description: 'The <strong>HTML <code>&lt;del&gt;</code> element</strong> represents a range of text that has been deleted from a document.',
+        obsolete: false,
+        defaults: {
+            textDecoration: 'line-through',
+        },
+        blink: {
+            textDecoration: 'line-through',
+        },
+        webkit: {
+            textDecoration: 'line-through',
+        },
+        gecko: {
+            textDecoration: 'line-through',
+        },
+        trident: {
+            textDecoration: 'line-through',
+        },
+    },
+    {
+        element: 'ins',
+        type: 'Demarcating edits',
+        categories: ['flow', 'phrasing', 'palpable'],
+        use: 'An addition to the document',
+        description: 'The <strong>HTML <code>&lt;ins&gt;</code> element</strong> represents a range of text that has been added to a document.',
+        obsolete: false,
+        defaults: {
+            textDecoration: 'underline',
+        },
+        blink: {
+            textDecoration: 'underline',
+        },
+        webkit: {
+            textDecoration: 'underline',
+        },
+        gecko: {
+            textDecoration: 'underline',
+        },
+        trident: {
+            textDecoration: 'underline',
+        },
+    },
+    {
+        element: 'caption',
+        type: 'Table content',
+        categories: [],
+        use: 'Table caption',
+        description: 'The <strong>HTML Table Caption element</strong> (<strong><code>&lt;caption&gt;</code></strong>) specifies the caption (or title) of a table, and if used is <em>always</em> the first child of a <code>&lt;table&gt;</code>.',
+        obsolete: false,
+        defaults: {
+            display: 'table-caption',
+            textAlign: 'center',
+        },
+        blink: {
+            display: 'table-caption',
+            textAlign: 'center',
+        },
+        webkit: {
+            display: 'table-caption',
+            textAlign: 'center',
+        },
+        gecko: {
+            display: 'table-caption',
+            textAlign: 'center',
+        },
+        trident: {
+            display: 'table-caption',
+            textAlign: 'center',
+            zoom: '1',
+        },
+    },
+    {
+        element: 'col',
+        type: 'Table content',
+        categories: [],
+        use: 'Table column',
+        description: 'The <strong>HTML <code>&lt;col&gt;</code> element</strong> defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a <code>&lt;colgroup&gt;</code> element.',
+        obsolete: false,
+        defaults: {
+            display: 'table-column',
+        },
+        blink: {
+            display: 'table-column',
+        },
+        webkit: {
+            display: 'table-column',
+        },
+        gecko: {
+            display: 'table-column',
+        },
+        trident: {
+            display: 'table-column',
+            boxSizing: 'border-box',
+        },
+    },
+    {
+        element: 'colgroup',
+        type: 'Table content',
+        categories: [],
+        use: 'Group of columns in a table',
+        description: 'The <strong>HTML <code>&lt;colgroup&gt;</code> element</strong> defines a group of columns within a table.',
+        obsolete: false,
+        defaults: {
+            display: 'table-column-group',
+        },
+        blink: {
+            display: 'table-column-group',
+        },
+        webkit: {
+            display: 'table-column-group',
+        },
+        gecko: {
+            display: 'table-column-group',
+        },
+        trident: {
+            display: 'table-column-group',
+            boxSizing: 'border-box',
+        },
+    },
+    {
+        element: 'table',
+        type: 'Table content',
+        categories: ['flow', 'palpable'],
+        use: 'Table',
+        description: 'The <strong>HTML <code>&lt;table&gt;</code> element</strong> represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.',
+        obsolete: false,
+        defaults: {
+            display: 'table',
+            boxSizing: 'border-box',
+            borderSpacing: '2px',
+            borderCollapse: 'separate',
+            textIndent: 'initial',
+        },
+        blink: {
+            display: 'table',
+            borderSpacing: '2px',
+            borderCollapse: 'separate',
+            borderColor: 'gray',
+        },
+        webkit: {
+            display: 'table',
+            borderSpacing: '2px',
+            borderCollapse: 'separate',
+            borderColor: 'gray',
+        },
+        gecko: {
+            display: 'table',
+            borderSpacing: '2px',
+            borderCollapse: 'separate',
+            boxSizing: 'border-box',
+            textIndent: '0',
+        },
+        trident: {
+            borderColor: '#f0f0f0',
+            borderSpacing: '2px 2px',
+            boxSizing: 'border-box',
+            display: 'table',
+            zoom: '1',
+        },
+    },
+    {
+        element: 'tbody',
+        type: 'Table content',
+        categories: [],
+        use: 'Group of rows in a table',
+        description: 'The <strong>HTML Table Body element</strong> (<strong><code>&lt;tbody&gt;</code></strong>) encapsulates a set of table rows (<code>&lt;tr&gt;</code> elements), indicating that they comprise the body of the table (<code>&lt;table&gt;</code>).',
+        obsolete: false,
+        defaults: {
+            display: 'table-row-group',
+            verticalAlign: 'middle',
+            borderColor: 'inherit',
+        },
+        blink: {
+            display: 'table-row-group',
+            verticalAlign: 'middle',
+            borderColor: 'inherit',
+        },
+        webkit: {
+            display: 'table-row-group',
+            verticalAlign: 'middle',
+            borderColor: 'inherit',
+        },
+        gecko: {
+            display: 'table-row-group',
+            verticalAlign: 'middle',
+        },
+        trident: {
+            boxSizing: 'border-box',
+            display: 'table-row-group',
+            verticalAlign: 'middle',
+        },
+    },
+    {
+        element: 'td',
+        type: 'Table content',
+        categories: ['sectioning root'],
+        use: 'Table cell',
+        description: 'The <strong>HTML <code>&lt;td&gt;</code> element</strong> defines a cell of a table that contains data. It participates in the <em>table model</em>.',
+        obsolete: false,
+        defaults: {
+            display: 'table-cell',
+            padding: '1px',
+            verticalAlign: 'inherit',
+        },
+        blink: {
+            display: 'table-cell',
+            verticalAlign: 'inherit',
+        },
+        webkit: {
+            display: 'table-cell',
+            verticalAlign: 'inherit',
+        },
+        gecko: {
+            display: 'table-cell',
+            padding: '1px',
+            verticalAlign: 'inherit',
+            textAlign: 'unset',
+        },
+        trident: {
+            display: 'table-cell',
+            padding: '1px',
+            verticalAlign: 'middle',
+            zoom: '1',
+        },
+    },
+    {
+        element: 'tfoot',
+        type: 'Table content',
+        categories: [],
+        use: 'Group of footer rows in a table',
+        description: 'The <strong>HTML <code>&lt;tfoot&gt;</code> element</strong> defines a set of rows summarizing the columns of the table.',
+        obsolete: false,
+        defaults: {
+            display: 'table-footer-group',
+            borderColor: 'inherit',
+        },
+        blink: {
+            display: 'table-footer-group',
+            verticalAlign: 'middle',
+            borderColor: 'inherit',
+        },
+        webkit: {
+            display: 'table-footer-group',
+            verticalAlign: 'middle',
+            borderColor: 'inherit',
+        },
+        gecko: {
+            display: 'table-footer-group',
+            verticalAlign: 'middle',
+        },
+        trident: {
+            display: 'table-footer-group',
+            boxSizing: 'border-box',
+            verticalAlign: 'middle',
+        },
+    },
+    {
+        element: 'th',
+        type: 'Table content',
+        categories: ['interactive'],
+        use: 'Table header cell',
+        description: 'The <strong>HTML <code>&lt;th&gt;</code> element</strong> defines a cell as header of a group of table cells. The exact nature of this group is defined by the <code>scope</code> and <code>headers</code> attributes.',
+        obsolete: false,
+        defaults: {
+            display: 'table-cell',
+            padding: '1px',
+            verticalAlign: 'inherit',
+            fontWeight: 'bold',
+        },
+        blink: {
+            display: 'table-cell',
+            verticalAlign: 'inherit',
+            fontWeight: 'bold',
+        },
+        webkit: {
+            display: 'table-cell',
+            verticalAlign: 'inherit',
+            fontWeight: 'bold',
+        },
+        gecko: {
+            display: 'table-cell',
+            padding: '1px',
+            verticalAlign: 'inherit',
+            fontWeight: 'bold',
+        },
+        trident: {
+            display: 'table-cell',
+            padding: '1px',
+            verticalAlign: 'middle',
+            textAlign: 'center',
+            zoom: '1',
+            fontWeight: 'bold',
+        },
+    },
+    {
+        element: 'thead',
+        type: 'Table content',
+        categories: [],
+        use: 'Group of heading rows in a table',
+        description: 'The <strong>HTML <code>&lt;thead&gt;</code> element</strong> defines a set of rows defining the head of the columns of the table.',
+        obsolete: false,
+        defaults: {
+            display: 'table-header-group',
+            verticalAlign: 'middle',
+            borderColor: 'inherit',
+        },
+        blink: {
+            display: 'table-header-group',
+            verticalAlign: 'middle',
+            borderColor: 'inherit',
+        },
+        webkit: {
+            display: 'table-header-group',
+            verticalAlign: 'middle',
+            borderColor: 'inherit',
+        },
+        gecko: {
+            display: 'table-header-group',
+            verticalAlign: 'middle',
+        },
+        trident: {
+            display: 'table-header-group',
+            boxSizing: 'border-box',
+            verticalAlign: 'middle',
+        },
+    },
+    {
+        element: 'tr',
+        type: 'Table content',
+        categories: [],
+        use: 'Table row',
+        description: 'The <strong>HTML <code>&lt;tr&gt;</code> element</strong> defines a row of cells in a table. The row\'s cells can then be established using a mix of <code>&lt;td&gt;</code> (data cell) and <code>&lt;th&gt;</code> (header cell) elements.',
+        obsolete: false,
+        defaults: {
+            display: 'table-row',
+            borderColor: 'inherit',
+            verticalAlign: 'inherit',
+        },
+        blink: {
+            display: 'table-row',
+            borderColor: 'inherit',
+            verticalAlign: 'inherit',
+        },
+        webkit: {
+            display: 'table-row',
+            borderColor: 'inherit',
+            verticalAlign: 'inherit',
+        },
+        gecko: {
+            display: 'table-row',
+            verticalAlign: 'inherit',
+        },
+        trident: {
+            display: 'table-row',
+            boxSizing: 'border-box',
+            verticalAlign: 'middle',
+            zoom: '1',
+        },
+    },
+    {
+        element: 'button',
+        type: 'Forms',
+        categories: ['flow', 'phrasing', 'interactive', 'listed', 'labelable', 'submittable', 'form-associated', 'palpable'],
+        use: 'Button control',
+        description: 'The <strong>HTML <code>&lt;button&gt;</code> element</strong> represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.',
+        obsolete: false,
+        defaults: {
+            letterSpacing: 'initial',
+            wordSpacing: 'initial',
+            lineHeight: 'initial',
+            textTransform: 'initial',
+            textIndent: 'initial',
+            textShadow: 'initial',
+            textAlign: 'center',
+            display: 'inline-block',
+            boxSizing: 'border-box',
+        },
+        blink: {
+            alignItems: 'flex-start',
+            textAlign: 'center',
+            cursor: 'default',
+            boxSizing: 'border-box',
+            padding: '2px 6px 3px 6px',
+            color: 'initial',
+            letterSpacing: 'normal',
+            wordSpacing: 'normal',
+            lineHeight: 'normal',
+            textTransform: 'none',
+            textIndent: '0',
+            textShadow: 'none',
+            display: 'inline-block',
+            textAlign: 'start',
+        },
+        webkit: {
+            alignItems: 'flex-start',
+            textAlign: 'center',
+            cursor: 'default',
+            boxSizing: 'border-box',
+            color: 'initial',
+            letterSpacing: 'normal',
+            wordSpacing: 'normal',
+            lineHeight: 'normal',
+            textTransform: 'none',
+            textIndent: '0',
+            textShadow: 'none',
+            display: 'inline-block',
+            textAlign: 'start',
+        },
+        gecko: {
+        },
+        trident: {
+            backgroundColor: '#f0f0f0',
+            borderWidth: '3px',
+            boxSizing: 'border-box',
+            fontFamily: 'sans-serif',
+            fontSize: '10pt',
+            overflow: 'hidden',
+            padding: '1px 8px',
+            textAlign: 'center',
+            zoom: '1',
+        },
+    },
+    {
+        element: 'button:active',
+        type: 'Forms',
+        state: ':active',
+        categories: ['flow', 'phrasing', 'interactive', 'listed', 'labelable', 'submittable', 'form-associated', 'palpable'],
+        use: 'Button control',
+        description: 'The <strong>HTML <code>&lt;button&gt;</code> element</strong> represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+            borderStyle: 'inset',
+        },
+        webkit: {
+            borderStyle: 'inset',
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'button:active:disabled ',
+        type: 'Forms',
+        state: ':active:disabled ',
+        categories: ['flow', 'phrasing', 'interactive', 'listed', 'labelable', 'submittable', 'form-associated', 'palpable'],
+        use: 'Button control',
+        description: 'The <strong>HTML <code>&lt;button&gt;</code> element</strong> represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+            borderStyle: 'outset',
+        },
+        webkit: {
+            borderStyle: 'outset',
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
 ]
 
 // TODO: add MDN browser compatibility data: https://github.com/mdn/browser-compat-data
