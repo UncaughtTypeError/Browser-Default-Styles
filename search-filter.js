@@ -4,7 +4,7 @@ import { cssDefaults } from '/css-defaults.js';
 const getStyles = (obj) => {
     const styles = [];
     for (const [keyObj, styleBlock] of Object.entries(obj)) {
-        if(typeof styleBlock !== 'object') {continue}
+        if(Array.isArray(styleBlock) || typeof styleBlock !== 'object') {continue}
 
         const browsers = getBrowsers(keyObj);
 
@@ -15,7 +15,7 @@ const getStyles = (obj) => {
             styles.push(`<li class="${keyObj}">${key}: ${value} <span class="browsers">${browsers}</span></li>`);
         }
     }
-    return styles.map(style => style).join('');
+    return styles.length ? styles.map(style => style).join('') : 'No default styles.';
 }
 
 const getBrowsers = (engine) => {
@@ -52,12 +52,14 @@ const getBrowsers = (engine) => {
 /* Compile meta */
 const getMeta = (obj) => {
 
-    const meta = {
-        description:    `<div class="meta__description meta__item u-tooltip-parent">
-                            <span class="meta__label">/* description */</span>
-                            <div class="meta__tooltip u-tooltip">${obj.description}<div class="u-tooltip__arrow"></div></div>
-                        </div>`,
-    }
+    const meta = `<div class="meta__description meta__item u-tooltip-parent">
+                    <span class="meta__label">/* description */</span>
+                    <div class="meta__tooltip u-tooltip">
+                        <div class="meta__tooltip__description">${obj.description}</div>
+                        <div class="meta__tooltip__use"><strong>Use:</strong> ${obj.use}</div>
+                        ${obj.note ? `<div class="meta__tooltip__use"><strong>Note:</strong> ${obj.note}</div>` : ''}
+                    <div class="u-tooltip__arrow"></div></div>
+                </div>`
 
     return meta;
 }
@@ -77,18 +79,12 @@ const displaySearchMatches = (event) => {
             html = matchArray.map(htmlElement => {
 
         const   regex = new RegExp(value, 'gi'),
-                elementName = htmlElement.element.replace(regex, `<span class="u-highlight">${value}</span>`),
-                stylesHtml = getStyles(htmlElement),
-                metaHtml = getMeta(htmlElement);
+                name = htmlElement.element.replace(regex, `<span class="u-highlight">${value}</span>`),
+                styles = getStyles(htmlElement),
+                description = getMeta(htmlElement),
+                result = renderResult({name, description, styles});
 
-        return `
-            <li>
-                <div class="element">${elementName}
-                    <div class="meta">${metaHtml.description}</div>
-                </div>
-                <ul class="styles">${stylesHtml}</ul>
-            </li>
-        `;
+        return result;
 
     }).join('');
     searchResults.innerHTML = html;
@@ -99,6 +95,7 @@ const displaySearchMatches = (event) => {
         filterSelectMatches(activeFilter.dataset.engine);
     }
     
+    setFilterResultsLabel();
     setEngineStyleFilters();
 }
 
@@ -134,31 +131,25 @@ const displaySelectedMatches = (event) => {
             buttonActive = setButtonState(event.target);
 
     if(buttonActive) {
-        setFilterResultsLabel({engine: engine, active: true});
-
         if(searchInput.value) {
             filterSelectMatches(engine);
         } else {
             const   matchArray = findSelectMatches(engine, cssDefaults),
                     html = matchArray.map(htmlElement => {
 
-                const   elementName = htmlElement.element,
-                        stylesHtml = getStyles(htmlElement);
+                const   name = htmlElement.element,
+                        styles = getStyles(htmlElement),
+                        description = getMeta(htmlElement),
+                        result = renderResult({name, description, styles});
 
-                return `
-                    <li>
-                        <div class="element">${elementName}
-                            <div class="meta">${metaHtml.description}</div>
-                        </div>
-                        <ul class="styles">${stylesHtml}</ul>
-                    </li>
-                `;
+                return result;
 
             }).join('');
             searchResults.innerHTML = html;
         }
+        setFilterResultsLabel(engine);
     } else {
-        setFilterResultsLabel({engine: engine, active: false});
+        setFilterResultsLabel();
     }
 
     setEngineStyleFilters();
@@ -178,15 +169,34 @@ const setButtonState = (element) => {
     }
 }
 
-const setFilterResultsLabel = (props) => {
+const filterButtons = document.querySelectorAll('.filter__button');
+
+filterButtons.forEach((button) => {
+    button.addEventListener('click', displaySelectedMatches);
+});
+
+/* Render Results */
+const renderResult = (props) => {
+    const   {name, description, styles} = props,
+            result = `<li>
+                        <div class="element">${name}
+                            <div class="meta">${description}</div>
+                        </div>
+                        <ul class="styles">${styles}</ul>
+                    </li>`;
+    return result;
+}
+
+const setFilterResultsLabel = (engine) => {
     const   filterLabel = document.querySelector('.filter-results-label'),
-            {engine, active} = props;
-    if(active) {
-        filterLabel.classList.remove('u-hide');
+            total = countResults();
+
+    if(engine) {
         filterLabel.setAttribute('data-engine',engine);
-        filterLabel.firstElementChild.innerHTML = `Showing results for <em>${engine}</em> browsers: `;
+        filterLabel.firstElementChild.innerHTML = `Showing ${total} result(s) for <em>${engine}</em> browsers: `;
     } else {
-        filterLabel.classList.add('u-hide');
+        filterLabel.setAttribute('data-engine','none');
+        filterLabel.firstElementChild.innerHTML = `Showing ${total} result(s): `;
         const results = document.querySelectorAll('.results .u-hide');
         results.forEach((result) => {
             result.classList.remove('u-hide');
@@ -194,11 +204,22 @@ const setFilterResultsLabel = (props) => {
     }
 }
 
-const filterButtons = document.querySelectorAll('.filter__button');
-
-filterButtons.forEach((button) => {
-    button.addEventListener('click', displaySelectedMatches);
-});
+const countResults = () => {
+    const   results = document.querySelector('.results'),
+            activeFilter = document.querySelector('.filter__button--active');
+    let     total = 0;
+    
+    if(activeFilter) {
+        results.childNodes.forEach(result => {
+            if(!result.classList.contains('u-hide')) {
+                total += 1;
+            }
+        });
+    } else {
+        total = results.childElementCount;
+    }
+    return total;
+}
 
 /* Filter Rendering Engine Styles */
 const filterEngineStyles = (event) => {
