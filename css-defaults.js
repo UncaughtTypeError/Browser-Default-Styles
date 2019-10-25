@@ -2959,7 +2959,7 @@ export const cssDefaults = [
         type: 'Forms',
         categories: ['flow', 'phrasing', 'interactive', 'listed', 'labelable', 'submittable', 'resettable', 'form-associated', 'palpable'],
         use: 'Multiline text controls',
-        description: '>The <strong>HTML <code>&lt;textarea&gt;</code> element</strong> represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.',
+        description: 'The <strong>HTML <code>&lt;textarea&gt;</code> element</strong> represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.',
         obsolete: false,
         defaults: {
             letterSpacing: 'initial',
@@ -3022,6 +3022,266 @@ export const cssDefaults = [
             padding: '2px',
             whiteSpace: 'pre-wrap',
             zoom: '1',
+        },
+    },
+    {
+        element: 'details',
+        type: 'Interactive elements',
+        categories: ['flow', 'sectioning root', 'interactive', 'palpable'],
+        use: 'Disclosure control for hiding details',
+        description: 'The <strong>HTML Details Element (<code>&lt;details&gt;</code>)</strong> creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+            display: 'block',
+        },
+        webkit: {
+            display: 'block',
+        },
+        gecko: {
+            display: 'block',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'dialog',
+        type: 'Interactive elements',
+        categories: ['flow', 'sectioning root'],
+        use: 'Dialog box or window',
+        description: 'The <strong>HTML <code>&lt;dialog&gt;</code> element</strong> represents a dialog box or other interactive component, such as an inspector or window.',
+        obsolete: false,
+        defaults: {
+            display: 'block',
+            position: 'absolute',
+            offsetInlineStart: '0',
+            offsetInlineEnd: '0',
+            width: 'fit-content',
+            height: 'fit-content',
+            margin: 'auto',
+            border: 'solid',
+            padding: '1em',
+            background: 'white',
+            color: 'black',
+        },
+        blink: {
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            width: '-webkit-fit-content',
+            height: '-webkit-fit-content',
+            margin: 'auto',
+            border: 'solid',
+            padding: '1em',
+            background: 'white',
+            color: 'black',
+        },
+        webkit: {
+        },
+        gecko: {
+            position: 'absolute',
+            insetInlineStart: '0',
+            insetInlineEnd: '0',
+            color: 'black',
+            margin: 'auto',
+            borderWidth: 'initial',
+            borderStyle: 'solid',
+            borderColor: 'initial',
+            borderImage: 'initial',
+            padding: '1em',
+            background: 'white',
+            width: '-moz-fit-content',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'menu',
+        type: 'Interactive elements',
+        categories: ['flow', 'palpable'],
+        use: 'Menu of commands',
+        description: 'The <strong>HTML <code>&lt;menu&gt;</code> element</strong> represents a group of commands that a user can perform or activate. This includes both list menus, which might appear across the top of a screen, as well as context menus, such as those that might appear underneath a button after it has been clicked.',
+        obsolete: false,
+        defaults: {
+            display: 'block',
+            marginBlockStart: '1em',
+            marginBlockEnd: '1em',
+            paddingInlineStart: '40px',
+            listStyleType: 'disc',
+        },
+        blink: {
+            display: 'block',
+            listStyleType: 'disc',
+            marginInlineEnd: '1em',
+            marginBlockStart: '0',
+            marginBlockEnd: '0',
+            paddingInlineStart: '40px',
+        },
+        webkit: {
+            display: 'block',
+            listStyleType: 'disc',
+            marginInlineEnd: '1em',
+            marginBlockStart: '0',
+            marginBlockEnd: '0',
+            paddingInlineStart: '40px',
+        },
+        gecko: {
+            display: 'block',
+            marginBlockStart: '1em',
+            marginBlockEnd: '1em',
+            paddingInlineStart: '40px',
+            listStyleType: 'disc',
+        },
+        trident: {
+            display: 'block',
+            listStyleImage: 'none',
+            listStylePosition: 'outside',
+            listStyleType: 'decimal',
+            margin: '1em 0',
+            padding: '0 0 0 30pt',
+        },
+    },
+    {
+        element: 'menuitem',
+        type: 'Interactive elements',
+        categories: [],
+        use: 'Menu command item',
+        description: 'The <strong>HTML <code>&lt;menuitem&gt;</code> element</strong> represents a command that a user is able to invoke through a popup menu. This includes context menus, as well as menus that might be attached to a menu button.',
+        obsolete: false,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'summary',
+        type: 'Interactive elements',
+        categories: [],
+        use: 'Caption for details',
+        description: 'The <strong>HTML Disclosure Summary element</strong> (<strong><code>&lt;summary&gt;</code></strong>) element specifies a summary, caption, or legend for a <code>&lt;details&gt;</code> element\'s disclosure box.',
+        obsolete: false,
+        defaults: {
+            display: 'list-item',
+            counterIncrement: 'list-item 0',
+            listStyle: 'disclosure-closed inside',
+        },
+        blink: {
+            display: 'block',
+        },
+        webkit: {
+            display: 'block',
+        },
+        gecko: {
+            display: 'block',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'content',
+        type: 'Web Components',
+        categories: [],
+        use: 'Shadow DOM insertion point',
+        description: 'The <strong>HTML <code>&lt;content&gt;</code> element</strong>—an obsolete part of the Web Components suite of technologies—was used inside of Shadow DOM as an insertion point, and wasn\'t meant to be used in ordinary HTML.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'element',
+        type: 'Web Components',
+        categories: [],
+        use: 'Define custom DOM elements',
+        description: 'The obsolete <strong>HTML <code>&lt;element&gt;</code> element</strong> was part of the Web Components specification; it was intended to be used to define new custom DOM elements.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'shadow',
+        type: 'Web Components',
+        categories: [],
+        use: 'Shadow DOM insertion point',
+        description: 'The <strong>HTML <code>&lt;shadow&gt;</code> element</strong>—an obsolete part of the Web Components technology suite—was intended to be used as a shadow DOM insertion point.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'slot',
+        type: 'Web Components',
+        categories: ['flow', 'phrasing'],
+        use: 'Shadow tree slot',
+        description: 'The <strong>HTML <code>&lt;slot&gt;</code> element</strong>—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.',
+        obsolete: false,
+        defaults: {
+            display: 'contents',
+        },
+        blink: {
+        },
+        webkit: {
+            display: 'contents',
+        },
+        gecko: {
+            display: 'contents',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'template',
+        type: 'Web Components',
+        categories: ['metadata', 'flow', 'phrasing', 'script-supporting'],
+        use: 'Template',
+        description: 'The <strong>HTML Content Template (<code>&lt;template&gt;</code>) element</strong> is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.',
+        obsolete: false,
+        defaults: {
+            display: 'none',
+        },
+        blink: {
+            display: 'none',
+        },
+        webkit: {
+            display: 'none',
+        },
+        gecko: {
+            display: 'none',
+        },
+        trident: {
         },
     },
 ]
