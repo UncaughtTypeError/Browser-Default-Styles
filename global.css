@@ -255,6 +255,12 @@ code {
     bottom: calc(100% + 15px);
 }
 
+.meta__tooltip__use {
+    border-top: 1px solid var(--primary-color);
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
 .actions-wrapper {
     margin-bottom: 2em;
 }
