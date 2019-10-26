@@ -52,16 +52,34 @@ const getBrowsers = (engine) => {
 /* Compile meta */
 const getMeta = (obj) => {
 
-    const meta = `<div class="meta__description meta__item u-tooltip-parent">
-                    <span class="meta__label">/* description */</span>
-                    <div class="meta__tooltip u-tooltip">
-                        <div class="meta__tooltip__description">${obj.description}</div>
-                        <div class="meta__tooltip__use"><strong>Use:</strong> ${obj.use}</div>
-                        ${obj.note ? `<div class="meta__tooltip__use"><strong>Note:</strong> ${obj.note}</div>` : ''}
-                    <div class="u-tooltip__arrow"></div></div>
-                </div>`
+    const   meta = [];
 
-    return meta;
+    if(obj.description) {
+        const description = `<div class="meta__description meta__item u-tooltip-parent">
+                                <span class="meta__label">/* description */</span>
+
+                                <div class="meta__tooltip u-tooltip">
+                                    <div class="meta__tooltip__description">${obj.description}</div>
+
+                                    <div class="meta__tooltip__use"><strong>Use:</strong> ${obj.use}</div>
+                                    ${obj.note ? `<div class="meta__tooltip__use"><strong>Note:</strong> ${obj.note}</div>` : ''}
+
+                                    <div class="u-tooltip__arrow"></div>
+                                </div>
+
+                            </div>`;
+
+        meta.push(description);
+    }
+    if(obj.note) {
+        const note = `<div class="meta__note meta__item">
+                        <span>${obj.obsolete ? `<i class="fas fa-trash-alt"></i>` : ''} ${obj.note}</span>
+                    </div>`;
+
+        meta.push(note);
+    }
+
+    return meta.map(data => data).join('');
 }
 
 /* Filter by Search */
@@ -80,9 +98,10 @@ const displaySearchMatches = (event) => {
 
         const   regex = new RegExp(value, 'gi'),
                 name = htmlElement.element.replace(regex, `<span class="u-highlight">${value}</span>`),
+                obsolete = htmlElement.obsolete,
                 styles = getStyles(htmlElement),
                 description = getMeta(htmlElement),
-                result = renderResult({name, description, styles});
+                result = renderResult({name, description, styles, obsolete});
 
         return result;
 
@@ -138,9 +157,10 @@ const displaySelectedMatches = (event) => {
                     html = matchArray.map(htmlElement => {
 
                 const   name = htmlElement.element,
+                        obsolete = htmlElement.obsolete,
                         styles = getStyles(htmlElement),
                         description = getMeta(htmlElement),
-                        result = renderResult({name, description, styles});
+                        result = renderResult({name, description, styles, obsolete});
 
                 return result;
 
@@ -177,8 +197,8 @@ filterButtons.forEach((button) => {
 
 /* Render Results */
 const renderResult = (props) => {
-    const   {name, description, styles} = props,
-            result = `<li>
+    const   {name, description, styles, obsolete} = props,
+            result = `<li ${obsolete ? `class="obsolete"` : ''}>
                         <div class="element">${name}
                             <div class="meta">${description}</div>
                         </div>
