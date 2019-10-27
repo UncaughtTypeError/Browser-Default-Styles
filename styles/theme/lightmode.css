@@ -1,0 +1,127 @@
+/* || Globals */
+:root {
+    --light-primary-color: #333333;
+    --light-accent-color: #45ecb6;
+    --light-secondary-color: #333333;
+    --light-soft-color: #ffffff;
+    --light-medium-color: #f8f8f8;
+    --light-hard-color: #f1f1f1;
+    --light-boxShadow-color: #c7c7c7;
+}
+
+::selection {
+    background: var(--light-accent-color);
+}
+::-moz-selection {
+    background: var(--light-accent-color);
+}
+
+body {
+    color: var(--light-primary-color);
+}
+
+a:visited {
+    color: var(--light-accent-color);
+}
+
+code {
+    background: var(--light-hard-color);
+}
+
+div.darkmode-layer {
+    mix-blend-mode: unset;
+    background: #292929;
+}
+
+.darkmode-toggle {
+    color: var(--light-hard-color);
+}
+
+/* || Utility Classes */
+.u-primary-color {
+    color: var(--light-accent-color);
+}
+
+.u-highlight {
+    background: var(--light-accent-color);
+}
+
+.u-button {
+    background: var(--light-hard-color);
+    color: var(--light-secondary-color);
+}
+
+.u-button:hover {
+    color: var(--light-secondary-color);
+}
+
+.u-button::before {
+    background: var(--light-accent-color);
+}
+
+.u-tooltip {
+    background: var(--light-soft-color);
+    box-shadow: 0 0 3px 1px var(--light-boxShadow-color);
+    color: var(--light-secondary-color);
+}
+
+.u-tooltip__arrow:before {
+    background: var(--light-soft-color);
+    box-shadow: 0 0 3px 1px var(--light-boxShadow-color);
+}
+
+/* || General */
+.meta__tooltip__use {
+    border-color: var(--light-hard-color);
+}
+
+.styles {
+    background: var(--light-hard-color);
+    color: var(--light-primary-color);
+}
+
+.styles li {
+    border-color: var(--light-soft-color);
+}
+
+.results > li {
+    border-color: var(--light-hard-color);
+}
+
+.results:not(:empty) {
+    border-color: var(--light-hard-color);
+}
+
+.results .element {
+    color: var(--light-secondary-color);
+}
+
+.search__field {
+    background: var(--light-soft-color);
+    color: var(--light-primary-color);
+    border-color: var(--light-hard-color);
+}
+
+.search__field:focus {
+    background: var(--light-medium-color);
+}
+
+.search span {
+    background-color: var(--light-accent-color);
+}
+
+.filter__button {
+    border-color: var(--light-soft-color);
+}
+
+.filter__button--active {
+    background: var(--light-accent-color);
+}
+
+.filter-engine-styles input:checked ~ label svg {
+    color: var(--light-accent-color);
+}
+
+.header h1 span {
+    color: var(--light-accent-color);
+}

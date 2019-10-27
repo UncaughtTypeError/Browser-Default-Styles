@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Browser Default Styles</title>
-    <link rel="stylesheet" href="global.css" />
-    <link rel="stylesheet" href="lightmode.css" />
-    <link rel="stylesheet" href="darkmode.css" />
-    <script type="module" src="search-filter.js" defer></script>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/theme/lightmode.css" />
+    <link rel="stylesheet" href="styles/theme/darkmode.css" />
+    <script type="module" src="scripts/main.js" defer></script>
     <script src="https://kit.fontawesome.com/d7c692687b.js" crossorigin="anonymous" async></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.1/lib/darkmode-js.min.js" defer></script>
 </head>
@@ -123,9 +123,9 @@
                 time: '0.5s', // default: '0.3s'
                 mixColor: '#fff', // default: '#fff'
                 backgroundColor: '#fff',  // default: '#fff'
-                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorDark: '#292929;',  // default: '#100f2c'
                 buttonColorLight: '#ffffff', // default: '#fff'
-                saveInCookies: false, // default: true,
+                saveInCookies: true, // default: true,
                 label: '<i class="fas fa-adjust"></i>', // default: ''
                 autoMatchOsTheme: true // default: true
             }
