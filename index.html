@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/theme/lightmode.css" />
     <link rel="stylesheet" href="styles/theme/darkmode.css" />
     <script type="module" src="scripts/main.js" defer></script>
+    <script src="scripts/scroll-behaviour.js" defer></script>
     <script src="https://kit.fontawesome.com/d7c692687b.js" crossorigin="anonymous" async></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.1/lib/darkmode-js.min.js" defer></script>
 </head>
@@ -23,40 +24,42 @@
             </header>
         </div>
         <div class="actions-wrapper">
-            <div class="search">
-                <label for="search" class="search__label u-hide">Search for an element to check .</label>
-                <input type="search" id="search" name="search" class="search__field" placeholder="Search for an element." aria-label="Search for an element." />
-                <span></span>
-            </div>
-            <div class="filter">
-                <div class="filter__buttongroup u-tooltip-parent">
-                    <button class="filter__button u-button" data-engine="blink">Blink</button> 
-                    <div class="filter__tooltip u-tooltip u-center">
-                        <span><i class="fab fa-chrome"></i><small>Chrome</small></span>
-                        <span><i class="fab fa-opera"></i><small>Opera</small></span>
-                        <span><i class="fab fa-edge"></i><small>Edge</small></span>
-                        <div class="u-tooltip__arrow"></div>
-                    </div> 
+            <div class="actions">
+                <div class="search">
+                    <label for="search" class="search__label u-hide">Search for an element to check .</label>
+                    <input type="search" id="search" name="search" class="search__field" placeholder="Search for an element." aria-label="Search for an element." />
+                    <span></span>
                 </div>
-                <div class="filter__buttongroup u-tooltip-parent">
-                    <button class="filter__button u-button" data-engine="webkit">Webkit</button>
-                    <div class="filter__tooltip u-tooltip u-center">
-                        <span><i class="fab fa-safari"></i><small>Safari</small></span>
-                        <div class="u-tooltip__arrow"></div>
+                <div class="filter">
+                    <div class="filter__buttongroup u-tooltip-parent">
+                        <button class="filter__button u-button" data-engine="blink">Blink</button> 
+                        <div class="filter__tooltip u-tooltip u-center">
+                            <span><i class="fab fa-chrome"></i><small>Chrome</small></span>
+                            <span><i class="fab fa-opera"></i><small>Opera</small></span>
+                            <span><i class="fab fa-edge"></i><small>Edge</small></span>
+                            <div class="u-tooltip__arrow"></div>
+                        </div> 
                     </div>
-                </div>
-                <div class="filter__buttongroup u-tooltip-parent">
-                    <button class="filter__button u-button" data-engine="gecko">Gecko</button>
-                    <div class="filter__tooltip u-tooltip u-center">
-                        <span><i class="fab fa-firefox"></i><small>Firefox</small></span>
-                        <div class="u-tooltip__arrow"></div>
+                    <div class="filter__buttongroup u-tooltip-parent">
+                        <button class="filter__button u-button" data-engine="webkit">Webkit</button>
+                        <div class="filter__tooltip u-tooltip u-center">
+                            <span><i class="fab fa-safari"></i><small>Safari</small></span>
+                            <div class="u-tooltip__arrow"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="filter__buttongroup u-tooltip-parent">
-                    <button class="filter__button u-button" data-engine="trident">Trident</button>
-                    <div class="filter__tooltip u-tooltip u-center">
-                        <span><i class="fab fa-internet-explorer"></i><small>Internet Explorer</small></span>
-                        <div class="u-tooltip__arrow"></div>
+                    <div class="filter__buttongroup u-tooltip-parent">
+                        <button class="filter__button u-button" data-engine="gecko">Gecko</button>
+                        <div class="filter__tooltip u-tooltip u-center">
+                            <span><i class="fab fa-firefox"></i><small>Firefox</small></span>
+                            <div class="u-tooltip__arrow"></div>
+                        </div>
+                    </div>
+                    <div class="filter__buttongroup u-tooltip-parent">
+                        <button class="filter__button u-button" data-engine="trident">Trident</button>
+                        <div class="filter__tooltip u-tooltip u-center">
+                            <span><i class="fab fa-internet-explorer"></i><small>Internet Explorer</small></span>
+                            <div class="u-tooltip__arrow"></div>
+                        </div>
                     </div>
                 </div>
             </div>

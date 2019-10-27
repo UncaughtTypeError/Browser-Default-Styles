@@ -65,13 +65,13 @@ div.darkmode-layer {
 }
 
 .darkmode--activated .u-tooltip {
-    background: var(--dark-hard-color);
+    background: var(--dark-medium-color);
     box-shadow: 0 0 3px 1px var(--dark-boxShadow-color);
     color: var(--dark-primary-color);
 }
 
 .darkmode--activated .u-tooltip__arrow:before {
-    background: var(--dark-hard-color);
+    background: var(--dark-medium-color);
     box-shadow: 0 0 3px 1px var(--dark-boxShadow-color);
 }
 
@@ -130,6 +130,11 @@ div.darkmode-layer {
 
 .darkmode--activated .filter-engine-styles input:checked ~ label svg {
     color: var(--dark-accent-color);
+}
+
+.darkmode--activated .actions-wrapper .actions {
+    background: var(--dark-soft-color);
+    box-shadow: 0 45px 15px -45px var(--dark-boxShadow-color);
 }
 
 .darkmode--activated .header {

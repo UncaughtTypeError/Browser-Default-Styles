@@ -246,6 +246,18 @@ body {
 
 .actions-wrapper {
     margin-bottom: 2em;
+    height: 85px;
+}
+
+.actions-wrapper .actions {
+    transition: .5s;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 750px;
 }
 
 .search {
@@ -262,6 +274,7 @@ body {
     font-family: monospace;
     text-align: center;
     font-size: 2em;
+    background: transparent;
 }
 
 .search__field:focus, 
@@ -414,7 +427,6 @@ body {
     right: 0;
     width: 250px;
     max-width: 500px;
-    pointer-events: initial;
 }
 
 .sources__tooltip .u-tooltip__arrow {
@@ -425,6 +437,7 @@ body {
 
 .u-tooltip-parent:hover .sources__tooltip {
     bottom: calc(100% + 15px);
+    pointer-events: initial;
 }
 
 .sources ul {
@@ -456,6 +469,19 @@ body {
 
 .fa-safari {
     color: #048cff;
+}
+
+/* || Scroll Behaviour */
+.u-scrollUp .actions-wrapper .actions {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    padding-top: 15px;
+}
+
+.u-scrollUp .actions-wrapper .actions > div {
+    position: relative;
+    z-index: 10;
 }
 
 @media(max-width: 768px) {

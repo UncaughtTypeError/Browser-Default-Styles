@@ -122,6 +122,11 @@ div.darkmode-layer {
     color: var(--light-accent-color);
 }
 
+.actions-wrapper .actions {
+    background: var(--light-soft-color);
+    box-shadow: 0 45px 15px -45px var(--light-boxShadow-color);
+}
+
 .header h1 span {
     color: var(--light-accent-color);
 }
