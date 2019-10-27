@@ -109,6 +109,11 @@ body {
 .to-top {
     width: 30px;
     height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
     background: transparent;
     transition: .3s;
     position: fixed;
@@ -123,18 +128,21 @@ body {
 .to-top:after {
     content: "";
     background: transparent;
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 0;
     right: 0;
+    margin: auto;
     border-radius: 100%;
     transition: .3s;
 }
 
 .to-top:hover:after {
     bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .content-wrapper {
