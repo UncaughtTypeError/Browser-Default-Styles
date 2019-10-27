@@ -106,6 +106,20 @@ body {
 }
 
 /* || General */
+.to-top {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transition: .3s;
+    position: fixed;
+    bottom: 25px;
+    left: 100px;
+    opacity: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    pointer-events: none;
+}
+
 .content-wrapper {
     max-width: 750px;
     margin: auto;
@@ -167,9 +181,9 @@ body {
 }
 
 .styles li span {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
@@ -225,6 +239,7 @@ body {
 
 .u-tooltip-parent:hover .meta__tooltip {
     bottom: calc(100% + 15px);
+    pointer-events: initial;
 }
 
 .meta__tooltip__use {
@@ -446,7 +461,7 @@ body {
     list-style: none;
 }
 
-/* Browser Icons */
+/* || Browser Icons */
 .fa-chrome {
     color: #eac407;
 }
@@ -472,11 +487,26 @@ body {
 }
 
 /* || Scroll Behaviour */
+.u-scrollUp .to-top {
+    bottom: 32px;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.u-scrollDown .actions-wrapper .actions,
+.u-scrollUp .actions-wrapper .actions {
+    z-index: 9;
+    padding-top: 15px;
+}
+
+.u-scrollDown .actions-wrapper .actions {
+    position: absolute;
+    top: -200px;
+}
+
 .u-scrollUp .actions-wrapper .actions {
     position: fixed;
     top: 0;
-    z-index: 9;
-    padding-top: 15px;
 }
 
 .u-scrollUp .actions-wrapper .actions > div {

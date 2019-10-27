@@ -71,6 +71,10 @@ div.darkmode-layer {
 }
 
 /* || General */
+.to-top:hover {
+    background: var(--light-hard-color);
+}
+
 .meta__tooltip__use {
     border-color: var(--light-hard-color);
 }

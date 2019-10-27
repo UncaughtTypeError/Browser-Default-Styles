@@ -76,6 +76,10 @@ div.darkmode-layer {
 }
 
 /* || General */
+.darkmode--activated .to-top:hover {
+    background: var(--dark-medium-color);
+}
+
 .darkmode--activated .meta__tooltip__use {
     border-color: var(--dark-soft-color);
 }
