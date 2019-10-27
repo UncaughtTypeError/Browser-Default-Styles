@@ -59,13 +59,13 @@ body.darkmode--activated {
 }
 
 .darkmode--activated .u-tooltip {
-    background: var(--dark-background-color);
+    background: var(--dark-backgroundAlt-color);
     box-shadow: 0 0 3px 1px var(--dark-boxShadow-color);
     color: var(--dark-primary-color);
 }
 
 .darkmode--activated .u-tooltip__arrow:before {
-    background: var(--dark-background-color);
+    background: var(--dark-backgroundAlt-color);
     box-shadow: 0 0 3px 1px var(--dark-boxShadow-color);
 }
 
@@ -106,7 +106,7 @@ body.darkmode--activated {
 }
 
 .darkmode--activated .search__field:focus {
-    background: var(--dark-background-color);
+    background: var(--dark-backgroundAlt-color);
 }
 
 .darkmode--activated .search span {
@@ -119,6 +119,7 @@ body.darkmode--activated {
 
 .darkmode--activated .filter__button--active {
     background: var(--dark-accent-color);
+    color: var(--dark-backgroundAlt-color);
 }
 
 .darkmode--activated .filter-engine-styles input:checked ~ label svg {
