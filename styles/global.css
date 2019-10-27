@@ -107,8 +107,8 @@ body {
 
 /* || General */
 .to-top {
-    width: 30px;
-    height: 30px;
+    width: 37px;
+    height: 37px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -131,12 +131,13 @@ body {
     width: 70%;
     height: 70%;
     position: absolute;
-    bottom: -15px;
+    bottom: -20px;
     left: 0;
     right: 0;
     margin: auto;
     border-radius: 100%;
     transition: .3s;
+    z-index: -1;
 }
 
 .to-top:hover:after {
