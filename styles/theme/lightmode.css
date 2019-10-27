@@ -71,7 +71,7 @@ div.darkmode-layer {
 }
 
 /* || General */
-.to-top:hover {
+.to-top:hover:after {
     background: var(--light-hard-color);
 }
 

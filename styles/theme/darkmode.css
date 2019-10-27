@@ -76,7 +76,7 @@ div.darkmode-layer {
 }
 
 /* || General */
-.darkmode--activated .to-top:hover {
+.darkmode--activated .to-top:hover:after {
     background: var(--dark-medium-color);
 }
 
