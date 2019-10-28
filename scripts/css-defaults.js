@@ -1974,25 +1974,6 @@ export const cssDefaults = [
         },
     },
     {
-        element: 'applet',
-        type: 'Embedded content',
-        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'listed', 'submittable', 'form-associated', 'palpable'],
-        use: 'Java applet',
-        description: 'The obsolete <strong>HTML Applet Element</strong> (<strong><code>&lt;applet&gt;</code></strong>) embeds a Java applet into the document; this element has been deprecated in favor of <code>&lt;object&gt;</code>.',
-        note: 'Obsolete/Deprecated',
-        obsolete: true,
-        defaults: {
-        },
-        blink: {
-        },
-        webkit: {
-        },
-        gecko: {
-        },
-        trident: {
-        },
-    },
-    {
         element: 'embed',
         type: 'Embedded content',
         categories: ['flow', 'phrasing', 'embedded', 'interactive', 'palpable'],
@@ -4034,7 +4015,7 @@ export const cssDefaults = [
     {
         element: 'applet',
         type: 'Obsolete and deprecated elements',
-        categories: [],
+        categories: ['flow', 'phrasing', 'embedded', 'interactive', 'listed', 'submittable', 'form-associated', 'palpable'],
         use: 'Java applet embedding',
         description: 'The obsolete <strong>HTML Applet Element</strong> (<strong><code>&lt;applet&gt;</code></strong>) embeds a Java applet into the document; this element has been deprecated in favor of <code>&lt;object&gt;</code>.',
         note: 'Obsolete/Deprecated',
