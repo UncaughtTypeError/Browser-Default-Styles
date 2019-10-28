@@ -4013,6 +4013,171 @@ export const cssDefaults = [
         },
     },
     {
+        element: 'acronym',
+        type: 'Obsolete and deprecated elements',
+        categories: [],
+        use: 'Acronym',
+        description: 'The HTML Acronym Element (<code>&lt;acronym&gt;</code>) allows authors to clearly indicate a sequence of characters that compose an acronym or abbreviation for a word. This element has been removed in HTML5. Use&nbsp;<code>&lt;abbr&gt;</code> instead.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'applet',
+        type: 'Obsolete and deprecated elements',
+        categories: [],
+        use: 'Java applet embedding',
+        description: 'The obsolete <strong>HTML Applet Element</strong> (<strong><code>&lt;applet&gt;</code></strong>) embeds a Java applet into the document; this element has been deprecated in favor of <code>&lt;object&gt;</code>.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'basefont',
+        type: 'Obsolete and deprecated elements',
+        categories: [],
+        use: 'Font default',
+        description: 'The obsolete <strong>HTML Base Font element</strong> (<strong><code>&lt;basefont&gt;</code></strong>) sets a default font face, size, and color for the other elements which are descended from its parent element.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+            display: 'none',
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+            display: 'none',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'bgsound',
+        type: 'Obsolete and deprecated elements',
+        categories: [],
+        use: 'Audio player',
+        description: 'The Internet Explorer only <strong>HTML Background Sound element</strong> (<strong><code>&lt;bgsound&gt;</code></strong>) sets up a sound file to play in the background while the page is used; use <code>&lt;audio&gt;</code> instead.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'big',
+        type: 'Obsolete and deprecated elements',
+        categories: [],
+        use: 'Increase font size',
+        description: 'The obsolete <strong>HTML Big Element</strong> (<strong><code>&lt;big&gt;</code></strong>) renders the enclosed text at a font size one level larger than the surrounding text (<code>medium</code> becomes <code>large</code>, for example).',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+            fontSize: 'larger',
+        },
+        blink: {
+            fontSize: 'larger',
+        },
+        webkit: {
+            fontSize: 'larger',
+        },
+        gecko: {
+            fontSize: 'larger',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'blink',
+        type: 'Obsolete and deprecated elements',
+        categories: [],
+        use: 'Flash text',
+        description: 'The <strong>HTML Blink Element</strong> (<code>&lt;blink&gt;</code>) is a non-standard element which causes the enclosed text to flash slowly.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'center',
+        type: 'Obsolete and deprecated elements',
+        categories: [],
+        use: 'Center text',
+        description: 'The obsolete <strong>HTML Center Element</strong> (<strong><code>&lt;center&gt;</code></strong>) is a block-level element that displays its block-level or inline contents centered horizontally within its containing element.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+            display: 'block',
+        },
+        blink: {
+            display: 'block',
+            textAlign: 'center',
+        },
+        webkit: {
+            display: 'block',
+            textAlign: 'center',
+        },
+        gecko: {
+            display: 'block',
+            textAlign: 'center',
+        },
+        trident: {
+        },
+    },
+    {
+        element: 'command',
+        type: 'Obsolete and deprecated elements',
+        categories: [],
+        use: 'Invoke command',
+        description: 'The <strong>HTML Command element</strong> (<strong><code>&lt;command&gt;</code></strong>) represents a command which the user can invoke. Commands are often used as part of a context menu or toolbar.',
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
+        defaults: {
+        },
+        blink: {
+        },
+        webkit: {
+        },
+        gecko: {
+        },
+        trident: {
+        },
+    },
+    {
         element: 'keygen',
         type: 'Obsolete and deprecated elements',
         categories: [],

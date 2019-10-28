@@ -95,6 +95,7 @@ div.darkmode-layer {
 
 .darkmode--activated .results > li {
     border-color: var(--dark-hard-color);
+    background: var(--dark-medium-color);
 }
 
 .darkmode--activated .results:not(:empty) {
