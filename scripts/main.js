@@ -84,6 +84,11 @@ const getMeta = (obj) => {
     return meta.map(data => data).join('');
 }
 
+/* Actions */
+const showFilter = () => {
+    document.querySelector('.filter').classList.remove('u-hide');
+}
+
 /* Filter by Search */
 const findSearchMatches = (elementToMatch, arrayToFilter) => {
     return arrayToFilter.filter(htmlElement => {
@@ -116,6 +121,7 @@ const displaySearchMatches = (event) => {
         filterSelectMatches(activeFilter.dataset.engine);
     }
     
+    showFilter();
     setFilterResultsLabel();
     setEngineStyleFilters();
 }
@@ -278,10 +284,12 @@ const setEngineStyleFilters = () => {
         engineStyles.classList.remove('u-hide');
     }
 
+    // Show checkbox if element with engine style is available
     for(const [engine, valid] of Object.entries(validFilters)) {
         valid ? engineStyles.classList.add(engine) : engineStyles.classList.remove(engine);
     }
 
+    // Show engine styles if corresponding checkbox is checked
     checkboxes.forEach((input) => {
         let browserStyles = input.id;
         if(engineStyles.classList.contains(browserStyles)) {

@@ -11,9 +11,11 @@
 
 .darkmode--activated ::selection {
     background: var(--dark-accent-color);
+    color: var(--dark-hard-color);
 }
 .darkmode--activated ::-moz-selection {
     background: var(--dark-accent-color);
+    color: var(--dark-hard-color);
 }
 
 body.darkmode--activated {
@@ -42,6 +44,10 @@ div.darkmode-layer {
 }
 
 /* || Utility Classes */
+.darkmode--activated .u-dark--hide {
+    display: none;
+}
+
 .darkmode--activated .u-primary-color {
     color: var(--dark-accent-color);
 }
@@ -67,7 +73,7 @@ div.darkmode-layer {
 .darkmode--activated .u-tooltip {
     background: var(--dark-medium-color);
     box-shadow: 0 0 3px 1px var(--dark-boxShadow-color);
-    color: var(--dark-primary-color);
+    color: var(--dark-secondary-color);
 }
 
 .darkmode--activated .u-tooltip__arrow:before {
@@ -137,13 +143,9 @@ div.darkmode-layer {
     color: var(--dark-accent-color);
 }
 
-.darkmode--activated .actions-wrapper .actions {
+.darkmode--activated.u-scrollUp .actions-wrapper .actions {
     background: var(--dark-soft-color);
     box-shadow: 0 45px 15px -45px var(--dark-boxShadow-color);
-}
-
-.darkmode--activated .header {
-    isolation: isolate;
 }
 
 .darkmode--activated .header h1 span {

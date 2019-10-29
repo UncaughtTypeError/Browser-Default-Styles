@@ -1,6 +1,16 @@
 /* || Theme toggle */
 const setThemeToggle = () => {
-    var options = {
+    const node = `
+        <div class="darkmode-toggle__label u-tooltip-parent"> 
+            <div class="darkmode-toggle__tooltip u-tooltip u-center">
+                <span>Switch to <span class="u-light--hide">light</span><span class="u-dark--hide">dark</span> theme</span>
+                <div class="u-tooltip__arrow"></div>
+            </div>
+            <i class="fas fa-adjust"></i>
+        </div>
+    `;
+
+    const options = {
         bottom: '32px', // default: '32px'
         right: 'unset', // default: '32px'
         left: '32px', // default: 'unset'
@@ -10,7 +20,7 @@ const setThemeToggle = () => {
         buttonColorDark: '#292929;',  // default: '#100f2c'
         buttonColorLight: '#ffffff', // default: '#fff'
         saveInCookies: true, // default: true,
-        label: '<i class="fas fa-adjust"></i>', // default: ''
+        label: node, // default: ''
         autoMatchOsTheme: true // default: true
     }
 

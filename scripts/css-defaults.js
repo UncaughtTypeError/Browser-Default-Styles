@@ -4292,7 +4292,8 @@ export const cssDefaults = [
         categories: [],
         use: 'Menu command item',
         description: 'The <strong>HTML <code>&lt;menuitem&gt;</code> element</strong> represents a command that a user is able to invoke through a popup menu. This includes context menus, as well as menus that might be attached to a menu button.',
-        obsolete: false,
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
         defaults: {
         },
         blink: {
@@ -4310,7 +4311,8 @@ export const cssDefaults = [
         categories: [],
         use: 'Menu command item',
         description: 'The <strong>HTML Multi-Column Layout element</strong> (<strong><code>&lt;multicol&gt;</code></strong>) was an experimental element designed to allow multi-column layouts and must not be used.',
-        obsolete: false,
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
         defaults: {
         },
         blink: {
@@ -4331,7 +4333,8 @@ export const cssDefaults = [
         categories: [],
         use: 'Auto-generate <code>NAME</code> labels for anchors',
         description: '<strong><code>&lt;nextid&gt;</code></strong> is an obsolete HTML element that served to enable the NeXT web designing tool to generate automatic NAME labels for its anchors.',
-        obsolete: false,
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
         defaults: {
         },
         blink: {
@@ -4349,7 +4352,8 @@ export const cssDefaults = [
         categories: [],
         use: 'Prevent text wrapping',
         description: 'The non-standard, obsolete HTML <code>&lt;nobr&gt;</code> element prevents the text it contains from automatically wrapping across multiple lines, potentially resulting in the user having to scroll horizontally to see the entire width of the text.',
-        obsolete: false,
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
         defaults: {
             whiteSpace: 'nowrap',
         },
@@ -4392,7 +4396,8 @@ export const cssDefaults = [
         categories: [],
         use: 'Fallback support for <code>&lt;frame&gt;</code>',
         description: 'The obsolete HTML <strong>No Frames</strong> or <strong>frame fallback</strong> element, <strong><code>&lt;noframes&gt;</code></strong>, provides content to be presented in browsers that don\'t support (or have disabled support for) the <code>&lt;frame&gt;</code> element.',
-        obsolete: false,
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
         defaults: {
             display: 'none',
         },
@@ -4414,7 +4419,8 @@ export const cssDefaults = [
         categories: [],
         use: 'Render in plain text',
         description: 'The <em>HTML Plaintext Element</em> (<code>&lt;plaintext&gt;</code>) renders everything following the start tag as raw text, ignoring any following HTML.',
-        obsolete: false,
+        note: 'Obsolete/Deprecated',
+        obsolete: true,
         defaults: {
             display: 'block',
             marginBlockStart: '1em',

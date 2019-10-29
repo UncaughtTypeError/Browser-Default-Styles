@@ -38,6 +38,10 @@ div.darkmode-layer {
 }
 
 /* || Utility Classes */
+body:not(.darkmode--activated) .u-light--hide {
+    display: none;
+}
+
 .u-primary-color {
     color: var(--light-accent-color);
 }
@@ -90,6 +94,7 @@ div.darkmode-layer {
 
 .results > li {
     border-color: var(--light-hard-color);
+    background: var(--light-soft-color);
 }
 
 .results:not(:empty) {
@@ -126,7 +131,7 @@ div.darkmode-layer {
     color: var(--light-accent-color);
 }
 
-.actions-wrapper .actions {
+.u-scrollUp .actions-wrapper .actions {
     background: var(--light-soft-color);
     box-shadow: 0 45px 15px -45px var(--light-boxShadow-color);
 }

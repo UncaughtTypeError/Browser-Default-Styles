@@ -17,8 +17,17 @@ body {
     font-family: monospace;
 }
 
+::-webkit-search-cancel-button {
+    display: none !important;
+}
+
 /* || Utility Classes */
 .u-hide {
+    display: none !important;
+}
+
+.u-dark,
+.u-light {
     display: none;
 }
 
@@ -66,7 +75,7 @@ body {
     position: absolute;
     padding: 5px 10px;
     border-radius: 5px;
-    transition: .3s;
+    transition: .1s;
     opacity: 0;
     font-size: small;
     line-height: normal;
@@ -152,6 +161,10 @@ body {
     margin: auto;
 }
 
+.header {
+    isolation: isolate;
+}
+
 .header h1 {
     font-size: 3.2em;
     font-weight: normal;
@@ -182,7 +195,7 @@ body {
 }
 
 .results > li {
-    padding: 5px 10px;
+    padding: 5px 10px 10px 10px;
     border: 2px solid;
     border-top: 0;
     position: relative;
@@ -205,6 +218,7 @@ body {
     border-bottom: 1px solid;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .styles li span {
@@ -212,6 +226,32 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.styles li:after {
+    content: "";
+    height: 3px;
+    width: 2px;
+    border-radius: 100%;
+    position: absolute;
+    right: calc(100% + 5px);
+    top: 8px;
+}
+
+.styles .gecko:after {
+    background: var(--firefox);
+}
+
+.styles .webkit:after {
+    background: var(--safari);
+}
+
+.styles .blink:after {
+    background: var(--chrome);
+}
+
+.styles .trident:after {
+    background: var(--internet-explorer);
 }
 
 .styles .blink,
@@ -309,7 +349,7 @@ body {
 }
 
 .search__field {
-    transition: .3s ease;
+    transition: .2s ease;
     border: 0;
     border-bottom: 5px solid;
     padding: 5px 10px;
@@ -490,29 +530,53 @@ body {
     list-style: none;
 }
 
-/* || Browser Icons */
+.u-tooltip-parent .darkmode-toggle__tooltip {
+    bottom: 100%;
+    min-width: 100px;
+    transform: translateX(-43%);
+}
+
+.u-tooltip-parent:hover .darkmode-toggle__tooltip {
+    bottom: calc(100% + 35px);
+}
+
+.darkmode-toggle__tooltip .u-tooltip__arrow {
+    top: 100%;
+    left: 50%;
+}
+
+/* || Browsers */
+:root {
+    --chrome: #eac407;
+    --opera: #ce0c0c;
+    --edge: #0037ff;
+    --internet-explorer: #00b9ff;
+    --firefox: #e87411;
+    --safari: #048cff;
+}
+
 .fa-chrome {
-    color: #eac407;
+    color: var(--chrome);
 }
 
 .fa-opera {
-    color: #ce0c0c;
+    color: var(--opera);
 }
 
 .fa-edge {
-    color: #0037ff;
+    color: var(--edge);
 }
 
 .fa-internet-explorer {
-    color: #00b9ff;
+    color: var(--internet-explorer);
 }
 
 .fa-firefox {
-    color: #e87411;
+    color: var(--firefox);
 }
 
 .fa-safari {
-    color: #048cff;
+    color: var(--safari);
 }
 
 /* || Scroll Behaviour */
@@ -536,6 +600,7 @@ body {
 .u-scrollUp .actions-wrapper .actions {
     position: fixed;
     top: 0;
+    transition: none;
 }
 
 .u-scrollUp .actions-wrapper .actions > div {
