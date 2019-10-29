@@ -283,7 +283,9 @@ body {
 }
 
 .obsolete .meta__note {
-    color: #de1818;
+    color: white;
+    background: #de1818;
+    padding: 1px 5px;
 }
 
 .actions-wrapper {
