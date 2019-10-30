@@ -331,6 +331,7 @@ engineStylesField.forEach((checkbox) => {
 /* Browser Compatibility Data */
 const compatibilityDataState = {
     timeOut: null,
+    elements: [],
 }
 
 const setCompatibilityData = () => {
@@ -364,6 +365,11 @@ const prepCompatibilityData = () => {
         if(format.test(element)) {
             return
         }
+        // Element is already in state store, no need for repeat lookup
+        if(compatibilityDataState.elements.includes(element)) {
+            element = compatibilityDataState.elements.element;
+            fetchCompatibilityData(element);
+        }
         fetchCompatibilityData(element);
 
     });
@@ -374,5 +380,7 @@ const fetchCompatibilityData = async element => {
     let url = `/api/mdn-browser-compat-data/html/elements/${element}.json`,
         response = await fetch(url),
         result = await response.json();
+        compatibilityDataState.elements.push(element);
+        console.log(compatibilityDataState.element,{compatibilityDataState});
     console.log({result});
 };
