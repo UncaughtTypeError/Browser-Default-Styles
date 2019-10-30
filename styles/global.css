@@ -87,10 +87,34 @@ body {
     width: 50px;
     height: 25px;
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
     overflow: hidden;
+}
+
+.u-tooltip__arrow--right {
+    right: 0;
+    left: auto;
+}
+
+.u-tooltip__arrow--left {
+    left: 0;
+    right: auto;
+}
+
+.u-tooltip__arrow--center {
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.u-tooltip__arrow--top {
+    top: auto;
+    bottom: 100%;
+    transform: rotate(180deg);
+}
+
+.u-tooltip__arrow--bottom {
+    top: 100%;
+    bottom: auto;
 }
 
 .u-tooltip__arrow:before {
@@ -207,6 +231,10 @@ body {
     display: block;
 }
 
+.results .element__name {
+    display: inline-block;
+}
+
 .styles {
     font-size: small;
     list-style: none;
@@ -292,24 +320,19 @@ body {
     cursor: help;
 }
 
-.meta__tooltip {
+.description__tooltip {
     bottom: 100%;
     left: 0;
     width: 100vw;
     max-width: 500px;
 }
 
-.meta__tooltip .u-tooltip__arrow {
-    top: 100%;
-    left: 25px;
-}
-
-.u-tooltip-parent:hover .meta__tooltip {
+.u-tooltip-parent:hover .description__tooltip {
     bottom: calc(100% + 15px);
     pointer-events: initial;
 }
 
-.meta__tooltip__use {
+.description__tooltip__use {
     border-top: 1px solid;
     padding-top: 5px;
     margin-top: 5px;
@@ -317,15 +340,41 @@ body {
 
 .meta__note {
     position: absolute;
-    top: 5px;
-    right: 10px;
-    font-style: italic;
+    top: 0;
+    right: 0;
+    cursor: help;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.meta__note:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-right: 40px solid;
+    border-bottom: 40px solid transparent;
+}
+
+.meta__note > span {
+    position: relative;
 }
 
 .obsolete .meta__note {
-    color: white;
-    background: #de1818;
-    padding: 1px 5px;
+    color: #de1818;
+}
+
+.note__tooltip {
+    bottom: 100%;
+    transform: translateX(-50%);
+    width: 150px;
+}
+
+.u-tooltip-parent:hover .note__tooltip {
+    bottom: calc(100% + 15px);
+    pointer-events: initial;
 }
 
 .actions-wrapper {
@@ -408,13 +457,6 @@ body {
     justify-content: space-around;
     font-size: 1.7em;
     line-height: 10px;
-}
-
-.filter__tooltip .u-tooltip__arrow {
-    transform: rotate(180deg) translateX(-50%);
-    transform-origin: left;
-    top: auto;
-    bottom: 100%;
 }
 
 .u-tooltip-parent:hover .filter__tooltip {
@@ -513,12 +555,6 @@ body {
     max-width: 500px;
 }
 
-.sources__tooltip .u-tooltip__arrow {
-    top: 100%;
-    right: -25px;
-    left: auto;
-}
-
 .u-tooltip-parent:hover .sources__tooltip {
     bottom: calc(100% + 15px);
     pointer-events: initial;
@@ -538,11 +574,6 @@ body {
 
 .u-tooltip-parent:hover .darkmode-toggle__tooltip {
     bottom: calc(100% + 35px);
-}
-
-.darkmode-toggle__tooltip .u-tooltip__arrow {
-    top: 100%;
-    left: 50%;
 }
 
 /* || Browsers */

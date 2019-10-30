@@ -79,8 +79,12 @@ body:not(.darkmode--activated) .u-light--hide {
     background: var(--light-hard-color);
 }
 
-.meta__tooltip__use {
+.description__tooltip__use {
     border-color: var(--light-hard-color);
+}
+
+.meta__note:before {
+    border-right-color: var(--light-hard-color);
 }
 
 .styles {

@@ -4,7 +4,7 @@ const setThemeToggle = () => {
         <div class="darkmode-toggle__label u-tooltip-parent"> 
             <div class="darkmode-toggle__tooltip u-tooltip u-center">
                 <span>Switch to <span class="u-light--hide">light</span><span class="u-dark--hide">dark</span> theme</span>
-                <div class="u-tooltip__arrow"></div>
+                <div class="u-tooltip__arrow u-tooltip__arrow--center u-tooltip__arrow--bottom"></div>
             </div>
             <i class="fas fa-adjust"></i>
         </div>

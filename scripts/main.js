@@ -1,6 +1,4 @@
 import { cssDefaults } from './css-defaults.js';
-import * as bcd from '/api/mdn-browser-compat-data/html/elements/a.js';
-console.log({bcd}, bcd.data.html.elements.a.__compat.support.chrome.version_added);
 
 /* Compile style list */
 const getStyles = (obj) => {
@@ -60,13 +58,13 @@ const getMeta = (obj) => {
         const description = `<div class="meta__description meta__item u-tooltip-parent">
                                 <span class="meta__label">/* description */</span>
 
-                                <div class="meta__tooltip u-tooltip">
-                                    <div class="meta__tooltip__description">${obj.description}</div>
+                                <div class="description__tooltip u-tooltip">
+                                    <div class="description__tooltip__description">${obj.description}</div>
 
-                                    <div class="meta__tooltip__use"><strong>Use:</strong> ${obj.use}</div>
-                                    ${obj.note ? `<div class="meta__tooltip__use"><strong>Note:</strong> ${obj.note}</div>` : ''}
+                                    <div class="description__tooltip__use"><strong>Use:</strong> ${obj.use}</div>
+                                    ${obj.note ? `<div class="description__tooltip__use"><strong>Note:</strong> ${obj.note}</div>` : ''}
 
-                                    <div class="u-tooltip__arrow"></div>
+                                    <div class="u-tooltip__arrow u-tooltip__arrow--left u-tooltip__arrow--bottom"></div>
                                 </div>
 
                             </div>`;
@@ -74,8 +72,14 @@ const getMeta = (obj) => {
         meta.push(description);
     }
     if(obj.note) {
-        const note = `<div class="meta__note meta__item">
-                        <span>${obj.obsolete ? `<i class="fas fa-trash-alt"></i>` : ''} ${obj.note}</span>
+        const icon = obj.obsolete ? `<i class="fas fa-thumbs-down"></i>` : '<i class="fas fa-info"></i>';
+        const note = `<div class="meta__note meta__item u-tooltip-parent">
+                        <span>${icon}</span>
+
+                        <div class="note__tooltip u-tooltip">
+                            ${obj.note}
+                            <div class="u-tooltip__arrow u-tooltip__arrow--center u-tooltip__arrow--bottom"></div>
+                        </div>
                     </div>`;
 
         meta.push(note);
@@ -97,10 +101,9 @@ const findSearchMatches = (elementToMatch, arrayToFilter) => {
     });
 }
 
-const displaySearchMatches = (event) => {
+const displaySearchMatches = (value) => {
 
-    const   value = event.target.value,
-            matchArray = findSearchMatches(value, cssDefaults),
+    const   matchArray = findSearchMatches(value, cssDefaults),
             html = matchArray.map(htmlElement => {
 
         const   regex = new RegExp(value, 'gi'),
@@ -124,12 +127,31 @@ const displaySearchMatches = (event) => {
     showFilter();
     setFilterResultsLabel();
     setEngineStyleFilters();
+    setCompatibilityData();
 }
 
 const   searchInput = document.querySelector('.search__field'),
         searchResults = document.querySelector('.results');
 
-searchInput.addEventListener('keyup', displaySearchMatches);
+const searchHandler = (event) => {
+    let type = event.type,
+        value = event.target.value;
+    if (type === 'keyup') {
+        displaySearchMatches(value);
+    } else if (type === 'keydown') {
+        if (event.keyCode === 32 || event.code === 'Space') {
+            event.preventDefault();
+        }
+    } else if (type === 'change') {
+        event.target.value = value.replace(/\s/g, "");
+        value = event.target.value;
+        displaySearchMatches(value);
+    } 
+}
+
+searchInput.addEventListener('keyup', searchHandler);
+searchInput.addEventListener('keydown', searchHandler);
+searchInput.addEventListener('change', searchHandler);
 
 /* Filter by Rendering Engine */
 const findSelectMatches = (elementToMatch, arrayToFilter) => {
@@ -181,6 +203,7 @@ const displaySelectedMatches = (event) => {
     }
 
     setEngineStyleFilters();
+    setCompatibilityData();
 }
 
 const setButtonState = (element) => {
@@ -207,7 +230,8 @@ filterButtons.forEach((button) => {
 const renderResult = (props) => {
     const   {name, description, styles, obsolete} = props,
             result = `<li ${obsolete ? `class="obsolete"` : ''}>
-                        <div class="element">${name}
+                        <div class="element">
+                            <div class="element__name">${name}</div>
                             <div class="meta">${description}</div>
                         </div>
                         <ul class="styles">${styles}</ul>
@@ -303,3 +327,52 @@ const engineStylesField = document.querySelectorAll('.filter-engine-styles input
 engineStylesField.forEach((checkbox) => {
     checkbox.addEventListener('change', filterEngineStyles);
 });
+
+/* Browser Compatibility Data */
+const compatibilityDataState = {
+    timeOut: null,
+}
+
+const setCompatibilityData = () => {
+    // allow time for user input to complete before lookup
+    delayCompatibilityData();
+}
+
+const delayCompatibilityData = () => {
+    if(compatibilityDataState.timeOut) {
+        clearTimeout(compatibilityDataState.timeOut);
+        compatibilityDataState.timeOut = null;
+    }
+    compatibilityDataState.timeOut = setTimeout(() => {
+        clearTimeout(compatibilityDataState.timeOut);
+        compatibilityDataState.timeOut = null;
+        prepCompatibilityData();
+    }, 1500);
+}
+
+const prepCompatibilityData = () => {
+    const results = document.querySelectorAll('.results > li');
+    results.forEach(result => {
+        // abort if another timeout is detected, indicates that user has provided new input
+        if(compatibilityDataState.timeOut) {
+            return;
+        }
+
+        let element = result.querySelector('.element__name').textContent,
+            format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+        // Exit if name contains spaces or special characters
+        if(format.test(element)) {
+            return
+        }
+        fetchCompatibilityData(element);
+
+    });
+
+}
+
+const fetchCompatibilityData = async element => {
+    let url = `/api/mdn-browser-compat-data/html/elements/${element}.json`,
+        response = await fetch(url),
+        result = await response.json();
+    console.log({result});
+};
