@@ -334,45 +334,66 @@ const compatibilityDataState = {
     elements: [],
 }
 
-const setCompatibilityData = () => {
-    // allow time for user input to complete before lookup
-    delayCompatibilityData();
-}
+// const setCompatibilityData = () => {
+//     // allow time for user input to complete before lookup
+//     delayCompatibilityData();
+// }
 
-const delayCompatibilityData = () => {
-    if(compatibilityDataState.timeOut) {
-        clearTimeout(compatibilityDataState.timeOut);
-        compatibilityDataState.timeOut = null;
-    }
-    compatibilityDataState.timeOut = setTimeout(() => {
-        clearTimeout(compatibilityDataState.timeOut);
-        compatibilityDataState.timeOut = null;
-        prepCompatibilityData();
-    }, 1500);
-}
+// const delayCompatibilityData = () => {
+//     if(compatibilityDataState.timeOut) {
+//         clearTimeout(compatibilityDataState.timeOut);
+//         compatibilityDataState.timeOut = null;
+//     }
+//     compatibilityDataState.timeOut = setTimeout(() => {
+//         clearTimeout(compatibilityDataState.timeOut);
+//         compatibilityDataState.timeOut = null;
+//         prepCompatibilityData();
+//     }, 1500);
+// }
 
-const prepCompatibilityData = () => {
-    const results = document.querySelectorAll('.results > li');
-    results.forEach(result => {
-        // abort if another timeout is detected, indicates that user has provided new input
-        if(compatibilityDataState.timeOut) {
-            return;
-        }
+// const prepCompatibilityData = () => {
+//     const results = document.querySelectorAll('.results > li');
+//     results.forEach(result => {
+//         // abort if another timeout is detected, indicates that user has provided new input
+//         if(compatibilityDataState.timeOut) {
+//             return;
+//         }
 
-        let element = result.querySelector('.element__name').textContent,
+//         let element = result.querySelector('.element__name').textContent,
+//             format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+//         // Exit if name contains spaces or special characters
+//         if(format.test(element)) {
+//             return;
+//         }
+//         // Element is already in state store, no need for repeat lookup
+//         if(compatibilityDataState.elements.includes(element)) {
+//             element = compatibilityDataState.elements.element;
+//             fetchCompatibilityData(element);
+//         }
+//         fetchCompatibilityData(element);
+
+//     });
+
+// }
+
+const setCompatibilityData = (event) => {
+    console.log(event);
+
+    if(event.target.classList.contains('element')) {
+        let element = document.querySelector('.element__name').textContent,
             format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
         // Exit if name contains spaces or special characters
         if(format.test(element)) {
-            return
+            return;
         }
         // Element is already in state store, no need for repeat lookup
         if(compatibilityDataState.elements.includes(element)) {
             element = compatibilityDataState.elements.element;
             fetchCompatibilityData(element);
         }
+        console.log({element});
         fetchCompatibilityData(element);
-
-    });
+    }
 
 }
 
@@ -382,5 +403,21 @@ const fetchCompatibilityData = async element => {
         result = await response.json();
         compatibilityDataState.elements.push(element);
         console.log(compatibilityDataState.element,{compatibilityDataState});
-    console.log({result});
+    let elementData = result.html.elements[element],
+        data = {
+            chrome: elementData.__compat.support.chrome.version_added,
+            edge: elementData.__compat.support.edge.version_added,
+            firefox: elementData.__compat.support.firefox.version_added,
+            opera: elementData.__compat.support.opera.version_added,
+            safari: elementData.__compat.support.safari.version_added,
+            ie: elementData.__compat.support.ie.version_added,
+        }
+    console.log(elementData.__compat.support, {data});
+    appendCompatibilityData(data);
 };
+
+const appendCompatibilityData = data => {
+    const {datad} = data;
+};
+
+document.querySelector('.results').addEventListener('mouseover', setCompatibilityData);
