@@ -233,6 +233,7 @@ const renderResult = (props) => {
                         <div class="element">
                             <div class="element__name">${name}</div>
                             <div class="meta">${description}</div>
+                            <div class="compatibility"></div>
                         </div>
                         <ul class="styles">${styles}</ul>
                     </li>`;
@@ -330,7 +331,6 @@ engineStylesField.forEach((checkbox) => {
 
 /* Browser Compatibility Data */
 const compatibilityDataState = {
-    timeOut: null,
     elements: [],
 }
 
@@ -377,9 +377,9 @@ const compatibilityDataState = {
 // }
 
 const setCompatibilityData = (event) => {
-    console.log(event);
+    let eventTarget = event.target;
 
-    if(event.target.classList.contains('element')) {
+    if(eventTarget.classList.contains('element')) {
         let element = document.querySelector('.element__name').textContent,
             format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
         // Exit if name contains spaces or special characters
@@ -391,8 +391,25 @@ const setCompatibilityData = (event) => {
             element = compatibilityDataState.elements.element;
             fetchCompatibilityData(element);
         }
-        console.log({element});
-        fetchCompatibilityData(element);
+
+        // fetchCompatibilityData(element)
+        //     .then(compatibilityData => { 
+        //         console.log({element},{compatibilityData});
+        //         appendCompatibilityData({compatibilityData, eventTarget});
+        //     })
+        //     .catch(err => { 
+        //         console.log(err);
+        //     });
+        
+        ((async () => {
+            let compatibilityData = await fetchCompatibilityData(element);
+            console.log({element},{compatibilityData});
+            appendCompatibilityData({compatibilityData, eventTarget});
+        })()).catch(err => {
+            console.log(err);
+        });
+
+        compatibilityDataState.elements.push(element);
     }
 
 }
@@ -400,10 +417,8 @@ const setCompatibilityData = (event) => {
 const fetchCompatibilityData = async element => {
     let url = `/api/mdn-browser-compat-data/html/elements/${element}.json`,
         response = await fetch(url),
-        result = await response.json();
-        compatibilityDataState.elements.push(element);
-        console.log(compatibilityDataState.element,{compatibilityDataState});
-    let elementData = result.html.elements[element],
+        result = await response.json(),
+        elementData = result.html.elements[element],
         data = {
             chrome: elementData.__compat.support.chrome.version_added,
             edge: elementData.__compat.support.edge.version_added,
@@ -411,13 +426,48 @@ const fetchCompatibilityData = async element => {
             opera: elementData.__compat.support.opera.version_added,
             safari: elementData.__compat.support.safari.version_added,
             ie: elementData.__compat.support.ie.version_added,
-        }
-    console.log(elementData.__compat.support, {data});
-    appendCompatibilityData(data);
+        };
+        console.log({data});
+    return data;
 };
 
 const appendCompatibilityData = data => {
-    const {datad} = data;
+    const {compatibilityData, eventTarget} = data;
+    console.log({compatibilityData, eventTarget});
+
+    const getIcon = dataset => {
+        let {browser, compatibility} = dataset;
+        switch(browser) {
+            case 'chrome' :
+                return `<i class="fab fa-chrome"></i>
+                        <span>${compatibility}</span>`;
+            case 'opera' :
+                return `<i class="fab fa-opera"></i>
+                        <span>${compatibility}</span>`;
+            case 'edge' :
+                return `<i class="fab fa-edge"></i>
+                        <span>${compatibility}</span>`;
+            case 'safari' :
+                return `<i class="fab fa-safari"></i>
+                        <span>${compatibility}</span>`;
+            case 'firefox' :
+                return `<i class="fab fa-firefox"></i>
+                        <span>${compatibility}</span>`;
+            case 'ie' :
+                return `<i class="fab fa-internet-explorer"></i>
+                        <span>${compatibility}</span>`;
+        }
+    }
+
+    const setIcon = icon => {
+        eventTarget.querySelector('.compatibility').appendChild(icon);
+    }
+    
+    for (let [browser, compatibility] of Object.entries(compatibilityData)) {
+        let icon = document.createElement('span');
+        icon.innerHTML = getIcon({browser, compatibility});
+        setIcon(icon);
+    }
 };
 
 document.querySelector('.results').addEventListener('mouseover', setCompatibilityData);

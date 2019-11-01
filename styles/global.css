@@ -258,12 +258,11 @@ body {
 
 .styles li:after {
     content: "";
-    height: 3px;
+    height: 20px;
     width: 2px;
-    border-radius: 100%;
     position: absolute;
-    right: calc(100% + 5px);
-    top: 8px;
+    right: calc(100% + 22px);
+    top: 0;
 }
 
 .styles .gecko:after {
