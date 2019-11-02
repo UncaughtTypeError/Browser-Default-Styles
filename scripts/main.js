@@ -334,7 +334,6 @@ const compatibilityDataState = {
 
 const setCompatibilityData = (event) => {
     let eventTarget = event.target;
-    console.log({eventTarget});
 
     if(eventTarget.classList.contains('element')) {
 
@@ -354,19 +353,9 @@ const setCompatibilityData = (event) => {
         //     element = compatibilityDataState.elements.element;
         //     fetchCompatibilityData(element);
         // }
-
-        // fetchCompatibilityData(element)
-        //     .then(compatibilityData => { 
-        //         console.log({element},{compatibilityData});
-        //         appendCompatibilityData({compatibilityData, eventTarget});
-        //     })
-        //     .catch(err => { 
-        //         console.log(err);
-        //     });
         
         ((async () => {
             let compatibilityData = await fetchCompatibilityData(element);
-            console.log({element},{compatibilityData});
             if(appendTarget.hasChildNodes()) {
                 return;
             }
@@ -393,13 +382,11 @@ const fetchCompatibilityData = async element => {
             safari: elementData.__compat.support.safari.version_added,
             ie: elementData.__compat.support.ie.version_added,
         };
-        console.log({data});
     return data;
 };
 
 const appendCompatibilityData = data => {
     const {compatibilityData, appendTarget} = data;
-    console.log({compatibilityData, appendTarget});
 
     const getIcon = dataset => {
         let {browser, compatibility} = dataset;
