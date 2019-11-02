@@ -89,6 +89,10 @@ const getMeta = (obj) => {
 }
 
 /* Actions */
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.search').classList.remove('u-hide');
+});
+
 const showFilter = () => {
     document.querySelector('.filter').classList.remove('u-hide');
 }
