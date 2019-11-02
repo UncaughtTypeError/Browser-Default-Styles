@@ -1,6 +1,6 @@
 /* || Globals */
 :root {
-    --light-primary-color: #333333;
+    --light-primary-color: #656565;
     --light-accent-color: #45ecb6;
     --light-secondary-color: #333333;
     --light-soft-color: #ffffff;
@@ -142,4 +142,16 @@ body:not(.darkmode--activated) .u-light--hide {
 
 .header h1 span {
     color: var(--light-accent-color);
+}
+
+.compatibility > span {
+    background: var(--light-hard-color);
+}
+
+.compatibility span span:last-child {
+    color: var(--light-secondary-color);
+}
+
+.compatibility span span:first-child svg {
+    color: var(--light-secondary-color);
 }

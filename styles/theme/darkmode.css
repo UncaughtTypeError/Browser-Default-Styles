@@ -73,7 +73,7 @@ div.darkmode-layer {
 .darkmode--activated .u-tooltip {
     background: var(--dark-medium-color);
     box-shadow: 0 0 3px 1px var(--dark-boxShadow-color);
-    color: var(--dark-secondary-color);
+    color: var(--dark-primary-color);
 }
 
 .darkmode--activated .u-tooltip__arrow:before {
@@ -154,4 +154,16 @@ div.darkmode-layer {
 
 .darkmode--activated .header h1 span {
     color: var(--dark-accent-color);
+}
+
+.darkmode--activated .compatibility > span {
+    background: var(--dark-hard-color);
+}
+
+.darkmode--activated .compatibility span span:last-child {
+    color: var(--dark-secondary-color);
+}
+
+.darkmode--activated .compatibility span span:first-child svg {
+    color: var(--dark-secondary-color);
 }

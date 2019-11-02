@@ -134,23 +134,51 @@ const   searchInput = document.querySelector('.search__field'),
 
 const searchHandler = (event) => {
     let type = event.type,
-        value = event.target.value;
-    if (type === 'keyup') {
-        displaySearchMatches(value);
-    } else if (type === 'keydown') {
-        if (event.keyCode === 32 || event.code === 'Space') {
+        value;
+
+    const cleanInput = () => {
+        // get the input value
+        if (event.clipboardData || window.clipboardData) { 
+            // from clipboard
+            value = (event.clipboardData || window.clipboardData).getData('text');
             event.preventDefault();
+        } else { 
+            // from input field value
+            value = event.target.value;
         }
-    } else if (type === 'change') {
-        event.target.value = value.replace(/\s/g, "");
-        value = event.target.value;
-        displaySearchMatches(value);
-    } 
+        value = value.replace(/\s/g, ""); // clean input
+        event.target.value = value; // update input field with cleaned value
+        return value; // return cleaned value to search against
+    }
+
+    switch(type) {
+        case 'keyup' :
+        case 'paste' :
+            value = cleanInput();
+            if (value) {
+                displaySearchMatches(value);
+            }
+            break;
+        case 'keydown' :
+            if (event.keyCode === 32 || event.code === 'Space') {
+                event.preventDefault();
+            }
+            value = cleanInput();
+            if (value) {
+                displaySearchMatches(value);
+            }
+            break;
+        default :
+            value = cleanInput();
+            if (value) {
+                displaySearchMatches(value);
+            }
+    }
 }
 
 searchInput.addEventListener('keyup', searchHandler);
 searchInput.addEventListener('keydown', searchHandler);
-searchInput.addEventListener('change', searchHandler);
+searchInput.addEventListener('paste', searchHandler);
 
 /* Filter by Rendering Engine */
 const findSelectMatches = (elementToMatch, arrayToFilter) => {
@@ -390,30 +418,40 @@ const appendCompatibilityData = data => {
 
     const getIcon = dataset => {
         let {browser, compatibility} = dataset;
+
+        if(compatibility === true) {
+            compatibility = `<span class="supported"><i class="fas fa-check"></i></span>`;
+        } else if(compatibility === false) {
+            compatibility = `<span class="unsupported"><i class="fas fa-times"></i></span>`;
+        } else {
+            compatibility = `<span class="supported">${compatibility}</span>`;
+        }
+
         switch(browser) {
             case 'chrome' :
-                return `<i class="fab fa-chrome"></i>
-                        <span>${compatibility}</span>`;
+                return `<span><i class="fab fa-chrome"></i></span>
+                        ${compatibility}`;
             case 'opera' :
-                return `<i class="fab fa-opera"></i>
-                        <span>${compatibility}</span>`;
+                return `<span><i class="fab fa-opera"></i></span>
+                        ${compatibility}`;
             case 'edge' :
-                return `<i class="fab fa-edge"></i>
-                        <span>${compatibility}</span>`;
+                return `<span><i class="fab fa-edge"></i></span>
+                        ${compatibility}`;
             case 'safari' :
-                return `<i class="fab fa-safari"></i>
-                        <span>${compatibility}</span>`;
+                return `<span><i class="fab fa-safari"></i></span>
+                        ${compatibility}`;
             case 'firefox' :
-                return `<i class="fab fa-firefox"></i>
-                        <span>${compatibility}</span>`;
+                return `<span><i class="fab fa-firefox"></i></span>
+                        ${compatibility}`;
             case 'ie' :
-                return `<i class="fab fa-internet-explorer"></i>
-                        <span>${compatibility}</span>`;
+                return `<span><i class="fab fa-internet-explorer"></i></span>
+                        ${compatibility}`;
         }
     }
 
     const setIcon = icon => {
         appendTarget.appendChild(icon);
+        appendTarget.classList.add('compatibility--visible');
     }
     
     for (let [browser, compatibility] of Object.entries(compatibilityData)) {

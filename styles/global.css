@@ -240,6 +240,7 @@ body {
     list-style: none;
     padding: 10px 10px 10px 25px;
     line-height: 1.5em;
+    position: relative;
 }
 
 .styles li {
@@ -374,6 +375,51 @@ body {
 .u-tooltip-parent:hover .note__tooltip {
     bottom: calc(100% + 15px);
     pointer-events: initial;
+}
+
+.compatibility {
+    position: absolute;
+    right: 10px;
+    top: 45px;
+    transition: .3s;
+}
+
+.compatibility--visible {
+    top: 22px;
+}
+
+.compatibility > span {
+    padding: 3px 2px;
+    min-width: 50px;
+    height: 20px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    vertical-align: bottom;
+    margin-left: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.compatibility span span:first-child {
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    font-size: 18px;
+    opacity: .3;
+}
+
+.compatibility span span:last-child {
+    margin-bottom: -5px;
+}
+
+.compatibility span .supported svg {
+    color: #0e940e;
+}
+
+.compatibility span .unsupported svg {
+    color: #de1818;
 }
 
 .actions-wrapper {
@@ -550,7 +596,7 @@ body {
 .sources__tooltip {
     bottom: 100%;
     right: 0;
-    width: 250px;
+    width: 280px;
     max-width: 500px;
 }
 
