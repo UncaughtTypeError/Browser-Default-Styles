@@ -393,7 +393,7 @@ const setCompatibilityData = (event) => {
             }
             appendCompatibilityData({compatibilityData, appendTarget});
         })()).catch(err => {
-            console.log(err);
+            console.error(err);
         });
 
         compatibilityDataState.elements.push(element);
@@ -402,18 +402,29 @@ const setCompatibilityData = (event) => {
 }
 
 const fetchCompatibilityData = async element => {
+
+    const setVersion = (browser, element) => {
+        browser = element.__compat.support[browser];
+        if(Array.isArray(browser)) {
+            return browser[0].version_added; // get latest version
+        } else {
+            return browser.version_added;
+        }
+    }
+    
     let url = `/api/mdn-browser-compat-data/html/elements/${element}.json`,
         response = await fetch(url),
         result = await response.json(),
         elementData = result.html.elements[element],
         data = {
-            chrome: elementData.__compat.support.chrome.version_added,
-            edge: elementData.__compat.support.edge.version_added,
-            firefox: elementData.__compat.support.firefox.version_added,
-            opera: elementData.__compat.support.opera.version_added,
-            safari: elementData.__compat.support.safari.version_added,
-            ie: elementData.__compat.support.ie.version_added,
+            chrome: setVersion('chrome', elementData),
+            edge: setVersion('edge', elementData),
+            firefox: setVersion('firefox', elementData),
+            opera: setVersion('opera', elementData),
+            safari: setVersion('safari', elementData),
+            ie: setVersion('ie', elementData),
         };
+
     return data;
 };
 
