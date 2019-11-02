@@ -127,7 +127,6 @@ const displaySearchMatches = (value) => {
     showFilter();
     setFilterResultsLabel();
     setEngineStyleFilters();
-    setCompatibilityData();
 }
 
 const   searchInput = document.querySelector('.search__field'),
@@ -203,7 +202,6 @@ const displaySelectedMatches = (event) => {
     }
 
     setEngineStyleFilters();
-    setCompatibilityData();
 }
 
 const setButtonState = (element) => {
@@ -334,63 +332,28 @@ const compatibilityDataState = {
     elements: [],
 }
 
-// const setCompatibilityData = () => {
-//     // allow time for user input to complete before lookup
-//     delayCompatibilityData();
-// }
-
-// const delayCompatibilityData = () => {
-//     if(compatibilityDataState.timeOut) {
-//         clearTimeout(compatibilityDataState.timeOut);
-//         compatibilityDataState.timeOut = null;
-//     }
-//     compatibilityDataState.timeOut = setTimeout(() => {
-//         clearTimeout(compatibilityDataState.timeOut);
-//         compatibilityDataState.timeOut = null;
-//         prepCompatibilityData();
-//     }, 1500);
-// }
-
-// const prepCompatibilityData = () => {
-//     const results = document.querySelectorAll('.results > li');
-//     results.forEach(result => {
-//         // abort if another timeout is detected, indicates that user has provided new input
-//         if(compatibilityDataState.timeOut) {
-//             return;
-//         }
-
-//         let element = result.querySelector('.element__name').textContent,
-//             format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-//         // Exit if name contains spaces or special characters
-//         if(format.test(element)) {
-//             return;
-//         }
-//         // Element is already in state store, no need for repeat lookup
-//         if(compatibilityDataState.elements.includes(element)) {
-//             element = compatibilityDataState.elements.element;
-//             fetchCompatibilityData(element);
-//         }
-//         fetchCompatibilityData(element);
-
-//     });
-
-// }
-
 const setCompatibilityData = (event) => {
     let eventTarget = event.target;
+    console.log({eventTarget});
 
     if(eventTarget.classList.contains('element')) {
-        let element = document.querySelector('.element__name').textContent,
+
+        let appendTarget = eventTarget.querySelector('.compatibility');
+        if(appendTarget.hasChildNodes()) {
+            return;
+        }
+
+        let element = eventTarget.querySelector('.element__name').textContent,
             format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
         // Exit if name contains spaces or special characters
         if(format.test(element)) {
             return;
         }
         // Element is already in state store, no need for repeat lookup
-        if(compatibilityDataState.elements.includes(element)) {
-            element = compatibilityDataState.elements.element;
-            fetchCompatibilityData(element);
-        }
+        // if(compatibilityDataState.elements.includes(element)) {
+        //     element = compatibilityDataState.elements.element;
+        //     fetchCompatibilityData(element);
+        // }
 
         // fetchCompatibilityData(element)
         //     .then(compatibilityData => { 
@@ -404,7 +367,10 @@ const setCompatibilityData = (event) => {
         ((async () => {
             let compatibilityData = await fetchCompatibilityData(element);
             console.log({element},{compatibilityData});
-            appendCompatibilityData({compatibilityData, eventTarget});
+            if(appendTarget.hasChildNodes()) {
+                return;
+            }
+            appendCompatibilityData({compatibilityData, appendTarget});
         })()).catch(err => {
             console.log(err);
         });
@@ -432,8 +398,8 @@ const fetchCompatibilityData = async element => {
 };
 
 const appendCompatibilityData = data => {
-    const {compatibilityData, eventTarget} = data;
-    console.log({compatibilityData, eventTarget});
+    const {compatibilityData, appendTarget} = data;
+    console.log({compatibilityData, appendTarget});
 
     const getIcon = dataset => {
         let {browser, compatibility} = dataset;
@@ -460,7 +426,7 @@ const appendCompatibilityData = data => {
     }
 
     const setIcon = icon => {
-        eventTarget.querySelector('.compatibility').appendChild(icon);
+        appendTarget.appendChild(icon);
     }
     
     for (let [browser, compatibility] of Object.entries(compatibilityData)) {
