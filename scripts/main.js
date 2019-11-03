@@ -380,31 +380,38 @@ const setCompatibilityData = (event) => {
         if(format.test(element)) {
             return;
         }
+
+        let inStore = false;
         // Element is already in state store, no need for repeat lookup
         compatibilityDataState.elements.map(e => {
             for(let [key, value] of Object.entries(e)) {
-                if(key === element) {
-                    let compatibilityData = value;
-                    appendCompatibilityData({compatibilityData, appendTarget});
-                    console.log('fetched from store',{compatibilityData});
+                if(inStore) {
+                    break; // already in store, exit loop
+                } else if(key !== element) {
+                    continue; // not in store, continue to next iteration
                 }
+                inStore = true;
+                let compatibilityData = value;
+                appendCompatibilityData({compatibilityData, appendTarget});
+                console.log('fetched from store',{compatibilityData});
             }
         });
-        
-        ((async () => {
-            let compatibilityData = await fetchCompatibilityData(element);
-            if(appendTarget.hasChildNodes()) {
-                return;
-            }
-            appendCompatibilityData({compatibilityData, appendTarget});
-            console.log('fetched from source',{compatibilityData});
+        // Element is not in state store, lookup is needed
+        if(!inStore) {
+            ((async () => {
+                let compatibilityData = await fetchCompatibilityData(element);
+                if(appendTarget.hasChildNodes()) {
+                    return;
+                }
+                appendCompatibilityData({compatibilityData, appendTarget});
+                console.log('fetched from source',{compatibilityData});
 
-            // Set state
-            compatibilityDataState.elements.push({[element] : compatibilityData});
-        })()).catch(err => {
-            console.error(err);
-        });
-
+                // Set state
+                compatibilityDataState.elements.push({[element] : compatibilityData});
+            })()).catch(err => {
+                console.error(err);
+            });
+        }
     }
 
 }
@@ -424,15 +431,15 @@ const fetchCompatibilityData = async element => {
         response = await fetch(url),
         result = await response.json(),
         elementData = result.html.elements[element];
-        return {
-            chrome: setVersion('chrome', elementData),
-            edge: setVersion('edge', elementData),
-            firefox: setVersion('firefox', elementData),
-            opera: setVersion('opera', elementData),
-            safari: setVersion('safari', elementData),
-            ie: setVersion('ie', elementData),
-        };
     console.log('fetch request made');
+    return {
+        chrome: setVersion('chrome', elementData),
+        edge: setVersion('edge', elementData),
+        firefox: setVersion('firefox', elementData),
+        opera: setVersion('opera', elementData),
+        safari: setVersion('safari', elementData),
+        ie: setVersion('ie', elementData),
+    };
 
 };
 
