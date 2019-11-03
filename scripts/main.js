@@ -381,10 +381,15 @@ const setCompatibilityData = (event) => {
             return;
         }
         // Element is already in state store, no need for repeat lookup
-        // if(compatibilityDataState.elements.includes(element)) {
-        //     element = compatibilityDataState.elements.element;
-        //     fetchCompatibilityData(element);
-        // }
+        compatibilityDataState.elements.map(e => {
+            for(let [key, value] of Object.entries(e)) {
+                if(key === element) {
+                    let compatibilityData = value;
+                    appendCompatibilityData({compatibilityData, appendTarget});
+                    console.log('fetched from store',{compatibilityData});
+                }
+            }
+        });
         
         ((async () => {
             let compatibilityData = await fetchCompatibilityData(element);
@@ -392,11 +397,14 @@ const setCompatibilityData = (event) => {
                 return;
             }
             appendCompatibilityData({compatibilityData, appendTarget});
+            console.log('fetched from source',{compatibilityData});
+
+            // Set state
+            compatibilityDataState.elements.push({[element] : compatibilityData});
         })()).catch(err => {
             console.error(err);
         });
 
-        compatibilityDataState.elements.push(element);
     }
 
 }
@@ -415,8 +423,8 @@ const fetchCompatibilityData = async element => {
     let url = `/api/mdn-browser-compat-data/html/elements/${element}.json`,
         response = await fetch(url),
         result = await response.json(),
-        elementData = result.html.elements[element],
-        data = {
+        elementData = result.html.elements[element];
+        return {
             chrome: setVersion('chrome', elementData),
             edge: setVersion('edge', elementData),
             firefox: setVersion('firefox', elementData),
@@ -424,8 +432,8 @@ const fetchCompatibilityData = async element => {
             safari: setVersion('safari', elementData),
             ie: setVersion('ie', elementData),
         };
+    console.log('fetch request made');
 
-    return data;
 };
 
 const appendCompatibilityData = data => {
