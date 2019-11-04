@@ -686,17 +686,31 @@ body {
 }
 
 @media(max-width: 768px) {
-    .results > li {
-        overflow: hidden;
-        background: white;
-        border: 0;
-    }
     
     .results {
         grid-template-columns: repeat(4, minmax(100px, 1fr));
         grid-auto-rows: 185px;
-        grid-gap: 5px;
-        background: #f1f1f1;
-        padding: 5px 5px;
     }
+
+    .results > li {
+        border-top: 2px solid;
+    }
+    
+    .results .element {
+        padding-bottom: 2px;
+    }
+    
+    .compatibility > span {
+        margin: 0;
+    }
+    
+    .compatibility {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(3, minmax(30%, 1fr));
+        position: relative;
+        top: 0;
+        left: 0;
+        grid-gap: 2px;
+    }
+    
 }
