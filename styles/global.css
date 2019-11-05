@@ -15,6 +15,8 @@ html {
 
 body {
     font-family: monospace;
+    margin: auto;
+    padding-bottom: 50px;
 }
 
 ::-webkit-search-cancel-button {
@@ -181,6 +183,10 @@ body {
     height: 100%;
 }
 
+.darkmode-toggle {
+    z-index: 9;
+}
+
 .content-wrapper {
     max-width: 750px;
     margin: auto;
@@ -208,6 +214,11 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: minmax(500px, 1fr);
+    grid-gap: 15px;
+}
+
+.results-meta {
+    margin-bottom: 5px;
 }
 
 .results-wrapper:hover {
@@ -215,20 +226,14 @@ body {
     position: relative;
 }
 
-.results:not(:empty) {
-    border-top: 2px solid;
-}
-
 .results > li {
-    padding: 5px 10px 10px 10px;
-    border: 2px solid;
-    border-top: 0;
+    border-radius: 8px;
     position: relative;
 }
 
 .results .element {
     font-size: 2em;
-    padding: 8px 0 8px 0px;
+    padding: 8px 10px 8px 10px;
     display: block;
 }
 
@@ -242,6 +247,8 @@ body {
     padding: 10px 10px 10px 25px;
     line-height: 1.5em;
     position: relative;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .styles li {
@@ -263,7 +270,7 @@ body {
     height: 20px;
     width: 2px;
     position: absolute;
-    right: calc(100% + 22px);
+    right: calc(100% + 23px);
     top: 0;
 }
 
@@ -341,30 +348,23 @@ body {
 
 .meta__note {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
     cursor: help;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     text-align: center;
     line-height: 25px;
-}
-
-.meta__note:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-right: 40px solid;
-    border-bottom: 40px solid transparent;
+    border-radius: 100%;
 }
 
 .meta__note > span {
     position: relative;
 }
 
-.obsolete .meta__note {
+.obsolete div.meta__note {
     color: #de1818;
+    background: #ffbdc9;
 }
 
 .note__tooltip {
@@ -424,19 +424,19 @@ body {
 }
 
 .actions-wrapper {
-    margin-bottom: 2em;
-    height: 85px;
-}
-
-.actions-wrapper .actions {
     transition: .5s;
     position: relative;
     top: 0;
     left: 0;
     right: 0;
-    margin: auto;
     width: 100%;
+    margin-bottom: 2em;
+    height: auto;
+}
+
+.actions {
     max-width: 750px;
+    margin: auto;
 }
 
 .search {
@@ -592,6 +592,7 @@ body {
     position: fixed;
     right: 1em;
     bottom: 1em;
+    transition: .3s;
 }
 
 .sources__tooltip {
@@ -663,18 +664,18 @@ body {
     pointer-events: initial;
 }
 
-.u-scrollDown .actions-wrapper .actions,
-.u-scrollUp .actions-wrapper .actions {
+.u-scrollDown .actions-wrapper,
+.u-scrollUp .actions-wrapper {
     z-index: 9;
     padding-top: 15px;
 }
 
-.u-scrollDown .actions-wrapper .actions {
+.u-scrollDown .actions-wrapper {
     position: absolute;
     top: -200px;
 }
 
-.u-scrollUp .actions-wrapper .actions {
+.u-scrollUp .actions-wrapper {
     position: fixed;
     top: 0;
     transition: none;
@@ -686,8 +687,12 @@ body {
 }
 
 @media(max-width: 768px) {
+
+    .content-wrapper {
+        max-width: 80%;
+    }
     
-    .results {
+    /* .results {
         grid-template-columns: repeat(4, minmax(100px, 1fr));
         grid-auto-rows: 185px;
     }
@@ -711,6 +716,6 @@ body {
         top: 0;
         left: 0;
         grid-gap: 2px;
-    }
+    } */
     
 }

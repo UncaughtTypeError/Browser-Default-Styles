@@ -7,6 +7,7 @@
     --dark-medium-color: #3a3939;
     --dark-hard-color: #202225;
     --dark-boxShadow-color: #171717;
+    --dark-subtle-font: #5a5a5a;
 }
 
 .darkmode--activated ::selection {
@@ -72,13 +73,13 @@ div.darkmode-layer {
 
 .darkmode--activated .u-tooltip {
     background: var(--dark-medium-color);
-    box-shadow: 0 0 3px 1px var(--dark-boxShadow-color);
+    box-shadow: 0 3px 5px 0 var(--dark-boxShadow-color);
     color: var(--dark-primary-color);
 }
 
 .darkmode--activated .u-tooltip__arrow:before {
     background: var(--dark-medium-color);
-    box-shadow: 0 0 3px 1px var(--dark-boxShadow-color);
+    box-shadow: 0 3px 5px 0 var(--dark-boxShadow-color);
 }
 
 /* || General */
@@ -90,8 +91,9 @@ div.darkmode-layer {
     border-color: var(--dark-soft-color);
 }
 
-.darkmode--activated .meta__note:before {
-    border-right-color: var(--dark-hard-color);
+.darkmode--activated .meta__note {
+    background: var(--dark-soft-color);
+    color: var(--dark-subtle-font);
 }
 
 .darkmode--activated .styles {
@@ -103,9 +105,14 @@ div.darkmode-layer {
     border-color: var(--dark-soft-color);
 }
 
+.darkmode--activated .results-meta {
+    color: var(--dark-subtle-font);
+}
+
 .darkmode--activated .results > li {
     border-color: var(--dark-hard-color);
     background: var(--dark-medium-color);
+    box-shadow: 1px 1px 10px var(--dark-boxShadow-color);
 }
 
 .darkmode--activated .results:not(:empty) {
@@ -147,9 +154,9 @@ div.darkmode-layer {
     color: var(--dark-accent-color);
 }
 
-.darkmode--activated.u-scrollUp .actions-wrapper .actions {
+.darkmode--activated.u-scrollUp .actions-wrapper {
     background: var(--dark-soft-color);
-    box-shadow: 0 45px 15px -45px var(--dark-boxShadow-color);
+    box-shadow: 1px 1px 3px var(--dark-boxShadow-color);
 }
 
 .darkmode--activated .header h1 span {
@@ -166,4 +173,12 @@ div.darkmode-layer {
 
 .darkmode--activated .compatibility span span:first-child svg {
     color: var(--dark-secondary-color);
+}
+
+.darkmode--activated .sources {
+    color: var(--dark-subtle-font)
+}
+
+.darkmode--activated .sources:hover {
+    color: var(--dark-primary-color);
 }

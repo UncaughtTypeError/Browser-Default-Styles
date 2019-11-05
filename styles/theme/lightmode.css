@@ -7,6 +7,7 @@
     --light-medium-color: #f8f8f8;
     --light-hard-color: #f1f1f1;
     --light-boxShadow-color: #c7c7c7;
+    --light-subtle-font: #b1b1b1;
 }
 
 ::selection {
@@ -17,7 +18,7 @@
 }
 
 body {
-    color: var(--light-primary-color);
+    color: var(--light-primary-color);    
 }
 
 a:visited {
@@ -65,13 +66,13 @@ body:not(.darkmode--activated) .u-light--hide {
 
 .u-tooltip {
     background: var(--light-soft-color);
-    box-shadow: 0 0 3px 1px var(--light-boxShadow-color);
+    box-shadow: 0 3px 5px 0 var(--light-boxShadow-color);
     color: var(--light-secondary-color);
 }
 
 .u-tooltip__arrow:before {
     background: var(--light-soft-color);
-    box-shadow: 0 0 3px 1px var(--light-boxShadow-color);
+    box-shadow: 0 3px 5px 0 var(--light-boxShadow-color);
 }
 
 /* || General */
@@ -83,8 +84,9 @@ body:not(.darkmode--activated) .u-light--hide {
     border-color: var(--light-hard-color);
 }
 
-.meta__note:before {
-    border-right-color: var(--light-hard-color);
+.meta__note {
+    background: var(--light-hard-color);
+    color: var(--light-subtle-font);
 }
 
 .styles {
@@ -96,9 +98,14 @@ body:not(.darkmode--activated) .u-light--hide {
     border-color: var(--light-soft-color);
 }
 
+.results-meta {
+    color: var(--light-subtle-font);
+}
+
 .results > li {
     border-color: var(--light-hard-color);
     background: var(--light-soft-color);
+    box-shadow: 1px 1px 10px var(--light-boxShadow-color);
 }
 
 .results:not(:empty) {
@@ -135,9 +142,9 @@ body:not(.darkmode--activated) .u-light--hide {
     color: var(--light-accent-color);
 }
 
-.u-scrollUp .actions-wrapper .actions {
+.u-scrollUp .actions-wrapper {
     background: var(--light-soft-color);
-    box-shadow: 0 45px 15px -45px var(--light-boxShadow-color);
+    box-shadow: 1px 1px 3px var(--light-boxShadow-color);
 }
 
 .header h1 span {
@@ -154,4 +161,12 @@ body:not(.darkmode--activated) .u-light--hide {
 
 .compatibility span span:first-child svg {
     color: var(--light-secondary-color);
+}
+
+.sources {
+    color: var(--light-subtle-font)
+}
+
+.sources:hover {
+    color: var(--light-primary-color);
 }
