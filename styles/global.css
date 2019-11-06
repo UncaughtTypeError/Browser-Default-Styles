@@ -83,6 +83,35 @@ body {
     line-height: normal;
     z-index: 1;
     pointer-events: none;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+}
+
+.u-tooltip:before, 
+.u-tooltip:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    top:0;
+    bottom:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+.u-tooltip:before {
+    left: 100%;
+    right: 100%;
+}
+
+.u-tooltip:after {
+    -webkit-transform:skew(8deg) rotate(3deg);
+    -moz-transform:skew(8deg) rotate(3deg);
+    -ms-transform:skew(8deg) rotate(3deg);
+    -o-transform:skew(8deg) rotate(3deg);
+    transform:skew(8deg) rotate(3deg);
+    right: 100%;
+    left: auto;
 }
 
 .u-tooltip__arrow {
@@ -131,6 +160,7 @@ body {
     height: 15px;
     pointer-events: none;
     transition: .08s;
+    box-shadow: 0 0px 1px 0 rgba(0,0,0,0.8);
 }
 
 .u-tooltip-parent {
@@ -229,6 +259,35 @@ body {
 .results > li {
     border-radius: 8px;
     position: relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+}
+
+.results > li:before, 
+.results > li:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    top:0;
+    bottom:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+
+.results > li:before {
+    left:10px;
+    right:10px;
+}
+
+.results > li:after {
+    -webkit-transform:skew(8deg) rotate(3deg);
+    -moz-transform:skew(8deg) rotate(3deg);
+    -ms-transform:skew(8deg) rotate(3deg);
+    -o-transform:skew(8deg) rotate(3deg);
+    transform:skew(8deg) rotate(3deg);
+    right: 10px;
+    left: auto;
 }
 
 .results .element {
@@ -370,11 +429,12 @@ body {
 .note__tooltip {
     bottom: 100%;
     transform: translateX(-50%);
+    left: 50%;
     width: 150px;
 }
 
 .u-tooltip-parent:hover .note__tooltip {
-    bottom: calc(100% + 15px);
+    bottom: calc(100% + 12px);
     pointer-events: initial;
 }
 
@@ -679,6 +739,33 @@ body {
     position: fixed;
     top: 0;
     transition: none;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
+}
+
+.u-scrollUp .actions-wrapper:before, 
+.u-scrollUp .actions-wrapper:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    top:0;
+    bottom:0;
+}
+
+.u-scrollUp .actions-wrapper:before {
+    left: 0;
+    right: 0;
+}
+
+.u-scrollUp .actions-wrapper:after {
+    -webkit-transform:skew(8deg) rotate(3deg);
+    -moz-transform:skew(8deg) rotate(3deg);
+    -ms-transform:skew(8deg) rotate(3deg);
+    -o-transform:skew(8deg) rotate(3deg);
+    transform:skew(8deg) rotate(3deg);
+    right: 0;
+    left: auto;
 }
 
 .u-scrollUp .actions-wrapper .actions > div {

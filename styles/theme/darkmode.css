@@ -73,13 +73,18 @@ div.darkmode-layer {
 
 .darkmode--activated .u-tooltip {
     background: var(--dark-medium-color);
-    box-shadow: 0 3px 5px 0 var(--dark-boxShadow-color);
     color: var(--dark-primary-color);
+}
+
+.darkmode--activated .u-tooltip:before, 
+.darkmode--activated .u-tooltip:after {
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
 .darkmode--activated .u-tooltip__arrow:before {
     background: var(--dark-medium-color);
-    box-shadow: 0 3px 5px 0 var(--dark-boxShadow-color);
 }
 
 /* || General */
@@ -112,7 +117,13 @@ div.darkmode-layer {
 .darkmode--activated .results > li {
     border-color: var(--dark-hard-color);
     background: var(--dark-medium-color);
-    box-shadow: 1px 1px 10px var(--dark-boxShadow-color);
+}
+
+.darkmode--activated .results > li:before, 
+.darkmode--activated .results > li:after {
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 .darkmode--activated .results:not(:empty) {
@@ -156,7 +167,13 @@ div.darkmode-layer {
 
 .darkmode--activated.u-scrollUp .actions-wrapper {
     background: var(--dark-soft-color);
-    box-shadow: 1px 1px 3px var(--dark-boxShadow-color);
+}
+
+.darkmode--activated.u-scrollUp .actions-wrapper:before, 
+.darkmode--activated.u-scrollUp .actions-wrapper:after {
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 .darkmode--activated .header h1 span {

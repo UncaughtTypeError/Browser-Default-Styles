@@ -66,13 +66,18 @@ body:not(.darkmode--activated) .u-light--hide {
 
 .u-tooltip {
     background: var(--light-soft-color);
-    box-shadow: 0 3px 5px 0 var(--light-boxShadow-color);
     color: var(--light-secondary-color);
+}
+
+.u-tooltip:before, 
+.u-tooltip:after {
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
 .u-tooltip__arrow:before {
     background: var(--light-soft-color);
-    box-shadow: 0 3px 5px 0 var(--light-boxShadow-color);
 }
 
 /* || General */
@@ -105,7 +110,13 @@ body:not(.darkmode--activated) .u-light--hide {
 .results > li {
     border-color: var(--light-hard-color);
     background: var(--light-soft-color);
-    box-shadow: 1px 1px 10px var(--light-boxShadow-color);
+}
+
+.results > li:before, 
+.results > li:after {
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 .results:not(:empty) {
@@ -143,8 +154,14 @@ body:not(.darkmode--activated) .u-light--hide {
 }
 
 .u-scrollUp .actions-wrapper {
-    background: var(--light-soft-color);
-    box-shadow: 1px 1px 3px var(--light-boxShadow-color);
+    background: var(--light-soft-color);\
+}
+
+.u-scrollUp .actions-wrapper:before, 
+.u-scrollUp .actions-wrapper:after {
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 .header h1 span {
