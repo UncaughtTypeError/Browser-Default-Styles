@@ -23,7 +23,9 @@ body.darkmode--activated {
     color: var(--dark-primary-color);
 }
 
-.darkmode--activated a:visited {
+.darkmode--activated a,
+.darkmode--activated a:hover,
+a:visited {
     color: var(--dark-accent-color);
 }
 

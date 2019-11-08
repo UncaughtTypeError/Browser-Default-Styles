@@ -21,6 +21,8 @@ body {
     color: var(--light-primary-color);    
 }
 
+a,
+a:hover,
 a:visited {
     color: var(--light-accent-color);
 }
@@ -154,7 +156,7 @@ body:not(.darkmode--activated) .u-light--hide {
 }
 
 .u-scrollUp .actions-wrapper {
-    background: var(--light-soft-color);\
+    background: var(--light-soft-color);
 }
 
 .u-scrollUp .actions-wrapper:before, 
