@@ -762,6 +762,14 @@ a:visited {
     margin-left: 10px;
 }
 
+.info li:not(:last-child):after {
+    content: "\2219";
+    font-size: 2em;
+    line-height: 15px;
+    right: -7px;
+    position: absolute;
+}
+
 /* || Browsers */
 :root {
     --chrome: #eac407;
