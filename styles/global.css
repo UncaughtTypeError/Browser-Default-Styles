@@ -448,11 +448,12 @@ a:visited {
     position: absolute;
     right: 10px;
     top: 45px;
+    display: flex;
     transition: .3s;
 }
 
 .compatibility--visible {
-    top: 22px;
+    top: 18px;
 }
 
 .compatibility > span {
@@ -581,14 +582,10 @@ a:visited {
     margin-top: 5px;
 }
 
-.results-wrapper > div {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(50%, 1fr));
-}
-
-.results-wrapper > div div:nth-child(2) {
-    grid-column: 2 / -1;
-    text-align: right;
+.results-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .filter-results-label svg {
@@ -733,7 +730,7 @@ a:visited {
 .u-scrollDown .actions-wrapper,
 .u-scrollUp .actions-wrapper {
     z-index: 9;
-    padding-top: 15px;
+    padding: 15px 10px 15px 10px;
 }
 
 .u-scrollDown .actions-wrapper {
@@ -779,15 +776,11 @@ a:visited {
     z-index: 10;
 }
 
-@media(max-width: 1050px) {
-
+.u-scrollUp .actions-wrapper .filter {
+    margin-bottom: 0;
 }
 
-@media(max-width: 768px) {
-
-    .content-wrapper {
-        max-width: 80%;
-    }
+@media(max-width: 1050px) {
 
     .meta {
         display: block;
@@ -798,6 +791,11 @@ a:visited {
         display: block;
         height: 0;
     }
+    
+    li:not(.obsolete) .meta__note,
+    li .meta__note .note__tooltip {
+        display: none;
+    }
 
     .description__tooltip {
         max-width: calc(100% + 10px);
@@ -807,8 +805,28 @@ a:visited {
         height: 15px;
     }
     
+    .compatibility {
+        position: relative;
+        top: 35px;
+        right: 0;
+        line-height: normal;
+        margin-bottom: -10px;
+    }
+    
     .compatibility--visible {
-        top: 43px;
+        top: 0;
+    }
+
+}
+
+@media(max-width: 768px) {
+
+    .content-wrapper {
+        max-width: 80%;
+    }
+
+    .header h1 {
+        font-size: 2.2em;
     }
     
     .element__name {
@@ -817,15 +835,16 @@ a:visited {
         overflow: hidden;
         width: 100%;
     }
+
+    .filter-results-label {
+        order: 2;
+    }
     
 }
 
 @media(max-width: 580px) {
     
-    .compatibility--visible,
-    .meta__description,
-    li:not(.obsolete) .meta__note,
-    li .meta__note .note__tooltip {
+    .meta__description {
         display: none;
     }
 
@@ -835,9 +854,34 @@ a:visited {
         margin: auto;
     }
     
+    .header h1 {
+        position: relative;
+    }
+
+    .header h1 span {
+        position: absolute;
+        top: 0;
+    }
+    
+    .header h1 span:first-of-type {
+        right: 100%;
+    }
+    
+    .header h1 span:last-of-type {
+        left: 100%;
+    }
+    
+    .header h4 {
+        font-size: 1em;
+    }
+    
 }
 
-@media(max-width: 400px) {
+@media(max-width: 450px) {
+    
+    .compatibility {
+        display: none;
+    }
     
     .browsers svg {
         margin-left: -2px;
