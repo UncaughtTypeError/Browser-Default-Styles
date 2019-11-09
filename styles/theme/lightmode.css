@@ -125,8 +125,8 @@ body:not(.darkmode--activated) .u-light--hide {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-.results:not(:empty) {
-    border-color: var(--light-hard-color);
+.results:before {
+    color: var(--light-subtle-font);
 }
 
 .results .element {

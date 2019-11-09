@@ -132,8 +132,8 @@ div.darkmode-layer {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-.darkmode--activated .results:not(:empty) {
-    border-color: var(--dark-hard-color);
+.darkmode--activated .results:before {
+    color: var(--dark-subtle-font);
 }
 
 .darkmode--activated .results-wrapper {
