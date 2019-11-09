@@ -87,6 +87,10 @@ body:not(.darkmode--activated) .u-light--hide {
     background: var(--light-hard-color);
 }
 
+.content-wrapper:before {
+    color: var(--light-subtle-font);
+}
+
 .description__tooltip__use {
     border-color: var(--light-hard-color);
 }
@@ -166,10 +170,6 @@ body:not(.darkmode--activated) .u-light--hide {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-.header h1 span {
-    color: var(--light-accent-color);
-}
-
 .compatibility > span {
     background: var(--light-hard-color);
 }
@@ -188,4 +188,12 @@ body:not(.darkmode--activated) .u-light--hide {
 
 .sources:hover {
     color: var(--light-primary-color);
+}
+
+.footer-wrapper {
+    background: var(--light-soft-color);
+}
+
+.info li {
+    color: var(--light-subtle-font);
 }

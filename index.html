@@ -38,7 +38,7 @@
         <div class="header-wrapper">
             <header class="header">
                 <hgroup class="u-center">
-                    <h1><span>{</span> Browser Default Styles <span>}</span></h1>
+                    <h1><span class="u-accentColor">{</span> Browser Default Styles <span class="u-accentColor">}</span></h1>
                     <h4>/* Search for any element to check its browser default styles */</h4>
                     <noscript>To use Browser Default Styles, please enable JavaScript</noscript>
                 </hgroup>
@@ -46,6 +46,9 @@
         </div>
         <div class="actions-wrapper">
             <div class="actions">
+                <div class="logo">
+                    <span class="u-accentColor">{</span> Browser Default Styles <span class="u-accentColor">}</span>
+                </div>
                 <div class="search u-hide">
                     <label for="search" class="search__label u-hide">Search for an element to check .</label>
                     <input type="search" id="search" name="search" class="search__field" placeholder="Search for an element." aria-label="Search for an element." />
@@ -118,26 +121,40 @@
             <ul class="results"></ul>
         </div>
         <div class="footer-wrapper">
-                <footer class="footer">
-                    <div class="to-top"><i class="fas fa-chevron-up"></i></div>
-                    <div class="sources u-tooltip-parent">
-                        Sources
-                        <div class="sources__tooltip u-tooltip">
-                            <strong class="u-primary-color">.sources</strong> {
-                            <ul>
-                                <li>blink: <a href="https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css" rel="nofollow" target="_blank">chromium.googlesource.com</a>;</li>
-                                <li>webkit: <a href="https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css" rel="nofollow" target="_blank">trac.webkit.org</a>;</li>
-                                <li>firefox: <a href="https://dxr.mozilla.org/mozilla-central/source/layout/style/res/html.css" rel="nofollow" target="_blank">dxr.mozilla.org</a>;</li>
-                                <li>trident: <a href="https://web.archive.org/web/20170122223926/http://www.iecss.com/" rel="nofollow" target="_blank">www.iecss.com</a>;</li>
-                                <li>standards: <a href="https://html.spec.whatwg.org/multipage/rendering.html" rel="nofollow" target="_blank">html.spec.whatwg.org</a>;</li>
-                                <li>elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" rel="nofollow" target="_blank">developer.mozilla.org</a>;</li>
-                                <li>-browser-compatibility-data: <a href="https://github.com/mdn/browser-compat-data" rel="nofollow" target="_blank">github.com/mdn/browser-compat-data</a>;</li>
-                            </ul>
-                            }
-                            <div class="u-tooltip__arrow u-tooltip__arrow--right u-tooltip__arrow--bottom"></div>
-                        </div>
+            <footer class="footer">
+                <div class="footer__left to-top"><i class="fas fa-chevron-up"></i></div>
+                <div class="footer__mid info">
+                    <div class="u-center"><span class="u-accentColor">{</span> Browser Default Styles <span class="u-accentColor">}</span></div>
+                    <div class="u-center">
+                        <ul>
+                            <li>Source code on <i class="fab fa-github"></i> <a href="https://github.com/UncaughtTypeError/Browser-Default-Styles" target="_blank">Github</a></li>
+                            <li>Hosted on, and deployed by Netlify
+                                <a href="https://netlify.com/" target="_blank">
+                                    <img class="u-light--hide" width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg"/>
+                                    <img class="u-dark--hide" width="80" src="https://www.netlify.com/img/global/badges/netlify-light.svg"/>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </footer>
+                </div>
+                <div class="footer__right sources u-tooltip-parent">
+                    Sources
+                    <div class="sources__tooltip u-tooltip">
+                        <strong class="u-primary-color">.sources</strong> {
+                        <ul>
+                            <li>blink: <a href="https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css" rel="nofollow" target="_blank">chromium.googlesource.com</a>;</li>
+                            <li>webkit: <a href="https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css" rel="nofollow" target="_blank">trac.webkit.org</a>;</li>
+                            <li>firefox: <a href="https://dxr.mozilla.org/mozilla-central/source/layout/style/res/html.css" rel="nofollow" target="_blank">dxr.mozilla.org</a>;</li>
+                            <li>trident: <a href="https://web.archive.org/web/20170122223926/http://www.iecss.com/" rel="nofollow" target="_blank">www.iecss.com</a>;</li>
+                            <li>standards: <a href="https://html.spec.whatwg.org/multipage/rendering.html" rel="nofollow" target="_blank">html.spec.whatwg.org</a>;</li>
+                            <li>elements: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" rel="nofollow" target="_blank">developer.mozilla.org</a>;</li>
+                            <li>-browser-compatibility-data: <a href="https://github.com/mdn/browser-compat-data" rel="nofollow" target="_blank">github.com/mdn/browser-compat-data</a>;</li>
+                        </ul>
+                        }
+                        <div class="u-tooltip__arrow u-tooltip__arrow--right u-tooltip__arrow--bottom"></div>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
     <script type="application/ld+json">
