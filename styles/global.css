@@ -844,14 +844,13 @@ a:visited {
 }
 
 .u-scrollDown .actions-wrapper {
-    position: absolute;
+    position: fixed;
     top: -200px;
 }
 
 .u-scrollUp .actions-wrapper {
     position: fixed;
     top: 0;
-    transition: none;
     -webkit-box-shadow:0 -1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
     -moz-box-shadow:0 -1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
     box-shadow:0 -1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
@@ -988,12 +987,13 @@ a:visited {
     .footer-wrapper {
         z-index: 1;
         transition: .3s;
-        bottom: 0;
+        bottom: -100px;
         left: 0;
         right: 0;
     }
     
     .u-scrollDown .footer-wrapper {
+        bottom: 0;
         position: fixed;
         -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
         -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.0) inset;
@@ -1075,10 +1075,21 @@ a:visited {
         display: none;
     }
 
-    .u-scrollUp .actions-wrapper {
+    .actions-wrapper {
         top: auto;
-        bottom: 0;
         margin: auto;
+    }
+
+    .u-scrollDown .actions-wrapper {
+        position: fixed;
+        bottom: -500px;
+        top: auto;
+    }
+
+    .u-scrollUp .actions-wrapper {
+        position: fixed;
+        bottom: 0;
+        top: auto;
     }
     
     .header h1 {
