@@ -539,8 +539,8 @@ a:visited {
 
 .actions-wrapper {
     transition: .5s;
-    position: relative;
-    top: 0;
+    position: static;
+    top: -200px;
     left: 0;
     right: 0;
     width: 100%;
