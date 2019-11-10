@@ -768,8 +768,9 @@ a:visited {
 .info ul {
     display: flex;
     padding: 0;
-    margin: 0;
+    margin: 0 0 -10px 0;
     list-style: none;
+    min-height: 35px;
 }
 
 .info li {
