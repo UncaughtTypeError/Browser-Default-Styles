@@ -206,6 +206,6 @@ div.darkmode-layer {
     background: var(--dark-soft-color);
 }
 
-.darkmode--activated .info li {
+.darkmode--activated .info {
     color: var(--dark-subtle-font);
 }

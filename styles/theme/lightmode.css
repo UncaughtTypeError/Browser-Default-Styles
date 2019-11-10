@@ -194,6 +194,6 @@ body:not(.darkmode--activated) .u-light--hide {
     background: var(--light-soft-color);
 }
 
-.info li {
+.info {
     color: var(--light-subtle-font);
 }
