@@ -54,6 +54,7 @@ a:visited {
 
 .u-center {
     text-align: center;
+    isolation: isolate;
 }
 
 .u-button {
