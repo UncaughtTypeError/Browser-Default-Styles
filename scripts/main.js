@@ -100,18 +100,38 @@ const showFilter = () => {
 /* Filter by Search */
 const findSearchMatches = (elementToMatch, arrayToFilter) => {
     return arrayToFilter.filter(htmlElement => {
-        const regex = new RegExp(elementToMatch, 'gi');
+        let regex = new RegExp(elementToMatch, 'gi');
         return htmlElement.element.match(regex);
     });
 }
 
-const displaySearchMatches = (value) => {
+const cleanInput = (...args) => {
+    let [event,value] = args;
+    
+    // get the input value
+    if (event.clipboardData || window.clipboardData) { 
+        // from clipboard
+        value = (event.clipboardData || window.clipboardData).getData('text');
+        event.preventDefault();
+    } else { 
+        // from input field value
+        value = event.target.value;
+    }
+    value = value.replace(/[^a-zA-Z]/g, ""); // clean input
+    event.target.value = value; // update input field with cleaned value
+    return value; // return cleaned value to search against
+}
+
+const displaySearchMatches = (...args) => {
+    let [event,value] = args;
+
+    value = cleanInput(event,value);
 
     const   matchArray = findSearchMatches(value, cssDefaults),
             html = matchArray.map(htmlElement => {
 
         const   regex = new RegExp(value, 'gi'),
-                name = htmlElement.element.replace(regex, `<span class="u-highlight">${value}</span>`),
+                name = htmlElement.element.replace(regex, `<span class="u-highlight">${value.toLowerCase()}</span>`),
                 obsolete = htmlElement.obsolete,
                 styles = getStyles(htmlElement),
                 description = getMeta(htmlElement),
@@ -134,50 +154,39 @@ const displaySearchMatches = (value) => {
 }
 
 const   searchInput = document.querySelector('.search__field'),
-        searchResults = document.querySelector('.results');
+        searchResults = document.querySelector('.results'),
+        searchTimeout = {timeout: null};
 
 const searchHandler = (event) => {
-    let type = event.type,
-        value;
 
-    const cleanInput = () => {
-        // get the input value
-        if (event.clipboardData || window.clipboardData) { 
-            // from clipboard
-            value = (event.clipboardData || window.clipboardData).getData('text');
-            event.preventDefault();
-        } else { 
-            // from input field value
+    clearTimeout(searchTimeout.timeout);
+
+    searchTimeout.timeout = setTimeout(function () {
+        let type = event.type,
             value = event.target.value;
-        }
-        value = value.replace(/\s/g, ""); // clean input
-        event.target.value = value; // update input field with cleaned value
-        return value; // return cleaned value to search against
-    }
 
-    switch(type) {
-        case 'keyup' :
-        case 'paste' :
-            value = cleanInput();
-            if (value) {
-                displaySearchMatches(value);
-            }
-            break;
-        case 'keydown' :
-            if (event.keyCode === 32 || event.code === 'Space') {
-                event.preventDefault();
-            }
-            value = cleanInput();
-            if (value) {
-                displaySearchMatches(value);
-            }
-            break;
-        default :
-            value = cleanInput();
-            if (value) {
-                displaySearchMatches(value);
-            }
-    }
+        switch(type) {
+            case 'keyup' :
+            case 'keydown' :
+                if (event.keyCode === 32 || event.code === 'Space') {
+                    event.preventDefault();
+                }
+                if (value) {
+                    displaySearchMatches(event,value);
+                }
+                break;
+            case 'paste' :
+                value = cleanInput(event,value);
+                if (value) {
+                    displaySearchMatches(event,value);
+                }
+                break;
+            default :
+                if (value) {
+                    displaySearchMatches(event,value);
+                }
+        }
+    }, 500);
 }
 
 searchInput.addEventListener('keyup', searchHandler);
