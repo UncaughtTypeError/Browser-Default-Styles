@@ -254,6 +254,7 @@ a:visited {
 
 .header {
     isolation: isolate;
+    position: relative;
 }
 
 .header h1 {
@@ -265,7 +266,7 @@ a:visited {
 
 .header h4 {
     opacity: .5;
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: normal;
 }
 
@@ -347,6 +348,7 @@ a:visited {
     font-size: 2em;
     padding: 8px 10px 8px 10px;
     display: block;
+    position: relative;
 }
 
 .results .element__name {
@@ -495,13 +497,13 @@ a:visited {
 .compatibility {
     position: absolute;
     right: 10px;
-    top: 45px;
+    bottom: -10px;
     display: flex;
     transition: .3s;
 }
 
 .compatibility--visible {
-    top: 35px;
+    bottom: 0;
 }
 
 .compatibility > span {
