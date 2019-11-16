@@ -6,7 +6,7 @@
     --light-soft-color: #ffffff;
     --light-medium-color: #f8f8f8;
     --light-hard-color: #f1f1f1;
-    --light-boxShadow-color: #c7c7c7;
+    --light-boxShadow-color: #e4e4e4;
     --light-subtle-font: #b1b1b1;
 }
 
@@ -106,7 +106,7 @@ body:not(.darkmode--activated) .u-light--hide {
 }
 
 .styles li {
-    border-color: var(--light-soft-color);
+    border-color: var(--light-boxShadow-color);
 }
 
 .results-meta {
