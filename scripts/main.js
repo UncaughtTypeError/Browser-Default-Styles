@@ -126,17 +126,23 @@ const setStandby = (condition) => {
     let icon    = document.querySelector('.search svg'),
         search  = document.querySelector('.search');
 
-    if(icon && condition) { // icon already exists, do not append another
-        return;
-    }
-
     if(condition) {
+
+        if(icon) { // icon already exists, do not append another
+            return;
+        }
+
         icon = document.createElement('i');
         icon.classList.add('fas', 'fa-circle-notch', 'fa-spin');
         search.appendChild(icon);
     } else {
         icon = document.querySelector('.search svg');
-        icon.parentNode.removeChild(icon);
+
+        if(!icon) { // icon does not exist, do not attempt to remove
+            return;
+        } else {
+            icon.parentNode.removeChild(icon);
+        }
     }
 }
 
@@ -169,6 +175,7 @@ const displaySearchMatches = (...args) => {
     showFilter();
     setFilterResultsLabel();
     setEngineStyleFilters();
+    setStandby(false);
 }
 
 const   searchInput = document.querySelector('.search__field'),
