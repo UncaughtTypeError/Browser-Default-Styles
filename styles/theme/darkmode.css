@@ -158,6 +158,10 @@ div.darkmode-layer {
     background-color: var(--dark-accent-color);
 }
 
+.darkmode--activated .search svg {
+    color: var(--dark-subtle-font);
+}
+
 .darkmode--activated .filter__button {
     border-color: var(--dark-soft-color);
 }

@@ -147,6 +147,10 @@ body:not(.darkmode--activated) .u-light--hide {
     background-color: var(--light-accent-color);
 }
 
+.search svg {
+    color: var(--light-subtle-font);
+}
+
 .filter__button {
     border-color: var(--light-soft-color);
 }

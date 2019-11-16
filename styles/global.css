@@ -560,6 +560,14 @@ a:visited {
     position: relative;
 }
 
+.search svg {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 .search__field {
     transition: .2s ease;
     border: 0;

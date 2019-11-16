@@ -122,6 +122,24 @@ const cleanInput = (...args) => {
     return value; // return cleaned value to search against
 }
 
+const setStandby = (condition) => {
+    let icon    = document.querySelector('.search svg'),
+        search  = document.querySelector('.search');
+
+    if(icon && condition) { // icon already exists, do not append another
+        return;
+    }
+
+    if(condition) {
+        icon = document.createElement('i');
+        icon.classList.add('fas', 'fa-circle-notch', 'fa-spin');
+        search.appendChild(icon);
+    } else {
+        icon = document.querySelector('.search svg');
+        icon.parentNode.removeChild(icon);
+    }
+}
+
 const displaySearchMatches = (...args) => {
     let [event,value] = args;
 
@@ -159,39 +177,22 @@ const   searchInput = document.querySelector('.search__field'),
 
 const searchHandler = (event) => {
 
+    setStandby(true);
     clearTimeout(searchTimeout.timeout);
 
-    searchTimeout.timeout = setTimeout(function () {
-        let type = event.type,
-            value = event.target.value;
+    searchTimeout.timeout = setTimeout(() => {
+        setStandby(false);
 
-        switch(type) {
-            case 'keyup' :
-            case 'keydown' :
-                if (event.keyCode === 32 || event.code === 'Space') {
-                    event.preventDefault();
-                }
-                if (value) {
-                    displaySearchMatches(event,value);
-                }
-                break;
-            case 'paste' :
-                value = cleanInput(event,value);
-                if (value) {
-                    displaySearchMatches(event,value);
-                }
-                break;
-            default :
-                if (value) {
-                    displaySearchMatches(event,value);
-                }
+        let value = event.target.value;
+
+        if (value) {
+            displaySearchMatches(event,value);
         }
+
     }, 500);
 }
 
-searchInput.addEventListener('keyup', searchHandler);
 searchInput.addEventListener('keydown', searchHandler);
-searchInput.addEventListener('paste', searchHandler);
 
 /* Filter by Rendering Engine */
 const findSelectMatches = (elementToMatch, arrayToFilter) => {
