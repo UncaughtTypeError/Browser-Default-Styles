@@ -194,6 +194,11 @@ const searchHandler = (event) => {
 
         if (value) {
             displaySearchMatches(event,value);
+        } else {
+            let results = document.querySelectorAll('.results li');
+            if(results) {
+                results.forEach(result => result.remove());
+            }
         }
 
     }, 500);
