@@ -99,9 +99,9 @@ const showFilter = () => {
 
 /* Filter by Search */
 const findSearchMatches = (elementToMatch, arrayToFilter) => {
+
     return arrayToFilter.filter(htmlElement => {
         let regex = new RegExp(escapeRegExp(elementToMatch), 'gi');
-        console.log(regex);
         return htmlElement.element.match(regex);
     });
 }
@@ -110,6 +110,11 @@ const findSearchMatches = (elementToMatch, arrayToFilter) => {
 // see: https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex/6969486#6969486
 const escapeRegExp = (str) => {
     return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+// Remove whitespaces
+const removeWhiteSpace = (str) => {
+    return str.replace(/\s/g, "");
 }
 
 const setStandby = (condition) => {
@@ -138,6 +143,8 @@ const setStandby = (condition) => {
 
 const displaySearchMatches = (...args) => {
     let [event,value] = args;
+
+    value = removeWhiteSpace(value);
 
     const   matchArray = findSearchMatches(value, cssDefaults),
             html = matchArray.map(htmlElement => {
