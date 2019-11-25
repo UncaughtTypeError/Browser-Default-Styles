@@ -100,26 +100,16 @@ const showFilter = () => {
 /* Filter by Search */
 const findSearchMatches = (elementToMatch, arrayToFilter) => {
     return arrayToFilter.filter(htmlElement => {
-        let regex = new RegExp(elementToMatch, 'gi');
+        let regex = new RegExp(escapeRegExp(elementToMatch), 'gi');
+        console.log(regex);
         return htmlElement.element.match(regex);
     });
 }
 
-const cleanInput = (...args) => {
-    let [event,value] = args;
-    
-    // get the input value
-    if (event.clipboardData || window.clipboardData) { 
-        // from clipboard
-        value = (event.clipboardData || window.clipboardData).getData('text');
-        event.preventDefault();
-    } else { 
-        // from input field value
-        value = event.target.value;
-    }
-    value = value.replace(/[^a-zA-Z]/g, ""); // clean input
-    event.target.value = value; // update input field with cleaned value
-    return value; // return cleaned value to search against
+// Escape special characters
+// see: https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex/6969486#6969486
+const escapeRegExp = (str) => {
+    return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
 }
 
 const setStandby = (condition) => {
@@ -149,12 +139,10 @@ const setStandby = (condition) => {
 const displaySearchMatches = (...args) => {
     let [event,value] = args;
 
-    value = cleanInput(event,value);
-
     const   matchArray = findSearchMatches(value, cssDefaults),
             html = matchArray.map(htmlElement => {
 
-        const   regex = new RegExp(value, 'gi'),
+        const   regex = new RegExp(escapeRegExp(value), 'gi'),
                 name = htmlElement.element.replace(regex, `<span class="u-highlight">${value.toLowerCase()}</span>`),
                 obsolete = htmlElement.obsolete,
                 styles = getStyles(htmlElement),
