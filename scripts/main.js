@@ -190,9 +190,11 @@ const searchHandler = (event) => {
         if (value) {
             displaySearchMatches(event,value);
         } else {
-            let results = document.querySelectorAll('.results li');
+            let results = document.querySelectorAll('.results li'),
+                filterLabel = document.querySelector('.filter-results-label')
             if(results) {
                 results.forEach(result => result.remove());
+                filterLabel.firstElementChild.innerHTML = `Showing 0 result(s): `;
             }
         }
 
