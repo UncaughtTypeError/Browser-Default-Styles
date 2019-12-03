@@ -1,14 +1,14 @@
 {
-  "name": "default-element-styles-vinalla",
+  "name": "default-element-styles",
   "version": "1.0.0",
-  "description": "",
+  "description": "A web app that will allow you to search against any element for standardized and default styles from all major rendering engines (WebKit, Blink, Gecko, Trident).",
   "main": "css-defaults.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Nathan G. J. Shepherd",
+  "license": "MIT",
   "dependencies": {
     "http-server": "^0.9.0",
     "mdn-browser-compat-data": "0.0.98"
