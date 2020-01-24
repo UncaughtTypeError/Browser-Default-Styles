@@ -10,7 +10,9 @@
   "author": "Nathan G. J. Shepherd",
   "license": "MIT",
   "dependencies": {
-    "http-server": "^0.12.1",
     "mdn-browser-compat-data": "0.0.98"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.1"
   }
 }
