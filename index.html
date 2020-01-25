@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Browser Default Styles</title>
@@ -33,6 +33,7 @@
     <meta name="msapplication-TileColor" content="#292929">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="service-worker/serviceWorker.js" async></script>
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/theme/darkmode.css" />
     <link rel="stylesheet" href="styles/theme/lightmode.css" />
@@ -136,7 +137,7 @@
                     <div class="u-center"><span class="u-accentColor">{</span> Browser Default Styles <span class="u-accentColor">}</span></div>
                     <div class="u-center">
                         <ul>
-                            <li>Source code on <i class="fab fa-github"></i> <a href="https://github.com/UncaughtTypeError/Browser-Default-Styles" target="_blank" title="Github">Github</a></li>
+                            <li>Source code on <i class="fab fa-github"></i> <a href="https://github.com/UncaughtTypeError/Browser-Default-Styles" target="_blank"  rel="noopener" title="Github">Github</a></li>
                             <li>Hosted on, and deployed by 
                                 <a href="https://netlify.com/" target="_blank" title="Netlify">Netlify 
                                     <img class="u-light--hide" width="80" loading="lazy" alt="Netlify" src="https://www.netlify.com/img/global/badges/netlify-dark.svg"/>
@@ -209,6 +210,5 @@
             "operatingSystem": "All"
         }
     </script>
-    <script src="service-worker/serviceWorker.js" defer></script>
 </body>
 </html>
