@@ -794,6 +794,7 @@ a:visited {
     float: right;
     transform: translateY(-25%);
     margin-left: 10px;
+    max-height: 35px;
 }
 
 .info li:not(:last-child):after {
