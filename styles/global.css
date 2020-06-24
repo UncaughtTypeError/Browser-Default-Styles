@@ -289,18 +289,13 @@ a:visited {
     position: relative;
 }
 
-.results:before {
+.results:empty:before {
     content: "*:empty{...}";
     text-align: center;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
     font-size: 3em;
     line-height: 3em;
     height: 3em;
-    margin: auto;
+    margin: 20px auto;
     pointer-events: none;
     opacity: 0;
     transition: .3s;
