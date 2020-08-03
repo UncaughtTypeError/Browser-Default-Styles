@@ -301,6 +301,7 @@ a:visited {
     transition: .3s;
 }
 
+.results--noMatches:empty:before,
 .results[class*="Styles"]:empty:before {
     opacity: .5;
 }
@@ -774,7 +775,6 @@ a:visited {
 .info ul {
     display: flex;
     padding: 0;
-    margin: 0 0 -10px 0;
     list-style: none;
     min-height: 35px;
 }
