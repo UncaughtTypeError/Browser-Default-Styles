@@ -190,18 +190,29 @@ const searchHandler = (event) => {
         if (value) {
             displaySearchMatches(event,value);
         } else {
-            let results = document.querySelectorAll('.results li'),
-                filterLabel = document.querySelector('.filter-results-label')
+            let results = document.querySelectorAll('.results li');
             if(results) {
                 results.forEach(result => result.remove());
-                filterLabel.firstElementChild.innerHTML = `Showing 0 result(s): `;
             }
+            setFilterResultsLabel();
+            setEngineStyleFilters();
         }
 
     }, 500);
 }
 
 searchInput.addEventListener('keydown', searchHandler);
+
+const urlQuery = () => {
+
+    let value = window.location.hash.substr(1);
+
+    if (value) {
+        displaySearchMatches(null,value);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', urlQuery);
 
 /* Filter by Rendering Engine */
 const findSelectMatches = (elementToMatch, arrayToFilter) => {
@@ -290,7 +301,8 @@ const renderResult = (props) => {
 }
 
 const setFilterResultsLabel = (engine) => {
-    const   filterLabel = document.querySelector('.filter-results-label'),
+    const   results = document.querySelector('.results'),
+            filterLabel = document.querySelector('.filter-results-label'),
             total = countResults();
 
     if(engine) {
@@ -303,6 +315,12 @@ const setFilterResultsLabel = (engine) => {
         results.forEach((result) => {
             result.classList.remove('u-hide');
         });
+    }
+
+    if(total <= 0) {
+        results.classList.add('results--noMatches');
+    } else {
+        results.classList.remove('results--noMatches');
     }
 }
 
@@ -320,6 +338,7 @@ const countResults = () => {
     } else {
         total = results.childElementCount;
     }
+
     return total;
 }
 
