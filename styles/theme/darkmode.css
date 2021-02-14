@@ -1,7 +1,5 @@
 /* || Globals */
 :root {
-    color-scheme: dark;
-    
     --dark-primary-color: #dcddde;
     --dark-accent-color: #45ecb6;
     --dark-secondary-color: #8e9297;
@@ -10,6 +8,10 @@
     --dark-hard-color: #202225;
     --dark-boxShadow-color: #171717;
     --dark-subtle-font: #5a5a5a;
+}
+
+:root .darkmode--activated {
+    color-scheme: dark;
 }
 
 .darkmode--activated ::selection {

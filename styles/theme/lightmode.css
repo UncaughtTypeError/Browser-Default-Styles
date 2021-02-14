@@ -1,7 +1,5 @@
 /* || Globals */
 :root {
-    color-scheme: light;
-
     --light-primary-color: #656565;
     --light-accent-color: #45ecb6;
     --light-secondary-color: #333333;
@@ -10,6 +8,10 @@
     --light-hard-color: #f1f1f1;
     --light-boxShadow-color: #e4e4e4;
     --light-subtle-font: #b1b1b1;
+}
+
+:root body:not(.darkmode--activated) {
+    color-scheme: light;
 }
 
 ::selection {
