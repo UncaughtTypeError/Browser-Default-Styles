@@ -27,6 +27,31 @@ export const cssDefaults = [
         },
     },
     {
+        element: 'html:focus, html:focus-visible',
+        type: ['Main root'],
+        categories: [],
+        use: 'Root element',
+        get description() { // set "lazy"/"memoized" getter - avoid recalculation on subsequent lookups
+            delete this.description;
+            let element = cssDefaults.find(entry => entry.element === 'html');
+            return this.description = element['description'];
+        },
+        obsolete: false,
+        defaults: {       
+        },
+        blink: {
+            outline: 'none',
+        },
+        webkit: {
+            outline: 'none',
+        },
+        gecko: {
+            outlineStyle: 'none',
+        },
+        trident: {
+        },
+    },
+    {
         element: 'base',
         type: ['Document metadata'],
         categories: ['metadata'],
