@@ -15,13 +15,6 @@ body {
     height: auto;
 }
 
-@supports (display: grid) {
-    html, 
-    body {
-        min-height: 100vh;
-    }
-}
-
 html {
     box-sizing: border-box;
 }
@@ -906,7 +899,17 @@ a:visited {
     display: block;
 }
 
-/* || Media Queries */
+/* || Conditional Group Rules */
+
+@supports (display: grid) {
+
+    html,
+    body {
+        min-height: 100vh;
+    }
+}
+
+/* ||| Media Queries */
 @media(max-width: 1580px) {
 
     .u-scrollUp .actions-wrapper .actions .logo {
@@ -1140,4 +1143,18 @@ a:visited {
         margin-left: -2px;
     }
     
+}
+
+/* ||| Media Features */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark light;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light dark;
+    }
 }

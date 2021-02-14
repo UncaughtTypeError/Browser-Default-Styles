@@ -1,5 +1,7 @@
 /* || Globals */
 :root {
+    color-scheme: light;
+
     --light-primary-color: #656565;
     --light-accent-color: #45ecb6;
     --light-secondary-color: #333333;
