@@ -65,6 +65,7 @@
                 </div>
                 <div class="search u-hide">
                     <label for="search" class="search__label u-hide">Element search</label>
+                    <div class="results-shareIcon"></div>
                     <input type="search" id="search" name="search" class="search__field" placeholder="Search for an element..." aria-label="Search for an element..."  autocomplete="off"/>
                     <span></span>
                 </div>
@@ -133,6 +134,7 @@
                 </div>
             </div>
             <ul class="results"></ul>
+            <div class="results-share"></div>
         </div>
         <div class="ads-wrapper">
             <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IK2QE&placement=browserdefaultstylescom" id="_carbonads_js"></script>
@@ -154,7 +156,7 @@
                     margin: 20px auto;
                     display: flex;
                     max-width: 330px;
-                    background-color: hsl(0, 0%, 98%);
+                    background-color: inherit;
                     box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, .1);
                 }
                 #carbonads a {
@@ -228,7 +230,7 @@
                 <div class="footer__right sources u-tooltip-parent">
                     Sources
                     <div class="sources__tooltip u-tooltip">
-                        <strong class="u-primary-color">.sources</strong> {
+                        <strong>.sources</strong> {
                         <ul>
                             <li>blink: <a href="https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css" 
                                 rel="nofollow" 
