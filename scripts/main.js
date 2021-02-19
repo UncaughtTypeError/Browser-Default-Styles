@@ -392,24 +392,23 @@ navigator.permissions.query({name: "clipboard-write"}).then(result => {
     if (result.state == "granted" || result.state == "prompt") {
         const copyUrlToClipboard = (event) => {
             let urlClip                 = event.target.innerText.trim() || event.target.textContent.trim(),
-                tooltip_feedbackTimeout = (state, delay) => {
+                tooltip_feedbackTimeout = (tooltip, state, delay) => {
                     setTimeout(() => {
                         tooltip.classList.remove(`results-share__tooltip--${state}`);
                         tooltip.innerText = '/* Copy */';
                     }, delay);
                 };
 
-            navigator.clipboard.writeText(urlClip).then(function() {
+            navigator.clipboard.writeText(urlClip).then(() => {
                 /* clipboard successfully set */
-                console.log(urlClip);
 
                 let tooltip = document.querySelector('.results-share__tooltip');
                 tooltip.classList.add('results-share__tooltip--success');
                 tooltip.innerText = '/* Copied! */';
 
-                tooltip_feedbackTimeout('success', 3000);
+                tooltip_feedbackTimeout(tooltip, 'success', 3000);
 
-            }, function(error) {
+            }, (error) => {
                 /* clipboard write failed */
                 console.error(error);
 
@@ -417,7 +416,7 @@ navigator.permissions.query({name: "clipboard-write"}).then(result => {
                 tooltip.classList.add('results-share__tooltip--fail');
                 tooltip.innerText = '/* Could not copy (╯°□°)╯︵ ┻━┻ */';
 
-                tooltip_feedbackTimeout('fail', 3000);
+                tooltip_feedbackTimeout(tooltip, 'fail', 3000);
 
             });
 
