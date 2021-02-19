@@ -168,6 +168,8 @@ const displaySearchMatches = (...args) => {
     }
     
     showFilter();
+    setShareLink(value);
+    setUrlFragment(value);
     setFilterResultsLabel();
     setEngineStyleFilters();
     setStandby(false);
@@ -194,6 +196,8 @@ const searchHandler = (event) => {
             if(results) {
                 results.forEach(result => result.remove());
             }
+            setShareLink(null);
+            setUrlFragment(null);
             setFilterResultsLabel();
             setEngineStyleFilters();
         }
@@ -324,6 +328,42 @@ const setFilterResultsLabel = (engine) => {
     }
 }
 
+const setShareLink = (searchTerm) => {
+    let share_Wrapper           = document.querySelector('.results-share__wrapper');
+    if(searchTerm) {
+
+        let share_Url           = window.location.origin+'#'+searchTerm,
+            share_Icon          = `<span class="results-share__target"><i class="fa fa-clone" aria-hidden="true"></i></span>`,
+            share_IconLink      = `<span class="results-share__link">
+                                        <span class="results-share__copyIcon">${share_Icon}</span> 
+                                        ${share_Url}
+                                    </span>`,
+            share_AnchorLink    = `<span class="results-share__copyIcon">${share_Icon}</span>`;
+
+        share_Wrapper.innerHTML     = share_IconLink;
+    } else {
+        share_Wrapper.textContent       = '';
+    }
+};
+
+const setUrlFragment = (searchTerm) => {
+    if(searchTerm) {
+        window.location.hash = searchTerm;
+    } else {
+        clearUrlFragment();
+    }
+};
+
+const clearUrlFragment = () => {
+    // remove fragment
+    window.location.replace("#");
+
+    // clean up the remaining '#'    
+    if (typeof window.history.replaceState == 'function') {
+        history.replaceState({}, '', window.location.href.slice(0, -1));
+    }
+}
+
 const countResults = () => {
     const   results = document.querySelector('.results'),
             activeFilter = document.querySelector('.filter__button--active');
@@ -341,6 +381,58 @@ const countResults = () => {
 
     return total;
 }
+
+/**
+ * Clipboard Copy
+ * 
+ * @note: checking for "clipboard-write" permission using the Permissions API 
+ */
+navigator.permissions.query({name: "clipboard-write"}).then(result => {
+
+    if (result.state == "granted" || result.state == "prompt") {
+        const copyUrlToClipboard = (event) => {
+            let urlClip                 = event.target.innerText.trim() || event.target.textContent.trim(),
+                tooltip_feedbackTimeout = (state, delay) => {
+                    setTimeout(() => {
+                        tooltip.classList.remove(`results-share__tooltip--${state}`);
+                        tooltip.innerText = '/* Copy */';
+                    }, delay);
+                };
+
+            navigator.clipboard.writeText(urlClip).then(function() {
+                /* clipboard successfully set */
+                console.log(urlClip);
+
+                let tooltip = document.querySelector('.results-share__tooltip');
+                tooltip.classList.add('results-share__tooltip--success');
+                tooltip.innerText = '/* Copied! */';
+
+                tooltip_feedbackTimeout('success', 3000);
+
+            }, function(error) {
+                /* clipboard write failed */
+                console.error(error);
+
+                let tooltip = document.querySelector('.results-share__tooltip');
+                tooltip.classList.add('results-share__tooltip--fail');
+                tooltip.innerText = '/* Could not copy (╯°□°)╯︵ ┻━┻ */';
+
+                tooltip_feedbackTimeout('fail', 3000);
+
+            });
+
+        }
+
+        let copyTargets = document.querySelectorAll('.results-share__target');
+        copyTargets.forEach((target) => {
+            target.addEventListener('click', copyUrlToClipboard);
+        });
+
+    } else {
+        console.info('Cannot use the Clipboard API. The "clipboard-write" permission has been ',result.state);
+    }
+
+});
 
 /* Filter Rendering Engine Styles */
 const filterEngineStyles = (event) => {
