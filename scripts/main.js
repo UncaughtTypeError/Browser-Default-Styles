@@ -337,12 +337,13 @@ const setShareLink = (searchTerm) => {
             share_IconLink      = `<span class="results-share__link">
                                         <span class="results-share__copyIcon">${share_Icon}</span> 
                                         ${share_Url}
-                                    </span>`,
-            share_AnchorLink    = `<span class="results-share__copyIcon">${share_Icon}</span>`;
+                                    </span>`;
 
-        share_Wrapper.innerHTML     = share_IconLink;
+        share_Wrapper.innerHTML = share_IconLink;
+        share_Wrapper.classList.remove('u-hide');
     } else {
-        share_Wrapper.textContent       = '';
+        share_Wrapper.textContent = '';
+        share_Wrapper.classList.add('u-hide');
     }
 };
 
