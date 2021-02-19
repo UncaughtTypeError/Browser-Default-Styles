@@ -148,6 +148,22 @@ div.darkmode-layer {
     color: var(--dark-secondary-color);
 }
 
+.darkmode--activated .results-share {
+    color: var(--dark-subtle-font);
+}
+
+.darkmode--activated .results-share__wrapper {
+    background: var(--dark-hard-color);
+}
+
+.darkmode--activated .results-share__copyIcon {
+    background: var(--dark-soft-color);
+}
+
+.darkmode--activated .u-tooltip-parent .results-share__tooltip:is(.results-share__tooltip--success, .results-share__tooltip--fail) {
+    color: var(--dark-secondary-color);
+}
+
 .darkmode--activated .search__field {
     background: var(--dark-medium-color);
     color: var(--dark-primary-color);
