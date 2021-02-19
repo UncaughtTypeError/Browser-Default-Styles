@@ -399,9 +399,8 @@ navigator.permissions.query({name: "clipboard-write"}).then(result => {
                     }, delay);
                 };
 
-            navigator.clipboard.writeText(urlClip).then(function() {
+            navigator.clipboard.writeText(urlClip).then(() => {
                 /* clipboard successfully set */
-                console.log(urlClip);
 
                 let tooltip = document.querySelector('.results-share__tooltip');
                 tooltip.classList.add('results-share__tooltip--success');
@@ -409,7 +408,7 @@ navigator.permissions.query({name: "clipboard-write"}).then(result => {
 
                 tooltip_feedbackTimeout('success', 3000);
 
-            }, function(error) {
+            }, (error) => {
                 /* clipboard write failed */
                 console.error(error);
 
