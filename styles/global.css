@@ -854,6 +854,7 @@ a:visited {
     padding: 0;
     list-style: none;
     min-height: 35px;
+    margin-bottom: -10px;
 }
 
 .info li {
