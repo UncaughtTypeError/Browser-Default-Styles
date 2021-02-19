@@ -137,6 +137,22 @@ body:not(.darkmode--activated) .u-light--hide {
     color: var(--light-secondary-color);
 }
 
+.results-share {
+    color: var(--light-subtle-font);
+}
+
+.results-share__wrapper {
+    background: var(--light-hard-color);
+}
+
+.results-share__copyIcon {
+    background: var(--light-soft-color);
+}
+
+.u-tooltip-parent .results-share__tooltip:is(.results-share__tooltip--success, .results-share__tooltip--fail) {
+    color: var(--light-secondary-color);
+}
+
 .search__field {
     background: var(--light-soft-color);
     color: var(--light-primary-color);

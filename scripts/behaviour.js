@@ -1,4 +1,6 @@
-/* || Theme toggle */
+/* 
+ * || Theme toggle 
+ */
 const setThemeToggle = () => {
     const node = `
         <div class="darkmode-toggle__label u-tooltip-parent"> 
@@ -30,7 +32,9 @@ const setThemeToggle = () => {
 
 document.addEventListener('DOMContentLoaded', setThemeToggle);
 
-/* || Scroll behaviour */
+/* 
+ * || Scroll behaviour 
+ */
 const watchScroll = () => {
     const fromTop = window.pageYOffset || document.documentElement.scrollTop;
     if (fromTop < 500) {
@@ -47,9 +51,41 @@ const watchScroll = () => {
 
 window.addEventListener('scroll', watchScroll, false);
 
-/* || Scroll to top */
+/* 
+ * || Scroll to top 
+ */
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 document.querySelector('.to-top').addEventListener('click', scrollToTop);
+
+/* 
+ * || On-click Ripple Effect 
+ */
+function createRipple(event) {
+    const targetElement = event.currentTarget;
+
+    const circle            = document.createElement('span');
+    const diameter          = Math.max(targetElement.clientWidth, targetElement.clientHeight);
+    const radius            = diameter / 2;
+    const viewportOffset    = targetElement.getBoundingClientRect();
+
+    circle.style.width      = circle.style.height = `${diameter}px`;
+    circle.style.left       = `${event.clientX - viewportOffset.left - radius}px`;
+    circle.style.top        = `${event.clientY - viewportOffset.top - radius}px`;
+    circle.classList.add('rippleEffect');
+
+    const rippleEffect      = targetElement.getElementsByClassName('rippleEffect')[0];
+
+    if (rippleEffect) {
+        rippleEffect.remove();
+    }
+
+    targetElement.appendChild(circle);
+}
+
+const targetElements = document.querySelectorAll('[data-onclick="rippleEffect"]');
+for (const targetElement of targetElements) {
+    targetElement.addEventListener('click', createRipple);
+}
