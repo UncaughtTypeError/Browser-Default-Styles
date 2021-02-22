@@ -1267,6 +1267,13 @@ a:visited {
     .browsers svg {
         margin-left: -2px;
     }
+
+    .results-share__wrapper {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+    }
     
 }
 
