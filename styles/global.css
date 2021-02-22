@@ -633,12 +633,27 @@ a:visited {
     position: relative;
 }
 
-.search svg {
+.search__loader {
     position: absolute;
-    right: 10px;
-    top: 0;
+    left: 95%;
+    top: -3px;
     bottom: 0;
     margin: auto;
+    height: 25px;
+    width: 25px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    border-top: 2px solid var(--accent-color);
+    border-right: 2px solid transparent;
+    border-bottom: none;
+    border-left: none;
+    animation: spinner5 700ms linear infinite;
+}
+
+@keyframes spinner5 {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .search__field {
