@@ -919,6 +919,10 @@ a:visited {
     pointer-events: initial;
 }
 
+.u-scrollDown {
+    padding-top: 250px;
+}
+
 .u-scrollDown .content-wrapper:before {
     left: 20px;
 }
