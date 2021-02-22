@@ -117,26 +117,27 @@ const removeWhiteSpace = (str) => {
     return str.replace(/\s/g, "");
 }
 
+// Allow time for user input before calling search handler
 const setStandby = (condition) => {
-    let icon    = document.querySelector('.search svg'),
+    let loader  = document.querySelector('.search .search__loader'),
         search  = document.querySelector('.search');
 
     if(condition) {
 
-        if(icon) { // icon already exists, do not append another
+        if(loader) { // loader already exists, do not append another
             return;
         }
 
-        icon = document.createElement('i');
-        icon.classList.add('fas', 'fa-circle-notch', 'fa-spin');
-        search.appendChild(icon);
+        loader = document.createElement('div');
+        loader.classList.add('search__loader');
+        search.appendChild(loader);
     } else {
-        icon = document.querySelector('.search svg');
+        loader = document.querySelector('.search__loader');
 
-        if(!icon) { // icon does not exist, do not attempt to remove
+        if(!loader) { // loader does not exist, do not attempt to remove
             return;
         } else {
-            icon.parentNode.removeChild(icon);
+            loader.parentNode.removeChild(loader);
         }
     }
 }
@@ -200,7 +201,7 @@ const searchHandler = (event) => {
             setEngineStyleFilters();
         }
 
-    }, 500);
+    },500);
 }
 
 searchInput.addEventListener('keydown', searchHandler);
