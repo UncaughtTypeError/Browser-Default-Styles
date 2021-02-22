@@ -196,8 +196,6 @@ const searchHandler = (event) => {
             if(results) {
                 results.forEach(result => result.remove());
             }
-            setShareLink(null);
-            setUrlFragment(null);
             setFilterResultsLabel();
             setEngineStyleFilters();
         }
@@ -305,8 +303,7 @@ const renderResult = (props) => {
 }
 
 const setFilterResultsLabel = (engine) => {
-    const   results = document.querySelector('.results'),
-            filterLabel = document.querySelector('.filter-results-label'),
+    const   filterLabel = document.querySelector('.filter-results-label'),
             total = countResults();
 
     if(engine) {
@@ -319,12 +316,6 @@ const setFilterResultsLabel = (engine) => {
         results.forEach((result) => {
             result.classList.remove('u-hide');
         });
-    }
-
-    if(total <= 0) {
-        results.classList.add('results--noMatches');
-    } else {
-        results.classList.remove('results--noMatches');
     }
 }
 
@@ -380,7 +371,21 @@ const countResults = () => {
         total = results.childElementCount;
     }
 
+    noResults(total);
+
     return total;
+}
+
+const noResults = (total) => {
+    const results = document.querySelector('.results');
+
+    if(total <= 0) {
+        results.classList.add('results--noMatches');
+        setShareLink(null);
+        setUrlFragment(null);
+    } else {
+        results.classList.remove('results--noMatches');
+    }
 }
 
 /**
