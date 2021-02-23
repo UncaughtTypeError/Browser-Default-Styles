@@ -917,7 +917,7 @@ export const cssDefaults = [
         defaults: {
             color: '#0000EE',
             textDecoration: 'underline',
-            cursor: 'pointed',
+            cursor: 'pointer',
         },
         blink: {
             textDecoration: 'underline',
