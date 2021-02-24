@@ -106,6 +106,50 @@ const findSearchMatches = (elementToMatch, arrayToFilter) => {
     });
 }
 
+const sortSearchMatches = (elementToMatch, arrayToSort) => {
+    
+    let value_sanitized = escapeRegExp(elementToMatch);
+
+    let exact_MatchArray = [],
+        partialsPseudo_MatchArray = [],
+        partialsAttributes_MatchArray = [],
+        contains_MatchArray = [];
+    
+    arrayToSort.map(htmlElement => {
+        let element = htmlElement.element;
+        if ( (element.indexOf(value_sanitized) === 0) && (element.length === value_sanitized.length) ) {
+
+            exact_MatchArray.push(htmlElement);
+
+        } else if ( element.indexOf(`${value_sanitized}:`) === 0 ) {
+
+            partialsPseudo_MatchArray.push(htmlElement);
+
+        } else if ( element.indexOf(`${value_sanitized}[`) === 0 ) {
+
+            partialsAttributes_MatchArray.push(htmlElement);
+
+        } else {
+            contains_MatchArray.push(htmlElement);
+        }
+    });
+
+    return sortArrays(
+        exact_MatchArray,
+        partialsPseudo_MatchArray,
+        partialsAttributes_MatchArray,
+        contains_MatchArray
+    );
+}
+
+const sortArrays = (...arrays) => {
+    return arrays.map((array) => {
+        return array.sort((a, b) => {
+            return a.element.length < b.element.length ? -1 : 1;
+        });
+    }).flat();
+}
+
 // Escape special characters
 // see: https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex/6969486#6969486
 const escapeRegExp = (str) => {
@@ -147,8 +191,9 @@ const displaySearchMatches = (...args) => {
 
     value = removeWhiteSpace(value);
 
-    const   matchArray = findSearchMatches(value, cssDefaults),
-            html = matchArray.map(htmlElement => {
+    const   matchedArray = findSearchMatches(value, cssDefaults),
+            sortedArray = sortSearchMatches(value, matchedArray),
+            html = sortedArray.map(htmlElement => {
 
         const   regex = new RegExp(escapeRegExp(value), 'gi'),
                 name = htmlElement.element.replace(regex, `<span class="u-highlight">${value.toLowerCase()}</span>`),
@@ -247,8 +292,8 @@ const displaySelectedMatches = (event) => {
         if(searchInput.value) {
             filterSelectMatches(engine);
         } else {
-            const   matchArray = findSelectMatches(engine, cssDefaults),
-                    html = matchArray.map(htmlElement => {
+            const   matchedArray = findSelectMatches(engine, cssDefaults),
+                    html = matchedArray.map(htmlElement => {
 
                 const   name = htmlElement.element,
                         obsolete = htmlElement.obsolete,
