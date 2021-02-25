@@ -934,7 +934,8 @@ a:visited {
     pointer-events: initial;
 }
 
-.u-scrollDown {
+.u-scrollDown,
+.u-scrollUp {
     padding-top: 250px;
 }
 
