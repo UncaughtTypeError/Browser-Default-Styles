@@ -113,6 +113,7 @@ const sortSearchMatches = (elementToMatch, arrayToSort) => {
     let exact_MatchArray = [],
         partialsPseudo_MatchArray = [],
         partialsAttributes_MatchArray = [],
+        beginsWith_MatchArray = [],
         contains_MatchArray = [];
     
     arrayToSort.map(htmlElement => {
@@ -129,6 +130,10 @@ const sortSearchMatches = (elementToMatch, arrayToSort) => {
 
             partialsAttributes_MatchArray.push(htmlElement);
 
+        } else if ( element.indexOf(`${value_sanitized}`) === 0 ) {
+
+            beginsWith_MatchArray.push(htmlElement);
+
         } else {
             contains_MatchArray.push(htmlElement);
         }
@@ -138,14 +143,17 @@ const sortSearchMatches = (elementToMatch, arrayToSort) => {
         exact_MatchArray,
         partialsPseudo_MatchArray,
         partialsAttributes_MatchArray,
+        beginsWith_MatchArray,
         contains_MatchArray
     );
 }
 
+// Sort alphabetically
+// see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
 const sortArrays = (...arrays) => {
     return arrays.map((array) => {
         return array.sort((a, b) => {
-            return a.element.length < b.element.length ? -1 : 1;
+            return a.element.localeCompare(b.element);
         });
     }).flat();
 }
