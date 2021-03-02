@@ -21,6 +21,12 @@
             "src": "icons/app-manifest-splash-screen.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "src": "icons/maskable_icon.png",
+            "sizes": "400x400",
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
     "start_url": "/",
